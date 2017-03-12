@@ -5,6 +5,7 @@ FactoryGirl.define do
         amount 0
         new_one false
         sales_hit false
+        association :category
 
         trait :new_one do
             new_one true
