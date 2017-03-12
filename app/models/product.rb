@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
     belongs_to :category
+    belongs_to :event
 
     validates :name, presence: true, uniqueness: true
     validates :category_id, presence: true
