@@ -1,4 +1,10 @@
+require 'babosa'
+
 class Product < ApplicationRecord
+    extend FriendlyId
+
+    friendly_id :slug_candidates, use: :slugged
+
     belongs_to :category
     belongs_to :event
 
@@ -16,5 +22,13 @@ class Product < ApplicationRecord
 
     def is_available_for_order?
         amount > 0
+    end
+
+    def slug_candidates
+        [:name, [:name, :id]]
+    end
+
+    def normalize_friendly_id(input)
+        input.to_s.to_slug.normalize(transliterations: :russian).to_s
     end
 end

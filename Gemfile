@@ -18,6 +18,8 @@ gem 'foundation-rails'
 gem 'autoprefixer-rails', '6.7.6'
 gem 'slim'
 gem 'trix'
+gem 'friendly_id', '~> 5.1.0'
+gem 'babosa'
 
 group :development do
     gem 'listen', '~> 3.0.5'
