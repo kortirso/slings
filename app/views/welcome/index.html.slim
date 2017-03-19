@@ -1,0 +1,53 @@
+.row
+    h2 Виды слингов
+    - @categories.each do |category|
+        .columns.small-4.end
+            = link_to category do
+                .category_block
+                    .category_image
+
+                    .category_text
+                        h3= category.name
+                        p Некоторый краткий текст про категорию
+.row
+    h2 Почему мы?
+    .columns.small-4
+        .advance_block
+            .advance_image
+
+            .advance_text
+                h3  Гарантия качества
+                p ТМ Слингуля. Собственное производство с 2009 г. Более 10 000 довольных покупателей.
+    .columns.small-4
+        .advance_block
+            .advance_image
+
+            .advance_text
+                h3 Индивидуальный дизайн
+                p Вы можете заказать слинг по индивидуальному дизайну! 
+    .columns.small-4
+        .advance_block
+            .advance_image
+
+            .advance_text
+                h3 Помощь
+                p Бесплатная помощь слингоконсультанта до и после покупки.
+.row
+    h2 Отзывы наших клиентов
+    .columns.small-8.small-centered
+        .columns.small-4
+            .review_block
+                .review_icon
+                .review_text
+                    p Какие прекрасные слинги, просто в восторге!!!
+                .review_author
+                    .author_image
+                    .author_name Яна Факунина
+        .columns.small-4.small-offset-4
+            .review_block
+                .review_icon
+                .review_text
+                    p Какие прекрасные слинги, просто в восторге!!!
+                .review_author
+                    .author_image
+                    .author_name Яна Факунина
