@@ -10,6 +10,19 @@
                         h3= category.name
                         p Некоторый краткий текст про категорию
 .row
+    h2 Мамин зайка!
+.row
+    h2 Хиты продаж
+    - 8.times do
+        .columns.small-1.medium-4.large-3
+            .sling_block
+                .sling_image
+
+                .sling_text
+                    .sling_name Название слинга
+                    .sling_price Цена
+                    = link_to 'Купить', '#', class: 'button price_button'
+.row
     h2 Почему мы?
     .columns.small-4
         .advance_block
@@ -34,20 +47,13 @@
                 p Бесплатная помощь слингоконсультанта до и после покупки.
 .row
     h2 Отзывы наших клиентов
-    .columns.small-8.small-centered
-        .columns.small-4
-            .review_block
-                .review_icon
-                .review_text
-                    p Какие прекрасные слинги, просто в восторге!!!
-                .review_author
-                    .author_image
-                    .author_name Яна Факунина
-        .columns.small-4.small-offset-4
-            .review_block
-                .review_icon
-                .review_text
-                    p Какие прекрасные слинги, просто в восторге!!!
-                .review_author
-                    .author_image
-                    .author_name Яна Факунина
+    .columns.small-12
+        - 4.times do
+            .columns.small-1.medium-6.large-3.end
+                .review_block
+                    .review_icon
+                    .review_text
+                        p Какие прекрасные слинги, просто в восторге!!!
+                    .review_author
+                        .author_image
+                        .author_name Яна Факунина
