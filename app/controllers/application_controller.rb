@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
 
     private
 
+    def get_categories_list
+        @categories = Category.order(name: :asc)
+    end
+
     def render_not_found
         render template: 'shared/404', status: 404
     end

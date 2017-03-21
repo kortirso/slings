@@ -1,3 +1,16 @@
-h1= @category.name
-- @products.each do |product|
-    p= link_to product.name, product_path(product)
+.row
+    = render 'shared/categories_nav'
+    .columns.small-12.medium-9.large-10
+        .catalog
+            .products.row
+                h2= @category.name
+                - @products.each do |product|
+                    .columns.small-1.medium-3.end
+                        = link_to product do
+                            .sling_block
+                                .sling_image
+
+                                .sling_text
+                                    .sling_name= product.name
+                                    .sling_price= "#{product.price} руб."
+                                    = link_to 'Купить', '#', class: 'button price_button'

@@ -164,7 +164,9 @@ h2 {
     }
     .sling_text {
         padding: 15px;
-        color: #333;
+        a {
+            color: #333;
+        }
         .sling_price {
             margin-bottom: 5px;
         }
@@ -173,7 +175,7 @@ h2 {
 
 .button.price_button {
     background: #767676;
-    color: #FFF;
+    color: #FFF !important;
     margin-bottom: 0;
     &:hover {
         background: #606060;
@@ -187,4 +189,15 @@ h2 {
     padding: 10px 15px;
     background: #BBB;
     color: #010101;
+}
+
+.catalog_nav {
+    .button {
+        margin-bottom: 2px;
+        width: 100%;
+        text-align: left;
+        &.active {
+            background: #2a3a59;
+        }
+    }
 }

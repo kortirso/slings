@@ -1,2 +1,28 @@
-- @categories.each do |category|
-    p= link_to category.name, category_path(category)
+.row
+    = render 'shared/categories_nav'
+    .columns.small-12.medium-9.large-10
+        .catalog
+            .best_products.row
+                h2 Хиты продаж
+                - 8.times do
+                    .columns.small-1.medium-3
+                        = link_to '#' do
+                            .sling_block
+                                .sling_image
+
+                                .sling_text
+                                    .sling_name Название слинга
+                                    .sling_price Цена
+                                    = link_to 'Купить', '#', class: 'button price_button'
+            .new_products.row
+                h2 Новинки
+                - 8.times do
+                    .columns.small-1.medium-3
+                        = link_to '#' do
+                            .sling_block
+                                .sling_image
+
+                                .sling_text
+                                    .sling_name Название слинга
+                                    .sling_price Цена
+                                    = link_to 'Купить', '#', class: 'button price_button'
