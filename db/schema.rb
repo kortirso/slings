@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315075838) do
+ActiveRecord::Schema.define(version: 20170322120600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carts", force: :cascade do |t|
+    t.integer  "summ",       default: 0, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       default: "", null: false
@@ -42,6 +48,17 @@ ActiveRecord::Schema.define(version: 20170315075838) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.integer  "cart_id"
+    t.integer  "product_id"
+    t.integer  "count",      default: 1, null: false
+    t.integer  "summ"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["cart_id"], name: "index_positions_on_cart_id", using: :btree
+    t.index ["product_id"], name: "index_positions_on_product_id", using: :btree
   end
 
   create_table "products", force: :cascade do |t|

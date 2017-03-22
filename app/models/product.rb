@@ -8,6 +8,9 @@ class Product < ApplicationRecord
     belongs_to :category
     belongs_to :event
 
+    has_many :positions
+    has_many :carts, through: :positions
+
     validates :name, presence: true, uniqueness: true
     validates :category_id, presence: true
     validates :price, :amount, numericality: { only_integer: true, greater_than_or_equal_to: 0 }

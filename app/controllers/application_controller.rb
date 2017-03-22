@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
+    include ProductsCart
+    
+    before_action :set_products_cart
+
     rescue_from ActionController::RoutingError, with: :render_not_found
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
