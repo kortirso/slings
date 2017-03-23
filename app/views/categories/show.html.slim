@@ -9,7 +9,7 @@
                         = link_to product do
                             .sling_block
                                 .sling_image
-
+                                    = image_tag product.image
                                 .sling_text
                                     .sling_name= product.name
                                     .sling_price= "#{product.price} руб."

@@ -5,24 +5,26 @@
             .best_products.row
                 h2 Хиты продаж
                 - 8.times do
+                    - product = Product.all.sample
                     .columns.small-1.medium-3
                         = link_to '#' do
                             .sling_block
                                 .sling_image
-
+                                    = image_tag product.image
                                 .sling_text
-                                    .sling_name Название слинга
-                                    .sling_price Цена
+                                    .sling_name= product.name
+                                    .sling_price= "#{product.price} руб."
                                     = link_to 'Купить', '#', class: 'button price_button'
             .new_products.row
                 h2 Новинки
                 - 8.times do
+                    - product = Product.all.sample
                     .columns.small-1.medium-3
                         = link_to '#' do
                             .sling_block
                                 .sling_image
-
+                                    = image_tag product.image
                                 .sling_text
-                                    .sling_name Название слинга
-                                    .sling_price Цена
+                                    .sling_name= product.name
+                                    .sling_price= "#{product.price} руб."
                                     = link_to 'Купить', '#', class: 'button price_button'

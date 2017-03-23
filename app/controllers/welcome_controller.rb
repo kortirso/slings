@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
     def index
-        @categories = Category.order(name: :asc)
+        @categories = Category.order(id: :asc)
     end
 end

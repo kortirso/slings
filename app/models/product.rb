@@ -3,6 +3,8 @@ require 'babosa'
 class Product < ApplicationRecord
     extend FriendlyId
 
+    mount_uploader :image, ItemsUploader
+
     friendly_id :slug_candidates, use: :slugged
 
     belongs_to :category

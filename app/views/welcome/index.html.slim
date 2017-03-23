@@ -1,11 +1,11 @@
 .row
     h2 Виды слингов
     - @categories.each do |category|
-        .columns.small-4.end
+        .columns.small-3.end
             = link_to category do
                 .category_block
                     .category_image
-
+                        = image_tag category.image
                     .category_text
                         h3= category.name
                         p Некоторый краткий текст про категорию
@@ -14,13 +14,14 @@
 .row
     h2 Хиты продаж
     - 8.times do
+        - product = Product.all.sample
         .columns.small-12.medium-4.large-3
             .sling_block
                 .sling_image
-
+                    = image_tag product.image
                 .sling_text
-                    .sling_name Название слинга
-                    .sling_price Цена
+                    .sling_name= product.name
+                    .sling_price= "#{product.price} руб."
                     = link_to 'Купить', '#', class: 'button price_button'
 .row
     h2 Почему мы?
