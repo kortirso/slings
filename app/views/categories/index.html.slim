@@ -14,7 +14,7 @@
                                 .sling_text
                                     .sling_name= product.name
                                     .sling_price= "#{product.price} руб."
-                                    = link_to 'Купить', '#', class: 'button price_button'
+                                    = button_to 'Купить', positions_path(product_id: product.id), class: 'button price_button', remote: true
             .new_products.row
                 h2 Новинки
                 - 8.times do
@@ -27,4 +27,4 @@
                                 .sling_text
                                     .sling_name= product.name
                                     .sling_price= "#{product.price} руб."
-                                    = link_to 'Купить', '#', class: 'button price_button'
+                                    = button_to 'Купить', positions_path(product_id: product.id), class: 'button price_button', remote: true

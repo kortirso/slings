@@ -4,9 +4,7 @@ RSpec.describe Position, type: :model do
     it { should validate_presence_of :cart_id }
     it { should validate_presence_of :product_id }
     it { should validate_presence_of :count }
-    it { should validate_presence_of :summ }
     it { should validate_numericality_of(:count).only_integer.is_greater_than_or_equal_to(0) }
-    it { should validate_numericality_of(:summ).only_integer.is_greater_than_or_equal_to(0) }
 
     it 'should be valid' do
         position = create :position

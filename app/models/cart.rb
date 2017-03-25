@@ -6,11 +6,9 @@ class Cart < ApplicationRecord
 
     def add_product(product_id)
         current_position = positions.find_by(product_id: product_id)
-        current_position ? current_position.update(count: current_position.count + 1) : current_position = positions.create(product_id: product_id)
+        current_position.present? ? current_position.update(count: current_position.count + 1) : current_position = positions.create!(product_id: product_id)
         self.calc_summ
     end
-
-    private
 
     def calc_summ
         self.update(summ: positions.sum(&:summ))

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :articles, only: :index
     resources :carts, only: :show
 
+    post 'positions/create' => 'positions#create', as: :positions
     get 'reviews' => 'pages#reviews', as: :reviews
     get 'feedback' => 'pages#feedback', as: :feedback
     get 'tailor' => 'pages#tailor', as: :tailor
