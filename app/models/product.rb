@@ -1,4 +1,5 @@
 require 'babosa'
+require 'open-uri'
 
 class Product < ApplicationRecord
     extend FriendlyId
@@ -35,5 +36,20 @@ class Product < ApplicationRecord
 
     def normalize_friendly_id(input)
         input.to_s.to_slug.normalize(transliterations: :russian).to_s
+    end
+
+    def self.build(args)
+        product = Product.new args[:params]
+        File.open(download_image(args[:image])) { |f| product.image = f }
+        product.save
+    end
+
+    private
+
+    def download_image(image)
+        download = open(image)
+        temp_file = "#{Rails.root}/public/uploads/#{download.to_s.split('/')[-1]}"
+        IO.copy_stream(download, temp_file)
+        temp_file
     end
 end
