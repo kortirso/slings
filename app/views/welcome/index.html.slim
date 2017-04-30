@@ -1,4 +1,4 @@
-.row
+.row.big_block
     h2 Виды слингов
     - @categories.each do |category|
         .columns.small-3.end
@@ -9,9 +9,9 @@
                     .category_text
                         h3= category.name
                         p Некоторый краткий текст про категорию
-.row
+.row.big_block
     h2 Мамин зайка!
-.row
+.row.big_block
     h2 Хиты продаж
     - 8.times do
         - product = Product.all.sample
@@ -23,8 +23,8 @@
                     .sling_name= product.name
                     .sling_price= "#{product.price} руб."
                     = button_to 'Купить', positions_path(product_id: product.id), class: 'button price_button', remote: true
-.row
-    h2 Почему мы?
+.row.big_block
+    h2 Чем можем быть полезны?
     .columns.small-4
         .advance_block
             .advance_image
@@ -46,7 +46,7 @@
             .advance_text
                 h3 Помощь
                 p Бесплатная помощь слингоконсультанта до и после покупки.
-.row
+.row.big_block
     h2 Отзывы наших клиентов
     .columns.small-12
         - 4.times do

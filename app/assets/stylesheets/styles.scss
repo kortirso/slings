@@ -61,6 +61,7 @@ body {
 
 .menu-centered {
     padding-top: 20px;
+    margin-bottom: 20px;
     .menu {
         a {
             color: #645f69;
@@ -78,13 +79,17 @@ body {
     left: 0;
 }
 
+.big_block {
+    margin-bottom: 40px;
+}
+
 h2 {
     color: #010101;
     font-size: 22px;
     text-align: center;
     position: relative;
     padding-bottom: 10px;
-    margin: 50px 0;
+    margin: 0 0 40px;
     &:after {
         position: absolute;
         content: '';
@@ -228,5 +233,11 @@ h2 {
         &.active {
             background: #2a3a59;
         }
+    }
+}
+
+.product_block {
+    .image_block {
+        text-align: center;
     }
 }
