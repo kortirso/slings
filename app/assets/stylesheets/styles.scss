@@ -20,15 +20,33 @@
     font-family: 'Noto Serif' !important;
 }
 
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
 body {
     position: relative;
     @include scroll-bar;
+}
+
+.content {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 120px;
+    padding-top: 80px;
 }
 
 #header {
     height: 80px;
     background: #e6e6e6;
     padding-top: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
     p {
         margin: 0;
     }
@@ -52,10 +70,12 @@ body {
 }
 
 #footer {
-    margin-top: 50px;
     height: 100px;
     width: 100%;
     background: #2a3a59;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 h2 {
@@ -197,6 +217,7 @@ h2 {
     padding: 10px 15px;
     background: #BBB;
     color: #010101;
+    z-index: 3;
 }
 
 .catalog_nav {

@@ -7,7 +7,9 @@ html
         = csrf_meta_tags
     body
         = render 'shared/header'
-        = render 'shared/navigation'
-        = yield
-        = render 'shared/footer'
+        .content
+            = render 'shared/navigation'
+            .row
+                == yield
+            = render 'shared/footer'
         = render 'shared/cart'
