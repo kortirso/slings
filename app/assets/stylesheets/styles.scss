@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,400i,500';
 
 @mixin scroll-bar {
     &::-webkit-scrollbar {
@@ -17,7 +17,7 @@
 }
 
 * {
-    font-family: 'Noto Serif' !important;
+    font-family: 'Roboto' !important;
 }
 
 html, body {
@@ -28,6 +28,7 @@ html, body {
 
 body {
     position: relative;
+    background: #feefea;
     @include scroll-bar;
 }
 
@@ -40,7 +41,7 @@ body {
 
 #header {
     height: 80px;
-    background: #e6e6e6;
+    background: #fedd50;
     padding-top: 15px;
     position: absolute;
     top: 0;
@@ -51,11 +52,12 @@ body {
         margin: 0;
     }
     .head {
-        color: #d0d0d0;
+        color: #282723;
         font-size: 14px;
     }
     .text {
         color: #282723;
+        font-weight: 500;
     }
 }
 
@@ -63,9 +65,19 @@ body {
     padding-top: 20px;
     margin-bottom: 20px;
     .menu {
+        background: #FFF;
+        box-shadow: 0 2px 3px 2px #bbd4d1;
         a {
             color: #645f69;
-            font-size: 18px;
+            font-size: 16px;
+            text-transform: uppercase;
+            padding: 16px 25px 14px;
+            &:hover {
+                color: #909090;
+            }
+            &.active {
+                color: #bbd4d1;
+            }
         }
     }
 }
@@ -73,7 +85,7 @@ body {
 #footer {
     height: 100px;
     width: 100%;
-    background: #2a3a59;
+    background: #577265;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -103,14 +115,12 @@ h2 {
 }
 
 .category_block {
-    background: #f2f5f7;
-    box-shadow: 0 10px 10px 2px #dfdfdf;
     margin-bottom: 40px;
     .category_image {
         height: 270px;
         padding: 10px;
         img {
-            height: 250px;
+
         }
     }
     .category_text {
@@ -184,8 +194,6 @@ h2 {
 }
 
 .sling_block {
-    background: #f2f5f7;
-    box-shadow: 0 10px 10px 2px #dfdfdf;
     margin-bottom: 20px;
     text-align: center;
     .sling_image {
@@ -197,21 +205,23 @@ h2 {
     }
     .sling_text {
         padding: 15px;
-        a {
-            color: #333;
+        .sling_name {
+            color: #010101;
         }
         .sling_price {
+            color: #010101;
             margin-bottom: 5px;
         }
     }
 }
 
 .button.price_button {
-    background: #767676;
+    padding: 12px 25px;
+    background: #779c8a;
     color: #FFF !important;
     margin-bottom: 0;
     &:hover {
-        background: #606060;
+        background: #577265;
     }
 }
 
@@ -220,7 +230,7 @@ h2 {
     top: 0;
     right: 0;
     padding: 10px 15px;
-    background: #BBB;
+    background: #bbd4d1;
     color: #010101;
     z-index: 3;
 }
@@ -230,14 +240,24 @@ h2 {
         margin-bottom: 2px;
         width: 100%;
         text-align: left;
+        background: #779c8a;
         &.active {
-            background: #2a3a59;
+            background: #577265;
+        }
+        &:hover {
+            background: #678275;
         }
     }
 }
 
 .product_block {
+    padding: 10px;
     .image_block {
         text-align: center;
     }
+}
+
+.block {
+    background: #f2f5f7;
+    box-shadow: 0 10px 10px 2px #dfdfdf;
 }

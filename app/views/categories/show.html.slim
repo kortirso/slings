@@ -1,4 +1,5 @@
 - provide(:category, @category.friendly_id)
+- provide(:path, 'catalog')
 .row
     = render 'shared/categories_nav'
     .columns.small-12.medium-9.large-10
@@ -8,7 +9,7 @@
                 - @products.each do |product|
                     .columns.small-1.medium-3.end
                         = link_to product do
-                            .sling_block
+                            .sling_block.block
                                 .sling_image
                                     = image_tag product.image
                                 .sling_text

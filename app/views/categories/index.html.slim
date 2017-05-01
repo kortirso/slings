@@ -1,3 +1,4 @@
+- provide(:path, 'catalog')
 .row
     = render 'shared/categories_nav'
     .columns.small-12.medium-9.large-10
@@ -7,8 +8,8 @@
                 - 8.times do
                     - product = Product.all.sample
                     .columns.small-1.medium-3
-                        = link_to '#' do
-                            .sling_block
+                        = link_to product do
+                            .sling_block.block
                                 .sling_image
                                     = image_tag product.image
                                 .sling_text
@@ -20,8 +21,8 @@
                 - 8.times do
                     - product = Product.all.sample
                     .columns.small-1.medium-3
-                        = link_to '#' do
-                            .sling_block
+                        = link_to product do
+                            .sling_block.block
                                 .sling_image
                                     = image_tag product.image
                                 .sling_text

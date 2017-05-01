@@ -1,9 +1,10 @@
+- provide(:path, 'root')
 .row.big_block
     h2 Виды слингов
     - @categories.each do |category|
         .columns.small-3.end
             = link_to category do
-                .category_block
+                .category_block.block
                     .category_image
                         = image_tag category.image
                     .category_text
@@ -16,13 +17,14 @@
     - 8.times do
         - product = Product.all.sample
         .columns.small-12.medium-4.large-3
-            .sling_block
-                .sling_image
-                    = image_tag product.image
-                .sling_text
-                    .sling_name= product.name
-                    .sling_price= "#{product.price} руб."
-                    = button_to 'Купить', positions_path(product_id: product.id), class: 'button price_button', remote: true
+            = link_to product do
+                .sling_block.block
+                    .sling_image
+                        = image_tag product.image
+                    .sling_text
+                        .sling_name= product.name
+                        .sling_price= "#{product.price} руб."
+                        = button_to 'Купить', positions_path(product_id: product.id), class: 'button price_button', remote: true
 .row.big_block
     h2 Чем можем быть полезны?
     .columns.small-4
