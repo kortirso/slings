@@ -12,5 +12,6 @@ class Cart < ApplicationRecord
 
     def calc_summ
         self.update(summ: positions.sum(&:summ))
+        summ
     end
 end

@@ -1,3 +1,27 @@
 .row
-    .columns.small-12
-        p Корзина
+    .columns.small-8.small-centered
+        h2 Корзина
+        .positions
+            table
+                thead
+                    th Название
+                    th Количество
+                    th Сумма (руб.)
+                tbody
+                    - @cart.positions.order(id: :asc).each do |position|
+                        tr
+                            td
+                                p= position.product.name
+                                .check_box
+                                    = label_tag "full_#{position.id}", 'Полная комплектация'
+                                    = link_to check_box_tag("full_#{position.id}", value = '1', checked = position.is_full?), full_path(position), remote: true, method: :post
+                            td
+                                span id="count_#{position.id}"= position.count
+                                    
+                                span= button_to '+', plus_path(position), class: 'button_up', remote: true
+                                span= button_to '-', minus_path(position), class: 'button_down', remote: true
+                            td id="summ_#{position.id}"= position.summ
+            #total_summ
+                = 'Итоговая сумма - '
+                span#amount= @cart.summ
+                = ' руб.'

@@ -1,4 +1,6 @@
 class Position < ApplicationRecord
+    PRICE_FOR_FULL = 400
+
     belongs_to :cart
     belongs_to :product
 
@@ -7,9 +9,24 @@ class Position < ApplicationRecord
 
     before_save :calc_summ
 
+    def is_full?
+        full
+    end
+
+    def change_count(koef)
+        self.update(count: self.count + koef)
+        self
+    end
+
+    def change_fullness
+        self.update(full: !self.full)
+        self
+    end
+
     private
 
     def calc_summ
         self.summ = self.count * self.product.price
+        self.summ += self.count * PRICE_FOR_FULL if is_full?
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323075634) do
+ActiveRecord::Schema.define(version: 20170501150953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,10 +55,11 @@ ActiveRecord::Schema.define(version: 20170323075634) do
   create_table "positions", force: :cascade do |t|
     t.integer  "cart_id"
     t.integer  "product_id"
-    t.integer  "count",      default: 1, null: false
+    t.integer  "count",      default: 1,     null: false
     t.integer  "summ"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "full",       default: false
     t.index ["cart_id"], name: "index_positions_on_cart_id", using: :btree
     t.index ["product_id"], name: "index_positions_on_product_id", using: :btree
   end

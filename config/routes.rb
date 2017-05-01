@@ -11,7 +11,14 @@ Rails.application.routes.draw do
     resources :articles, only: :index
     resources :carts, only: :show
 
-    post 'positions/create' => 'positions#create', as: :positions
+    scope controller: :positions do
+        post 'create' => :create, as: :positions
+        post 'plus/:position' => :product_plus, as: :plus
+        post 'minus/:position' => :product_minus, as: :minus
+        post 'full/:position' => :product_full, as: :full
+    end
+
+    
     get 'reviews' => 'pages#reviews', as: :reviews
     get 'feedback' => 'pages#feedback', as: :feedback
     get 'tailor' => 'pages#tailor', as: :tailor

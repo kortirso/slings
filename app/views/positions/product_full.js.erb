@@ -1,0 +1,3 @@
+$("#full_<%= @position.id %>").prop("checked", <%= @position.full %>);
+$("#summ_<%= @position.id %>").html("<%= @position.summ %>");
+$("#amount").html("<%= @cart.calc_summ %>");
