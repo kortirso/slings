@@ -5,15 +5,18 @@
             thead
                 th Название
                 th Количество
-                th Сумма (руб.)
+                th Цена (руб.)
             tbody
                 - @cart.positions.includes(:product).order(id: :asc).each do |position|
                     tr
                         td= "#{position.product.name}#{' (полная комплектация)' if position.is_full?}"
                         td= position.count
                         td= position.summ
+                tr
+                    td= @order.delivery.delivery_form
+                    td
+                    td= @order.delivery.delivery_cost
         p= "Сумма заказа - #{@order.summ} руб."
-        p= "Способ доставки - #{@order.delivery.delivery_form}"
         p= "Контактные данные - #{@order.delivery.owner_name}"
         p= "Телефон - #{@order.delivery.phone}"
         p

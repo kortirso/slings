@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503143748) do
+ActiveRecord::Schema.define(version: 20170503145329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,7 +80,9 @@ ActiveRecord::Schema.define(version: 20170503143748) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.boolean  "full",       default: false
+    t.integer  "order_id"
     t.index ["cart_id"], name: "index_positions_on_cart_id", using: :btree
+    t.index ["order_id"], name: "index_positions_on_order_id", using: :btree
     t.index ["product_id"], name: "index_positions_on_product_id", using: :btree
   end
 

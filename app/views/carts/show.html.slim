@@ -6,7 +6,7 @@
                 thead
                     th Название
                     th Количество
-                    th Сумма (руб.)
+                    th Цена (руб.)
                     th
                 tbody
                     - @cart.positions.includes(:product).order(id: :asc).each do |position|
@@ -32,10 +32,10 @@
                 h2 Доставка
                 = form_tag({ controller: 'orders', action: 'create' }, method: 'post') do
                     = hidden_field_tag :cart_id, @cart.id
-                    = select_tag :delivery_form, options_for_select(['Самовывоз', 'Доставка Почтой России (300 руб.)', 'Доставка Транспортной Компанией (500 руб.)'], 'Самовывоз'), prompt: false
+                    = select_tag :delivery_form, options_for_select([['Самовывоз', 'Самовывоз'], ['Доставка Почтой России (300 руб.)', 'Доставка Почтой России'], ['Доставка Транспортной Компанией (500 руб.)', 'Доставка Транспортной Компанией']], 'Самовывоз'), prompt: false
                     = text_field_tag :owner_name, nil, placeholder: 'ФИО получателя'
                     = text_field_tag :phone, nil, placeholder: 'Телефон'
                     .delivery_data
-                        = text_area_tag :passport, nil, rows: 6, cols: 25, placeholder: "Паспортные данные для получения посылки\nНеобходимы: серия и номер паспорта, кем и когда выдан"
+                        = text_area_tag :passport, nil, rows: 3, cols: 25, placeholder: "Паспортные данные для получения посылки\nНеобходимы: серия и номер паспорта, кем и когда выдан"
                         = text_area_tag :address, nil, rows: 3, cols: 25, placeholder: "Адрес доставки"
                     = submit_tag 'Создать', class: 'button'
