@@ -8,7 +8,7 @@
                     th Количество
                     th Сумма (руб.)
                 tbody
-                    - @cart.positions.order(id: :asc).each do |position|
+                    - @cart.positions.includes(:product).order(id: :asc).each do |position|
                         tr
                             td
                                 p= position.product.name
