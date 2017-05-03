@@ -14,15 +14,16 @@ Rails.application.routes.draw do
     resources :positions, only: [:create, :destroy]
 
     scope controller: :positions do
-        #post 'create' => :create, as: :positions
         post 'plus/:id' => :product_plus, as: :plus
         post 'minus/:id' => :product_minus, as: :minus
         post 'full/:id' => :product_full, as: :full
     end
     
-    get 'reviews' => 'pages#reviews', as: :reviews
-    get 'feedback' => 'pages#feedback', as: :feedback
-    get 'tailor' => 'pages#tailor', as: :tailor
+    scope controller: :pages do
+        get 'reviews' => :reviews, as: :reviews
+        get 'feedback' => :feedback, as: :feedback
+        get 'tailor' => :tailor, as: :tailor
+    end
 
     root to: 'welcome#index'
     match "*path", to: "application#catch_404", via: :all

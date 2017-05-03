@@ -25,6 +25,6 @@ class OrdersController < ApplicationController
     end
 
     def delivery_params
-        params.permit(:delivery_form, :owner_name, :phone)
+        params.permit(:delivery_form, :owner_name, :phone, :passport, :address)
     end
 end

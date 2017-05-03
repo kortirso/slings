@@ -92,7 +92,7 @@ body {
 }
 
 .big_block {
-    margin: 20px 0 40px;
+    margin: 40px 0 70px;
 }
 
 h2 {
@@ -356,4 +356,18 @@ table {
     .amount {
         text-align: right;
     }
+}
+
+.delivery_data {
+    display: none;
+}
+
+#owner_name {
+    width: 48%;
+    float: left;
+}
+
+#phone {
+    width: 48%;
+    float: right;
 }

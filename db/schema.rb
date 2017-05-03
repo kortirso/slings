@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503035933) do
+ActiveRecord::Schema.define(version: 20170503143748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20170503035933) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.string   "delivery_form", default: "", null: false
+    t.text     "passport"
+    t.text     "address"
     t.index ["order_id"], name: "index_deliveries_on_order_id", using: :btree
   end
 
