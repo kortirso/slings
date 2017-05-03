@@ -48,6 +48,15 @@ body {
     left: 0;
     width: 100%;
     z-index: 2;
+    #logo {
+        position: absolute;
+        left: 50px;
+        top: 0;
+        height: 87px;
+        img {
+            max-height: 100%;
+        }
+    }
     p {
         margin: 0;
     }
