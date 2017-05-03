@@ -19,7 +19,8 @@
         p= "Сумма заказа - #{@order.summ} руб."
         p= "Контактные данные - #{@order.delivery.owner_name}"
         p= "Телефон - #{@order.delivery.phone}"
+        p Перед оплатой убедитесь в правильности данных заказа. Если данные не верны, то создайте заново заказ из корзины.
         p
-            iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/button-widget?account=410012351134235&quickpay=small&yamoney-payment-type=on&button-text=01&button-size=m&button-color=orange&targets=%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8&default-sum=#{@order.summ}&fio=on&phone=on&successURL=" width="192" height="36"
+            iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/button-widget?account=410012351134235&quickpay=small&yamoney-payment-type=on&button-text=01&button-size=m&button-color=orange&targets=%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0+%E2%84%96#{@order.id}&default-sum=#{@order.summ}&fio=on&phone=on&successURL=" width="192" height="36"
         p
-            iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/button-widget?account=410012351134235&quickpay=small&any-card-payment-type=on&button-text=01&button-size=m&button-color=orange&targets=%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8&default-sum=#{@order.summ}&fio=on&phone=on&successURL=" width="192" height="36"
+            iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/button-widget?account=410012351134235&quickpay=small&any-card-payment-type=on&button-text=01&button-size=m&button-color=orange&targets=%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0+%E2%84%96#{@order.id}&default-sum=#{@order.summ}&fio=on&phone=on&successURL=" width="192" height="36"
