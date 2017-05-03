@@ -303,3 +303,57 @@ table {
         cursor: pointer;
     }
 }
+
+table {
+    thead {
+        th:nth-of-type(1) {
+            width: 400px;
+        }
+        th:nth-of-type(3) {
+            text-align: right;
+        }
+    }
+    tbody {
+        td:nth-of-type(4) {
+            text-align: center;
+        }
+    }
+    .change_count {
+        width: 110px;
+        .count {
+            float: right;
+            width: 50px;
+            padding-top: 12px;
+        }
+        .buttons {
+            float: right;
+            form {
+                height: 23px;
+            }
+        }
+    }
+    .button_up, .button_down, .button_delete {
+        padding: 0;
+        width: 23px;
+        height: 23px;
+        border: none;
+        outline: 0;
+        cursor: pointer;
+    }
+    .button_up {
+        background-image: image-url('button_up.png');
+        background-repeat: no-repeat;
+    }
+    .button_down {
+        background-image: image-url('button_down.png');
+        background-repeat: no-repeat;
+    }
+    .button_delete {
+        margin-top: 3px;
+        background-image: image-url('button_delete.png');
+        background-repeat: no-repeat;
+    }
+    .amount {
+        text-align: right;
+    }
+}

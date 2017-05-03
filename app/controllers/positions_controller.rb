@@ -1,9 +1,12 @@
 class PositionsController < ApplicationController
-    before_action :get_categories_list
     before_action :find_position, except: [:create]
 
     def create
         @cart.add_product(params[:product_id])
+    end
+
+    def destroy
+        @position.removing
     end
 
     def product_plus
@@ -21,7 +24,7 @@ class PositionsController < ApplicationController
     private
 
     def find_position
-        @position = Position.find_by(id: params[:position])
+        @position = @cart.positions.find_by(id: params[:id])
         nil if @position.nil?
     end
 end

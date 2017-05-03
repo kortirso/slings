@@ -7,19 +7,22 @@
                     th Название
                     th Количество
                     th Сумма (руб.)
+                    th
                 tbody
                     - @cart.positions.includes(:product).order(id: :asc).each do |position|
-                        tr
+                        tr id="position_#{position.id}"
                             td
                                 p= position.product.name
                                 .check_box
                                     = label_tag "full_#{position.id}", 'Полная комплектация'
                                     = link_to check_box_tag("full_#{position.id}", value = '1', checked = position.is_full?), full_path(position), remote: true, method: :post
-                            td
-                                span id="count_#{position.id}"= position.count
-                                span= button_to '+', plus_path(position), class: 'button_up', remote: true
-                                span= button_to '-', minus_path(position), class: 'button_down', remote: true
-                            td id="summ_#{position.id}"= position.summ
+                            td.change_count
+                                .buttons
+                                    = button_to '', plus_path(position), class: 'button_up', remote: true
+                                    = button_to '', minus_path(position), class: 'button_down', remote: true
+                                span.count id="count_#{position.id}"= position.count
+                            td.amount id="summ_#{position.id}"= position.summ
+                            td= button_to '', position_path(position.id), class: 'button_delete', method: :delete, remote: true
             #total_summ
                 = 'Итоговая сумма - '
                 span#amount= @cart.summ
