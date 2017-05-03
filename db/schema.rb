@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501150953) do
+ActiveRecord::Schema.define(version: 20170503035933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 20170501150953) do
     t.string   "image"
     t.string   "caption"
     t.index ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
+  end
+
+  create_table "deliveries", force: :cascade do |t|
+    t.integer  "order_id"
+    t.string   "owner_name",    default: "", null: false
+    t.string   "phone",         default: "", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "delivery_form", default: "", null: false
+    t.index ["order_id"], name: "index_deliveries_on_order_id", using: :btree
   end
 
   create_table "events", force: :cascade do |t|
@@ -50,6 +60,14 @@ ActiveRecord::Schema.define(version: 20170501150953) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "cart_id"
+    t.integer  "summ",       default: 0, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["cart_id"], name: "index_orders_on_cart_id", using: :btree
   end
 
   create_table "positions", force: :cascade do |t|

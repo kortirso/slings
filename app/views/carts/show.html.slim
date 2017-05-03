@@ -17,7 +17,6 @@
                                     = link_to check_box_tag("full_#{position.id}", value = '1', checked = position.is_full?), full_path(position), remote: true, method: :post
                             td
                                 span id="count_#{position.id}"= position.count
-                                    
                                 span= button_to '+', plus_path(position), class: 'button_up', remote: true
                                 span= button_to '-', minus_path(position), class: 'button_down', remote: true
                             td id="summ_#{position.id}"= position.summ
@@ -25,3 +24,11 @@
                 = 'Итоговая сумма - '
                 span#amount= @cart.summ
                 = ' руб.'
+        .delivery_options
+            h2 Доставка
+            = form_tag({ controller: 'orders', action: 'create' }, method: 'post') do
+                = hidden_field_tag :cart_id, @cart.id
+                = select_tag :delivery_form, options_for_select(['Самовывоз'], 'Самовывоз'), prompt: false
+                = text_field_tag :owner_name, nil, placeholder: 'ФИО'
+                = text_field_tag :phone, nil, placeholder: 'Телефон'
+                = submit_tag 'Создать', class: 'button'

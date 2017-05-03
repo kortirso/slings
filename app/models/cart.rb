@@ -2,6 +2,8 @@ class Cart < ApplicationRecord
     has_many :positions
     has_many :products, through: :positions
 
+    has_one :order
+
     validates :summ, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
     def add_product(product_id)

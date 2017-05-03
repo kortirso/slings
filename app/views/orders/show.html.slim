@@ -1,0 +1,22 @@
+.row
+    .columns.small-8.small-centered
+        h2 Ваш заказ
+        table
+            thead
+                th Название
+                th Количество
+                th Сумма (руб.)
+            tbody
+                - @cart.positions.order(id: :asc).each do |position|
+                    tr
+                        td= "#{position.product.name}#{' (полная комплектация)' if position.is_full?}"
+                        td= position.count
+                        td= position.summ
+        p= "Сумма заказа - #{@order.summ} руб."
+        p= "Способ доставки - #{@order.delivery.delivery_form}"
+        p= "Контактные данные - #{@order.delivery.owner_name}"
+        p= "Телефон - #{@order.delivery.phone}"
+        p
+            iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/button-widget?account=410012351134235&quickpay=small&yamoney-payment-type=on&button-text=01&button-size=m&button-color=orange&targets=%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8&default-sum=#{@order.summ}&fio=on&phone=on&successURL=" width="192" height="36"
+        p
+            iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/button-widget?account=410012351134235&quickpay=small&any-card-payment-type=on&button-text=01&button-size=m&button-color=orange&targets=%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B5+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8&default-sum=#{@order.summ}&fio=on&phone=on&successURL=" width="192" height="36"

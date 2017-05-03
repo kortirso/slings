@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :products, only: :show
     resources :articles, only: :index
     resources :carts, only: :show
+    resources :orders, only: [:show, :create]
 
     scope controller: :positions do
         post 'create' => :create, as: :positions
@@ -17,7 +18,6 @@ Rails.application.routes.draw do
         post 'minus/:position' => :product_minus, as: :minus
         post 'full/:position' => :product_full, as: :full
     end
-
     
     get 'reviews' => 'pages#reviews', as: :reviews
     get 'feedback' => 'pages#feedback', as: :feedback
