@@ -1,4 +1,5 @@
 class Api::V1::BaseController < ApplicationController
+    skip_before_action :set_products_cart
 
     private
 

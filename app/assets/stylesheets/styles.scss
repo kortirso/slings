@@ -28,7 +28,7 @@ html, body {
 
 body {
     position: relative;
-    background: #feefea;
+    background: #FDFDBF;
     @include scroll-bar;
 }
 
@@ -41,7 +41,7 @@ body {
 
 #header {
     height: 80px;
-    background: #fedd50;
+    background: #FCC7BF;
     padding-top: 15px;
     position: absolute;
     top: 0;
@@ -94,7 +94,7 @@ body {
 #footer {
     height: 100px;
     width: 100%;
-    background: #577265;
+    background: #fcc7bf;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -232,11 +232,11 @@ h2 {
 
 .button.price_button {
     padding: 12px 25px;
-    background: #779c8a;
+    background: #e17a7b;
     color: #FFF !important;
     margin-bottom: 0;
     &:hover {
-        background: #577265;
+        background: #ba6566;
     }
 }
 
@@ -245,7 +245,7 @@ h2 {
     top: 0;
     right: 0;
     padding: 10px 15px;
-    background: #bbd4d1;
+    background: #ef767d;
     color: #010101;
     z-index: 3;
 }
@@ -255,12 +255,12 @@ h2 {
         margin-bottom: 2px;
         width: 100%;
         text-align: left;
-        background: #779c8a;
+        background: #e17a7b;
         &.active {
-            background: #577265;
+            background: #ba6566;
         }
         &:hover {
-            background: #678275;
+            background: #ba6566;
         }
     }
 }
@@ -273,7 +273,7 @@ h2 {
 }
 
 .block {
-    background: #f2f5f7;
+    background: #f7f8fc;
     box-shadow: 0 10px 10px 2px #dfdfdf;
 }
 

@@ -40,13 +40,14 @@ class Product < ApplicationRecord
 
     def self.build(args)
         product = Product.new args[:params]
-        File.open(download_image(args[:image])) { |f| product.image = f }
+        File.open(Product.download_image(args[:image])) { |f| product.image = f }
         product.save
+        product
     end
 
     private
 
-    def download_image(image)
+    def self.download_image(image)
         download = open(image)
         temp_file = "#{Rails.root}/public/uploads/#{download.to_s.split('/')[-1]}"
         IO.copy_stream(download, temp_file)

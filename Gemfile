@@ -24,6 +24,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'babosa'
 gem 'carrierwave', '~> 1.0'
 gem 'rmagick'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development do
     gem 'listen', '~> 3.0.5'
