@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
+    before_action :get_categories_list
+    
     def index
-        @sales_hits = Product.sales_hits.order(updated_at: :desc).limit(4)
+
     end
 end

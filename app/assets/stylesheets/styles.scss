@@ -123,7 +123,7 @@ h2 {
     }
 }
 
-.category_block {
+.category_block, .category_block {
     margin-bottom: 40px;
     .category_image {
         height: 270px;
@@ -275,6 +275,7 @@ h2 {
 .block {
     background: #f7f8fc;
     box-shadow: 0 10px 10px 2px #dfdfdf;
+    text-align: center;
 }
 
 table {

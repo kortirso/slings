@@ -14,14 +14,6 @@ if Category.count == 0
     category = Category.new name: 'Шарф-рюкзаки', caption: ''
     File.open("#{Rails.root}/db/category_images/grey.png") { |f| category.image = f }
     category.save
-
-    category = Category.new name: 'Слинг-шарфы', caption: ''
-    File.open("#{Rails.root}/db/category_images/bordo.png") { |f| category.image = f }
-    category.save
-
-    category = Category.new name: 'Эрго-рюкзаки для двойни', caption: ''
-    File.open("#{Rails.root}/db/category_images/twins.png") { |f| category.image = f }
-    category.save
 end
 
 if Product.count == 0
@@ -39,13 +31,5 @@ if Product.count == 0
 
     product = Product.new name: 'Серый', price: 3500, amount: 0, category: Category.find_by(name: 'Шарф-рюкзаки')
     File.open("#{Rails.root}/db/slings_images/grey.png") { |f| product.image = f }
-    product.save
-
-    product = Product.new name: 'Бордо', price: 3400, amount: 0, category: Category.find_by(name: 'Слинг-шарфы')
-    File.open("#{Rails.root}/db/slings_images/bordo.png") { |f| product.image = f }
-    product.save
-
-    product = Product.new name: 'Для двойни', price: 3300, amount: 0, category: Category.find_by(name: 'Эрго-рюкзаки для двойни')
-    File.open("#{Rails.root}/db/slings_images/twins.png") { |f| product.image = f }
     product.save
 end

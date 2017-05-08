@@ -3,12 +3,15 @@
     h2 Сайт находится в разработке
     h2 Интернет-Магазин LittleMonkey
 .row.big_block
-    h2 Хиты продаж
-    - @sales_hits.each do |product|
-        = render 'shared/welcome_product', product: product
-    - (4 - @sales_hits.size).times do
-        - product = Product.all.sample
-        = render 'shared/welcome_product', product: product
+    h2 Категории товаров
+    - @categories.each do |category|
+        .columns.small-12.meduim-6.large-3.end
+            = link_to category do
+                .category_block.block
+                    .category_image
+                        = image_tag category.image
+                    .category_text
+                        h3= category.name
 .row.big_block
     h2 Наши преимущества
     .columns.small-4
