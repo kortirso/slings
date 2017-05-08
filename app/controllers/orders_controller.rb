@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
     before_action :find_order, only: :show
+    before_action :check_owner, only: :show
 
     def show
 
@@ -18,6 +19,10 @@ class OrdersController < ApplicationController
 
     def find_order
         @order = Order.find(params[:id])
+    end
+
+    def check_owner
+        render_not_found if @order.cart_id != @cart.id
     end
 
     def order_params
