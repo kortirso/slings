@@ -7,7 +7,7 @@
                 th Количество
                 th Цена (руб.)
             tbody
-                - @cart.positions.includes(:product).order(id: :asc).each do |position|
+                - @order.positions.includes(:product).order(id: :asc).each do |position|
                     tr
                         td= "#{position.product.name}#{' (полная комплектация)' if position.is_full?}"
                         td= position.count
