@@ -8,14 +8,6 @@
                 - unless @products.size.zero?
                     h2= @category.name
                     - @products.each do |product|
-                        .columns.small-1.medium-3.end
-                            = link_to product do
-                                .sling_block.block
-                                    .sling_image
-                                        = image_tag product.image
-                                    .sling_text
-                                        .sling_name= product.name
-                                        .sling_price= "#{product.price} руб."
-                                        = button_to 'Купить', positions_path(product_id: product.id), class: 'button price_button', remote: true
+                        = render 'shared/welcome_product', product: product
                 - else
                     h2 В данной категории нет товаров

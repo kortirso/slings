@@ -18,6 +18,9 @@ class Product < ApplicationRecord
     validates :category_id, presence: true
     validates :price, :amount, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
+    scope :sales_hits, -> { where sales_hit: true }
+    scope :new_ones, -> { where new_one: true }
+
     def is_new_product?
         new_one
     end

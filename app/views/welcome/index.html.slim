@@ -4,17 +4,11 @@
     h2 Интернет-Магазин LittleMonkey
 .row.big_block
     h2 Хиты продаж
-    - 4.times do
+    - @sales_hits.each do |product|
+        = render 'shared/welcome_product', product: product
+    - (4 - @sales_hits.size).times do
         - product = Product.all.sample
-        .columns.small-12.medium-4.large-3
-            = link_to product do
-                .sling_block.block
-                    .sling_image
-                        = image_tag product.image
-                    .sling_text
-                        .sling_name= product.name
-                        .sling_price= "#{product.price} руб."
-                        = button_to 'Купить', positions_path(product_id: product.id), class: 'button price_button', remote: true
+        = render 'shared/welcome_product', product: product
 .row.big_block
     h2 Наши преимущества
     .columns.small-4
