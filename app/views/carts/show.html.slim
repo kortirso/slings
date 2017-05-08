@@ -31,7 +31,11 @@
             .delivery_options
                 h2 Доставка
                 = form_tag({ controller: 'orders', action: 'create' }, method: 'post') do
-                    = hidden_field_tag :cart_id, @cart.id
+                    #= hidden_field_tag :cart_id, @cart.id
+                    - if Delivery.has_option_for_wait?
+                        .check_box.to_wait
+                            = label_tag 'wait', 'Готовы ли вы подождать до 25 числа и получить скидку 10% на весь заказ'
+                            = check_box_tag :wait
                     = select_tag :delivery_form, options_for_select([['Самовывоз', 'Самовывоз'], ['Доставка Почтой России (300 руб.)', 'Доставка Почтой России'], ['Доставка Транспортной Компанией (500 руб.)', 'Доставка Транспортной Компанией']], 'Самовывоз'), prompt: false
                     = text_field_tag :owner_name, nil, placeholder: 'ФИО получателя'
                     = text_field_tag :phone, nil, placeholder: 'Телефон'

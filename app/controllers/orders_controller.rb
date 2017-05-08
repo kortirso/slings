@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     end
     
     def create
-        order = CreateOrderService.call({order: order_params, delivery: delivery_params})
+        order = CreateOrderService.call({order: { cart_id: session[:cart_id] }, delivery: delivery_params})
         if order.nil?
             redirect_to @cart
         else
@@ -25,11 +25,7 @@ class OrdersController < ApplicationController
         render_not_found if @order.cart_id != @cart.id
     end
 
-    def order_params
-        params.permit(:cart_id)
-    end
-
     def delivery_params
-        params.permit(:delivery_form, :owner_name, :phone, :passport, :address)
+        params.permit(:wait, :delivery_form, :owner_name, :phone, :passport, :address)
     end
 end

@@ -16,7 +16,12 @@
                     td= @order.delivery.delivery_form
                     td
                     td= @order.delivery.delivery_cost
-        p= "Сумма заказа - #{@order.summ} руб."
+                - if @order.delivery.can_wait?
+                    tr
+                        td Скидка за ожидание
+                        td
+                        td= "-#{@order.delivery.discount}%"
+        p= "К оплате - #{@order.summ} руб."
         p= "Контактные данные - #{@order.delivery.owner_name}"
         p= "Телефон - #{@order.delivery.phone}"
         p Перед оплатой убедитесь в правильности данных заказа. Если данные не верны, то создайте заново заказ из корзины.
