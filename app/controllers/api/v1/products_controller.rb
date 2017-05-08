@@ -14,7 +14,7 @@ class Api::V1::ProductsController < Api::V1::BaseController
     end
 
     def update
-        if @product.update(product_params)
+        if @product.update(product_params.merge(category: @category))
             render json: { product: ProductSerializer.new(@product) }
         else
             render json: { error: 'Cant create product' }
