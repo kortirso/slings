@@ -6,7 +6,7 @@
     p Уважаемые посетители, приносим Вам свои извинения за возможные неудобства. Наш сайт находится на стадии разработки, но уже сейчас вы можете ознакомиться с предлагаемыми слингами и оформить заказ.
 .row.big_block
     h2 Категории товаров
-    - Category.where('name = ? OR name = ?', 'Слинги-рюкзаки', 'Май-слинги').order(id: :asc).each do |category|
+    - Category.where('name = ? OR name = ?', 'Слинг-рюкзаки', 'Май-слинги').order(id: :asc).each do |category|
         .columns.small-12.meduim-6.large-3.end
             = link_to category do
                 .category_block.block
