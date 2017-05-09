@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     private
 
     def get_categories_list
-        @categories = Category.order(id: :asc)
+        @categories = Category.order(name: :asc)
     end
 
     def render_not_found

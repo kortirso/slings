@@ -1,13 +1,16 @@
 - provide(:path, 'root')
-.row.big_block
-    h2 Интернет-Магазин LittleMonkey
+.row.big_block.about_block
+    h2 Интернет-магазин LilMonkey
+    p Официальный представитель ТМ СлингУля
+    p Все виды безопасных детских переносок
+    p Доставка по России
 .row.big_block
     h2 Сайт находится в разработке
     .columns.small-12
         p Уважаемые посетители, приносим Вам свои извинения за возможные неудобства. Наш сайт находится на стадии разработки, но уже сейчас вы можете ознакомиться с предлагаемыми слингами и оформить заказ.
-.row.big_block
+.row.big_block.categories_block
     h2 Категории товаров
-    - Category.where('name = ? OR name = ?', 'Слинг-рюкзаки', 'Май-слинги').order(id: :asc).each do |category|
+    - @categories.each do |category|
         .columns.small-6.medium-4.large-3.end
             = link_to category do
                 .category_block.block
@@ -15,6 +18,7 @@
                         = image_tag category.image
                     .category_text
                         h3= category.name
+                        p= category.caption
 .row.big_block
     h2 Почему стоит выбрать именно нас?
     .columns.small-12.medium-4
