@@ -3,11 +3,12 @@
     h2 Интернет-Магазин LittleMonkey
 .row.big_block
     h2 Сайт находится в разработке
-    p Уважаемые посетители, приносим Вам свои извинения за возможные неудобства. Наш сайт находится на стадии разработки, но уже сейчас вы можете ознакомиться с предлагаемыми слингами и оформить заказ.
+    .columns.small-12
+        p Уважаемые посетители, приносим Вам свои извинения за возможные неудобства. Наш сайт находится на стадии разработки, но уже сейчас вы можете ознакомиться с предлагаемыми слингами и оформить заказ.
 .row.big_block
     h2 Категории товаров
     - Category.where('name = ? OR name = ?', 'Слинг-рюкзаки', 'Май-слинги').order(id: :asc).each do |category|
-        .columns.small-12.meduim-6.large-3.end
+        .columns.small-6.medium-4.large-3.end
             = link_to category do
                 .category_block.block
                     .category_image
@@ -16,21 +17,21 @@
                         h3= category.name
 .row.big_block
     h2 Почему стоит выбрать именно нас?
-    .columns.small-4
+    .columns.small-12.medium-4
         .advance_block
             .advance_image
                 = image_tag 'galochka.png'
             .advance_text
                 h3 Безопасность
                 p Вся наша продукция производится из натуральных и безопасных материалов.
-    .columns.small-4
+    .columns.small-12.medium-4
         .advance_block
             .advance_image
                 = image_tag 'galochka.png'
             .advance_text
                 h3 Качество
                 p Каждый наш слинг, перед тем как попасть к вам, проходит многоступенчатую проверку качества.
-    .columns.small-4
+    .columns.small-12.medium-4
         .advance_block
             .advance_image
                 = image_tag 'galochka.png'
@@ -43,32 +44,32 @@
         .columns.small-12.medium-6.large-3.end
             .review_block
                 .review_icon
-                .review_text
-                    p Сегодня получила, пока великоват (но и ребенку пока только 3.5), но я уже в восторге! Очень приятный лен, идеальные швы и строчки, удобные лямки!
                 .review_author
                     .author_image= image_tag 'reviews/makarova.jpg'
                     .author_name Дарья Макарова
+                .review_text
+                    p Сегодня получила, пока великоват (но и ребенку пока только 3.5), но я уже в восторге! Очень приятный лен, идеальные швы и строчки, удобные лямки!
         .columns.small-12.medium-6.large-3.end
             .review_block
                 .review_icon
-                .review_text
-                    p Получили рюкзачок, уже обкатали, мы в восторге! Так удобно и красиво) Особенно папа оценил, со слингом сложности были, а тут все легко) Спасибо большое!)
                 .review_author
                     .author_image= image_tag 'reviews/timoshechkina.jpg'
                     .author_name Марина Тимошечкина
+                .review_text
+                    p Получили рюкзачок, уже обкатали, мы в восторге! Так удобно и красиво) Особенно папа оценил, со слингом сложности были, а тут все легко) Спасибо большое!)
         .columns.small-12.medium-6.large-3.end
             .review_block
                 .review_icon
-                .review_text
-                    p Наконец мы привыкли к слингу. По чуть-чуть и стал спокойно сидеть. В экскурсии по Абхазии очень помог слинг рюкзак. Как только уставал засыпал в нем.
                 .review_author
                     .author_image= image_tag 'reviews/smirnova.jpg'
                     .author_name Вика Смирнова
+                .review_text
+                    p Наконец мы привыкли к слингу. По чуть-чуть и стал спокойно сидеть. В экскурсии по Абхазии очень помог слинг рюкзак. Как только уставал засыпал в нем.
         .columns.small-12.medium-6.large-3.end
             .review_block
                 .review_icon
-                .review_text
-                    p Я не знаю как я без него жила!)) Мой любимый помощник!
                 .review_author
                     .author_image= image_tag 'reviews/zhuravleva.jpg'
                     .author_name Анна Журавлева
+                .review_text
+                    p Я не знаю как я без него жила!)) Мой любимый помощник!

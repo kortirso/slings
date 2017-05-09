@@ -1,9 +1,8 @@
 - provide(:path, 'catalog')
-.row
+= render 'shared/categories_nav'
+.columns.small-12.medium-9.large-10
     h2 Новинки
-    = render 'shared/categories_nav'
-    .columns.small-12.medium-9.large-10
-        .catalog
-            .new_products.row
-                - @new_ones.each do |product|
-                    = render 'shared/welcome_product', product: product
+    .catalog
+        .new_products.row
+            - @new_ones.each do |product|
+                = render 'shared/welcome_product', product: product

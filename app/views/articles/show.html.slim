@@ -1,6 +1,7 @@
 - provide(:path, 'articles')
-.row
+.row.big_block
     .columns.small-10.small-centered
         h2= @article.name
         - @article.caption.lines do |line|
-            p= line
+            - unless line.blank?
+                p= line
