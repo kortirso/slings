@@ -11,7 +11,7 @@ class Product < ApplicationRecord
     belongs_to :category
     belongs_to :event
 
-    has_many :positions
+    has_many :positions, dependent: :destroy
     has_many :carts, through: :positions
 
     validates :name, presence: true, uniqueness: true

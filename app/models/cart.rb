@@ -1,5 +1,5 @@
 class Cart < ApplicationRecord
-    has_many :positions
+    has_many :positions, dependent: :destroy
     has_many :products, through: :positions
 
     has_one :order
