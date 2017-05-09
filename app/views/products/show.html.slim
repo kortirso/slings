@@ -1,14 +1,14 @@
 - provide(:category, @product.category.friendly_id)
 - provide(:path, 'catalog')
 .row
+    h2= @product.name
     = render 'shared/categories_nav'
     .columns.small-12.medium-9.large-10
-        h2= @product.name
         .row
             .columns.small-12.medium-4
                 .product_block.block
                     .image_block
-                        = image_tag @product.image.to_s
+                        = image_tag @product.image
             .columns.small-12.medium-8
                 p= @product.caption
                 p= "Цена - #{@product.price} руб."

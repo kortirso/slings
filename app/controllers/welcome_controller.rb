@@ -1,6 +1,4 @@
-class WelcomeController < ApplicationController
-    before_action :get_categories_list
-    
+class WelcomeController < ApplicationController    
     def index
 
     end

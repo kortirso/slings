@@ -1,10 +1,12 @@
 - provide(:path, 'root')
 .row.big_block
-    h2 Сайт находится в разработке
     h2 Интернет-Магазин LittleMonkey
 .row.big_block
+    h2 Сайт находится в разработке
+    p Уважаемые посетители, приносим Вам свои извинения за возможные неудобства. Наш сайт находится на стадии разработки, но уже сейчас вы можете ознакомиться с предлагаемыми слингами и оформить заказ.
+.row.big_block
     h2 Категории товаров
-    - @categories.each do |category|
+    - Category.where('name = ? OR name = ?', 'Слинги-рюкзаки', 'Май-слинги').order(id: :asc).each do |category|
         .columns.small-12.meduim-6.large-3.end
             = link_to category do
                 .category_block.block
@@ -13,28 +15,28 @@
                     .category_text
                         h3= category.name
 .row.big_block
-    h2 Наши преимущества
+    h2 Почему стоит выбрать именно нас?
     .columns.small-4
         .advance_block
             .advance_image
-
+                = image_tag 'galochka.png'
             .advance_text
-                h3  Гарантия качества
-                p ТМ Слингуля. Собственное производство с 2009 г. Более 10 000 довольных покупателей.
+                h3 Безопасность
+                p Вся наша продукция производится из натуральных и безопасных материалов.
     .columns.small-4
         .advance_block
             .advance_image
-
+                = image_tag 'galochka.png'
             .advance_text
-                h3 Индивидуальный дизайн
-                p Вы можете заказать слинг по индивидуальному дизайну! 
+                h3 Качество
+                p Каждый наш слинг, перед тем как попасть к вам, проходит многоступенчатую проверку качества.
     .columns.small-4
         .advance_block
             .advance_image
-
+                = image_tag 'galochka.png'
             .advance_text
-                h3 Помощь
-                p Бесплатная помощь слингоконсультанта до и после покупки.
+                h3 Поддержка
+                p Мы консультируем мам на всех этапах: начиная от выбора слинга и до момента освоения слинга.
 .row.big_block
     h2 Отзывы наших клиентов
     .columns.small-12

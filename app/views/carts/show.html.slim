@@ -4,6 +4,7 @@
         .positions
             table
                 thead
+                    th Фото
                     th Название
                     th Количество
                     th Цена (руб.)
@@ -11,6 +12,7 @@
                 tbody
                     - @cart.positions.includes(:product).order(id: :asc).each do |position|
                         tr id="position_#{position.id}"
+                            td= image_tag position.product.image
                             td
                                 p= position.product.name
                                 .check_box
@@ -27,6 +29,7 @@
                 = 'Итоговая сумма - '
                 span#amount= @cart.summ
                 = ' руб.'
+            p После оформления и оплаты заказа мы отправляем заявку на пошив, через 5 - 10 дней (в зависимости от загруженности) заказ будет доставлен по месту назначения.
         - unless @cart.summ.zero?
             .delivery_options
                 h2 Доставка
@@ -34,12 +37,13 @@
                     #= hidden_field_tag :cart_id, @cart.id
                     - if Delivery.has_option_for_wait?
                         .check_box.to_wait
-                            = label_tag 'wait', 'Готовы ли вы подождать до 25 числа и получить скидку 10% на весь заказ'
+                            p 25 числа каждого месяца происходит совместная заказ слингов, что позволяет снизить стоимость заказа.
+                            = label_tag 'wait', 'Готовы ли вы оформить заказ от 25 числа и получить скидку 5% на весь заказ'
                             = check_box_tag :wait
-                    = select_tag :delivery_form, options_for_select([['Самовывоз', 'Самовывоз'], ['Доставка Почтой России (300 руб.)', 'Доставка Почтой России'], ['Доставка Транспортной Компанией (500 руб.)', 'Доставка Транспортной Компанией']], 'Самовывоз'), prompt: false
+                    = select_tag :delivery_form, options_for_select([['Самовывоз из г. Липецк', 'Самовывоз'], ['Доставка Почтой России (+300 руб.)', 'Доставка Почтой России'], ['Доставка Транспортной Компанией (+500 руб.)', 'Доставка Транспортной Компанией']], 'Самовывоз'), prompt: false
                     = text_field_tag :owner_name, nil, placeholder: 'ФИО получателя'
                     = text_field_tag :phone, nil, placeholder: 'Телефон'
                     .delivery_data
                         = text_area_tag :passport, nil, rows: 3, cols: 25, placeholder: "Паспортные данные для получения посылки\nНеобходимы: серия и номер паспорта, кем и когда выдан"
                         = text_area_tag :address, nil, rows: 3, cols: 25, placeholder: "Адрес доставки"
-                    = submit_tag 'Создать', class: 'button'
+                    = submit_tag 'Оформить заказ', class: 'button price_button'

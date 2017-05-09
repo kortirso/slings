@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto:400,400i,500';
+@import url('https://fonts.googleapis.com/css?family=Neucha&subset=cyrillic');
 
 @mixin scroll-bar {
     &::-webkit-scrollbar {
@@ -17,7 +17,8 @@
 }
 
 * {
-    font-family: 'Roboto' !important;
+    font-family: 'Neucha', sans-serif !important;
+    font-size: 20px;
 }
 
 html, body {
@@ -35,7 +36,7 @@ body {
 .content {
     position: relative;
     min-height: 100%;
-    padding-bottom: 120px;
+    padding-bottom: 200px;
     padding-top: 80px;
 }
 
@@ -62,7 +63,7 @@ body {
     }
     .head {
         color: #282723;
-        font-size: 14px;
+        font-size: 16px;
     }
     .text {
         color: #282723;
@@ -75,10 +76,10 @@ body {
     margin-bottom: 20px;
     .menu {
         background: #FFF;
-        box-shadow: 0 2px 3px 2px #bbd4d1;
+        box-shadow: 0 2px 3px 2px #76BBFA;
         a {
             color: #645f69;
-            font-size: 16px;
+            font-size: 18px;
             text-transform: uppercase;
             padding: 16px 25px 14px;
             &:hover {
@@ -92,12 +93,24 @@ body {
 }
 
 #footer {
-    height: 100px;
     width: 100%;
     background: #fcc7bf;
     position: absolute;
     bottom: 0;
     left: 0;
+    padding: 10px;
+    h4 {
+        font-size: 20px;
+    }
+    p {
+        margin-bottom: 3px;
+        font-size: 16px;
+    }
+    img {
+        width: 25px;
+        border-radius: 6px;
+        margin-right: 4px;
+    }
 }
 
 .big_block {
@@ -106,7 +119,7 @@ body {
 
 h2 {
     color: #010101;
-    font-size: 22px;
+    font-size: 30px;
     text-align: center;
     position: relative;
     padding-bottom: 10px;
@@ -136,7 +149,7 @@ h2 {
         padding: 20px;
         h3 {
             text-align: center;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 400;
             margin-bottom: 30px;
             color: #010101;
@@ -152,19 +165,24 @@ h2 {
 .advance_block {
     .advance_image {
         height: 100px;
+        text-align: center;
+        img {
+            max-height: 100%;
+        }
     }
     .advance_text {
         h3 {
             text-align: center;
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 500;
             margin-bottom: 20px;
             color: #282723;
+            text-decoration: underline;
         }
         p {
             text-align: center;
             margin: 0;
-            color: #adadad;
+            font-size: 18px;
         }
     }
 }
@@ -179,10 +197,11 @@ h2 {
     }
     .review_text {
         margin-top: 10px;
-        min-height: 135px;
+        min-height: 140px;
         p {
             color: #282723;
             text-align: center;
+            font-size: 18px;
         }
     }
     .review_author {
@@ -212,7 +231,7 @@ h2 {
     margin-bottom: 20px;
     text-align: center;
     .sling_image {
-        height: 240px;
+        height: 220px;
         padding: 10px;
         img {
             max-height: 100%;
@@ -235,8 +254,16 @@ h2 {
     background: #e17a7b;
     color: #FFF !important;
     margin-bottom: 0;
+    font-size: 18px;
     &:hover {
         background: #ba6566;
+    }
+}
+
+.link {
+    color: #e17a7b;
+    &:hover {
+        color: #ba6566;
     }
 }
 
@@ -256,6 +283,7 @@ h2 {
         width: 100%;
         text-align: left;
         background: #e17a7b;
+        font-size: 18px;
         &.active {
             background: #ba6566;
         }
@@ -274,7 +302,7 @@ h2 {
 
 .block {
     background: #f7f8fc;
-    box-shadow: 0 10px 10px 2px #dfdfdf;
+    box-shadow: 0 5px 10px 2px #9DC719;
     text-align: center;
 }
 
@@ -287,6 +315,9 @@ table {
     tbody {
         tr {
             td {
+                img {
+                    max-height: 50px;
+                }
                 p {
                     margin: 0;
                 }
@@ -312,11 +343,25 @@ table {
         left: 0;
         cursor: pointer;
     }
+    &.to_wait {
+        height: auto;
+        p {
+            margin-bottom: 22px;
+        }
+        label {
+            top: auto;
+            bottom: -20px;
+        }
+        input {
+            top: auto;
+            bottom: -30px;
+        }
+    }
 }
 
 table {
     thead {
-        th:nth-of-type(1) {
+        th:nth-of-type(2) {
             width: 400px;
         }
         th:nth-of-type(3) {
@@ -324,7 +369,7 @@ table {
         }
     }
     tbody {
-        td:nth-of-type(4) {
+        td:nth-of-type(1), td:nth-of-type(5) {
             text-align: center;
         }
     }
@@ -380,4 +425,10 @@ table {
 #phone {
     width: 48%;
     float: right;
+}
+
+.payments {
+    iframe {
+        margin-right: 10px;
+    }
 }
