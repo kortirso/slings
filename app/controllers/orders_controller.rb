@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+    skip_before_action :verify_authenticity_token, only: :create
     before_action :find_order, only: :show
     before_action :check_owner, only: :show
 
