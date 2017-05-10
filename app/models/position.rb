@@ -1,5 +1,5 @@
 class Position < ApplicationRecord
-    PRICE_FOR_FULL = 400
+    PRICE_FOR_FULL = 499
 
     belongs_to :cart
     belongs_to :product
