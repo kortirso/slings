@@ -16,7 +16,7 @@
                             td
                                 p= position.product.name
                                 .check_box
-                                    = label_tag "full_#{position.id}", 'Полная комплектация'
+                                    = label_tag "full_#{position.id}", 'Полная комплектация (+499 руб.)'
                                     = link_to check_box_tag("full_#{position.id}", value = '1', checked = position.is_full?), full_path(position), remote: true, method: :post
                             td.change_count
                                 .buttons

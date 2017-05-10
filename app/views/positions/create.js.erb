@@ -1,1 +1,1 @@
-$('#cart_amount').text('<%= @cart.positions.count %>');
+$('#cart_amount').text('<%= @cart.positions.sum(:count) %>');
