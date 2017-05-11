@@ -1,13 +1,8 @@
 - provide(:path, 'root')
 .row.big_block.about_block
-    h2 Интернет-магазин LilMonkey
-    p Официальный представитель ТМ СлингУля
-    p Все виды безопасных детских переносок
-    p Доставка по России
-.row.big_block
-    h2 Сайт находится в разработке
-    .columns.small-12
-        p Уважаемые посетители, приносим Вам свои извинения за возможные неудобства. Наш сайт находится на стадии разработки, но уже сейчас вы можете ознакомиться с предлагаемыми слингами и оформить заказ.
+    = image_tag 'develop.png', class: 'develop_image'
+    h2 Интернет-магазин LilMonkey - официальный представитель ТМ СлингУля.
+    p Все виды безопасных детских переносок. Доставка по России.
 .row.big_block.categories_block
     h2 Категории товаров
     - @categories.each do |category|
@@ -19,6 +14,14 @@
                     .category_text
                         h3= category.name
                         p= category.caption
+.row.big_block
+    h2 Статьи
+    - @articles.each do |article|
+        .columns.small-6.medium-4.end
+            .article_block
+                p= link_to article.name, article, class: 'link'
+                p= article.caption.truncate(200)
+                span= link_to 'читать далее...', article, class: 'link'
 .row.big_block
     h2 Почему стоит выбрать именно нас?
     .columns.small-12.medium-4
@@ -60,7 +63,7 @@
                     .author_image= image_tag 'reviews/timoshechkina.jpg'
                     .author_name Марина Тимошечкина
                 .review_text
-                    p Получили рюкзачок, уже обкатали, мы в восторге! Так удобно и красиво) Особенно папа оценил, со слингом сложности были, а тут все легко) Спасибо большое!)
+                    p Получили рюкзачок, уже обкатали, мы в восторге! Так удобно и красиво) Спасибо большое!)
         .columns.small-12.medium-6.large-3.end
             .review_block
                 .review_icon

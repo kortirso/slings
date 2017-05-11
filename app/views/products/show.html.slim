@@ -10,6 +10,7 @@
                     .image_block
                         = image_tag @product.image
             .columns.small-12.medium-8
-                p= @product.caption
+                - @product.caption.each_line do |line|
+                    p= line
                 p= "Цена - #{@product.price} руб."
                 p= button_to 'Купить', positions_path(product_id: @product.id), class: 'button price_button', remote: true

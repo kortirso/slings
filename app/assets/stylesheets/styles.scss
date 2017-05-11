@@ -60,6 +60,7 @@ body {
     }
     p {
         margin: 0;
+        text-align: center;
     }
     .head {
         color: #282723;
@@ -118,7 +119,7 @@ body {
 }
 
 h2 {
-    color: #010101;
+    color: #ef767d;
     font-size: 30px;
     text-align: center;
     position: relative;
@@ -189,6 +190,8 @@ h2 {
 }
 
 .review_block {
+    background: #FFF;
+    padding: 5px;
     .review_icon {
         height: 54px;
         width: 100%;
@@ -436,8 +439,22 @@ table {
 }
 
 .about_block {
+    position: relative;
     p {
         text-align: center;
+        font-size: 24px;
+    }
+    .develop_image {
+        position: absolute;
+        top: -25px;
+        left: 0;
+        height: 100px;
+    }
+    h2 {
+        margin-bottom: 10px;
+        &:after {
+            content: none;
+        }
     }
 }
 

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     end
     
     scope controller: :pages do
+        get 'instructions' => :instructions, as: :instructions
         get 'reviews' => :reviews, as: :reviews
         get 'feedback' => :feedback, as: :feedback
         get 'tailor' => :tailor, as: :tailor
