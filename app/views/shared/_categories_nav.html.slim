@@ -1,4 +1,5 @@
 .columns.small-12.medium-3.large-2
     .catalog_nav
+        = link_to @main_category.name, category_path(@main_category), class: "button #{'active' if yield(:category) == @main_category.friendly_id }"
         - @categories.each do |category|
             = link_to category.name, category_path(category), class: "button #{'active' if yield(:category) == category.friendly_id }"
