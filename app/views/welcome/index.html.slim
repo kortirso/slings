@@ -1,12 +1,17 @@
 - provide(:path, 'root')
 .row.big_block.about_block
-    = image_tag 'develop.png', class: 'develop_image'
-    h2 Интернет-магазин LilMonkey - официальный представитель ТМ СлингУля.
-    p Все виды безопасных детских переносок. Доставка по России.
+    h1
+        span.big Интернет-магазин LilMonkey
+        br /
+        span.little официальный представитель ТМ СлингУля
+    p
+        | Самые безопасные и качественные переноски для вашего малыша.
+        br /
+        | Доставка по России.
 .row.big_block.categories_block
     h2 Категории товаров
     - @categories.each do |category|
-        .columns.small-6.medium-4.large-3.end
+        .columns.small-6.medium-4.end
             = link_to category do
                 .category_block.block
                     .category_image
@@ -17,7 +22,7 @@
 .row.big_block
     h2 Статьи
     - @articles.each do |article|
-        .columns.small-6.medium-4.end
+        .columns.small-12.medium-6.large-4.end
             .article_block
                 p= link_to article.name, article, class: 'link'
                 p= article.caption.truncate(200)
@@ -27,56 +32,56 @@
     .columns.small-12.medium-4
         .advance_block
             .advance_image
-                = image_tag 'galochka.png'
-            .advance_text
-                h3 Безопасность
-                p Вся наша продукция производится из натуральных и безопасных материалов.
-    .columns.small-12.medium-4
-        .advance_block
-            .advance_image
-                = image_tag 'galochka.png'
+                = image_tag 'icons/award.png'
             .advance_text
                 h3 Качество
-                p Каждый наш слинг, перед тем как попасть к вам, проходит многоступенчатую проверку качества.
+                p Вся наша продукция изготавливается только из натуральных тканей - льна и хлопка. И оснащена качественной, проверенной фурнитурой.
     .columns.small-12.medium-4
         .advance_block
             .advance_image
-                = image_tag 'galochka.png'
+                = image_tag 'icons/shield.png'
+            .advance_text
+                h3 Безопасность
+                p Наши слинги обеспечивают физиологически правильное и безопасное расположение малыша. Имеют удобную конструкцию не позволяющую спине родителей уставать. 
+    .columns.small-12.medium-4
+        .advance_block
+            .advance_image
+                = image_tag 'icons/handshake.png'
             .advance_text
                 h3 Поддержка
-                p Мы консультируем мам на всех этапах: начиная от выбора слинга и до момента освоения слинга.
+                p Мы помогаем мамам от момента выбора слинга, до его освоения малышом. Все консультации бесплатны, просто напишите нам.
 .row.big_block
     h2 Отзывы наших клиентов
     .columns.small-12
         .columns.small-12.medium-6.large-3.end
             .review_block
                 .review_icon
-                .review_author
-                    .author_image= image_tag 'reviews/makarova.jpg'
-                    .author_name Дарья Макарова
                 .review_text
                     p Сегодня получила, пока великоват (но и ребенку пока только 3.5), но я уже в восторге! Очень приятный лен, идеальные швы и строчки, удобные лямки!
+                .review_author
+                    .author_name Дарья Макарова
+                    .author_image= image_tag 'reviews/makarova.jpg'
         .columns.small-12.medium-6.large-3.end
             .review_block
                 .review_icon
-                .review_author
-                    .author_image= image_tag 'reviews/timoshechkina.jpg'
-                    .author_name Марина Тимошечкина
                 .review_text
                     p Получили рюкзачок, уже обкатали, мы в восторге! Так удобно и красиво) Спасибо большое!)
+                .review_author
+                    .author_name Марина Тимошечкина
+                    .author_image= image_tag 'reviews/timoshechkina.jpg'
         .columns.small-12.medium-6.large-3.end
             .review_block
                 .review_icon
-                .review_author
-                    .author_image= image_tag 'reviews/smirnova.jpg'
-                    .author_name Вика Смирнова
                 .review_text
                     p Наконец мы привыкли к слингу. По чуть-чуть и стал спокойно сидеть. В экскурсии по Абхазии очень помог слинг рюкзак. Как только уставал засыпал в нем.
+                .review_author
+                    .author_name Вика Смирнова
+                    .author_image= image_tag 'reviews/smirnova.jpg'
         .columns.small-12.medium-6.large-3.end
             .review_block
                 .review_icon
-                .review_author
-                    .author_image= image_tag 'reviews/zhuravleva.jpg'
-                    .author_name Анна Журавлева
                 .review_text
                     p Я не знаю как я без него жила!)) Мой любимый помощник!
+                .review_author
+                    .author_name Анна Журавлева
+                    .author_image= image_tag 'reviews/zhuravleva.jpg'

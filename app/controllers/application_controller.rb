@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
     private
 
     def get_categories_list
-        @main_category = Category.find_by(name: 'Слинги-рюкзаки')
-        @categories = Category.where.not(name: 'Слинги-рюкзаки').order(name: :asc)
+        @main_category = Category.find_by(name: 'Эрго-рюкзаки (слинги-рюкзаки)')
+        @categories = Category.where.not(name: 'Эрго-рюкзаки (слинги-рюкзаки)').order(name: :asc)
     end
 
     def render_not_found

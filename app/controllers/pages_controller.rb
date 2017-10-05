@@ -10,8 +10,4 @@ class PagesController < ApplicationController
     def feedback
 
     end
-
-    def tailor
-
-    end
 end

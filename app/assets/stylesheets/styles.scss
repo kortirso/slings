@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Neucha&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
 
 @mixin scroll-bar {
     &::-webkit-scrollbar {
@@ -17,8 +18,14 @@
 }
 
 * {
-    font-family: 'Neucha', sans-serif !important;
-    font-size: 20px;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
 html, body {
@@ -29,7 +36,6 @@ html, body {
 
 body {
     position: relative;
-    background: #FDFDBF;
     @include scroll-bar;
 }
 
@@ -38,6 +44,7 @@ body {
     min-height: 100%;
     padding-bottom: 140px;
     padding-top: 80px;
+    background: #FDFDBF;
 }
 
 #header {
@@ -62,13 +69,9 @@ body {
         margin: 0;
         text-align: center;
     }
-    .head {
+    .head, .text {
         color: #282723;
         font-size: 16px;
-    }
-    .text {
-        color: #282723;
-        font-weight: 500;
     }
 }
 
@@ -77,8 +80,10 @@ body {
     margin-bottom: 20px;
     .menu {
         background: #FFF;
-        box-shadow: 0 2px 3px 2px #76BBFA;
+        border-radius: 5px;
+        box-shadow: 3px 3px 10px 0 #76BBFA;
         a {
+            font-family: 'Neucha', sans-serif !important;
             color: #645f69;
             font-size: 18px;
             text-transform: uppercase;
@@ -115,16 +120,25 @@ body {
 }
 
 .big_block.row {
-    margin: 40px 0 70px;
+    margin: 40px auto 70px;
 }
 
-h2 {
+h1, h2 {
     color: #ef767d;
     font-size: 30px;
     text-align: center;
     position: relative;
     padding-bottom: 10px;
     margin: 0 0 40px;
+    span {
+        &.big {
+            font-weight: 500;
+            font-size: 30px;
+        }
+        &.little {
+            font-size: 26px;
+        }
+    }
     &:after {
         position: absolute;
         content: '';
@@ -167,7 +181,7 @@ h2 {
     .advance_image {
         height: 100px;
         text-align: center;
-        padding-left: 30px;
+        margin-bottom: 20px;
         img {
             max-height: 100%;
         }
@@ -179,7 +193,7 @@ h2 {
             font-weight: 500;
             margin-bottom: 20px;
             color: #282723;
-            text-decoration: underline;
+            text-transform: uppercase;
         }
         p {
             text-align: center;
@@ -191,7 +205,9 @@ h2 {
 
 .review_block {
     background: #FFF;
-    padding: 5px;
+    padding: 5px 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
     .review_icon {
         height: 54px;
         width: 100%;
@@ -205,27 +221,25 @@ h2 {
         p {
             color: #282723;
             text-align: center;
-            font-size: 18px;
+            font-size: 16px;
         }
     }
     .review_author {
         position: relative;
-        padding-left: 40px;
         font-style: italic;
+        text-align: center;
         .author_image {
             width: 50px;
             height: 50px;
             border-radius: 50%;
             overflow: hidden;
+            margin: 0 auto;
             img {
                 width: 100%;
             }
         }
         .author_name {
             color: #282723;
-            position: absolute;
-            top: 14px;
-            left: 100px;
             font-size: 14px;
         }
     }
@@ -279,6 +293,7 @@ h2 {
     background: #ef767d;
     color: #010101;
     z-index: 3;
+    border-radius: 5px;
 }
 
 .catalog_nav {
@@ -306,8 +321,9 @@ h2 {
 }
 
 .block {
+    border-radius: 5px;
     background: #f7f8fc;
-    box-shadow: 0 5px 10px 2px #9DC719;
+    box-shadow: 3px 3px 10px 0px #9DC719;
     text-align: center;
 }
 
@@ -442,7 +458,7 @@ table {
     position: relative;
     p {
         text-align: center;
-        font-size: 24px;
+        font-size: 20px;
     }
     .develop_image {
         position: absolute;
@@ -450,7 +466,7 @@ table {
         left: 0;
         height: 100px;
     }
-    h2 {
+    h1 {
         margin-bottom: 10px;
         &:after {
             content: none;
@@ -459,20 +475,12 @@ table {
 }
 
 .categories_block {
-    .columns.large-3 {
-        width: 20%;
-    }
+    max-width: 900px;
 }
 
 @media screen and (max-width: 1023px) {
     #logo {
         display: none;
-    }
-
-    .categories_block {
-        .columns.large-3 {
-            width: 33%;
-        }
     }
 }
 
@@ -482,10 +490,6 @@ table {
         a {
             padding: 10px 25px;
         }
-    }
-
-    .review_block .review_text {
-        min-height: auto;
     }
 
     .category_block .category_image, .category_block {
@@ -498,7 +502,7 @@ table {
     }
 
     .big_block.row {
-        margin: 20px 0 30px;
+        margin: 20px auto 30px;
     }
 
     .categories_block {
@@ -511,5 +515,11 @@ table {
 @media screen and (max-width: 639px) {
     .catalog_nav {
         margin-top: 0;
+    }
+
+    #header {
+        .text {
+            font-size: 15px;
+        }
     }
 }

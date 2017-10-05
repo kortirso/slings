@@ -15,8 +15,7 @@ html
         = render 'shared/header'
         .content
             = render 'shared/navigation'
-            .row
-                == yield
+            == yield
             = render 'shared/footer'
         = render 'shared/cart'
         = render 'shared/metrics' if Rails.env.production?

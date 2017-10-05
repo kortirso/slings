@@ -6,4 +6,3 @@
         li= link_to 'Статьи', articles_path, class: "#{'active' if yield(:path) == 'articles' }"
         li= link_to 'Отзывы', reviews_path, class: "#{'active' if yield(:path) == 'reviews' }"
         li= link_to 'Обратная связь', feedback_path, class: "#{'active' if yield(:path) == 'feedback' }"
-        li= link_to 'Мамин зайка', tailor_path, class: "#{'active' if yield(:path) == 'bunny' }"
