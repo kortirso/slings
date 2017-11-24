@@ -28,6 +28,11 @@ gem 'rmagick'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'rails_admin', '~> 1.1.1'
 
+# Add Webpack
+gem 'foreman'
+gem 'webpacker', '2.0'
+gem 'webpacker-react', '~> 0.2.0'
+
 group :development do
     gem 'listen', '~> 3.0.5'
     gem 'spring'
