@@ -1,13 +1,14 @@
 - provide(:category, @category.friendly_id)
 - provide(:path, 'catalog')
-= render 'shared/categories_nav'
-.columns.small-12.medium-9.large-10
-    - unless @products.size.zero?
-        h2= @category.name
-    - else
-        h2 В данной категории нет товаров
-    .catalog
-        .products.row
-            - unless @products.size.zero?
-                - @products.each do |product|
-                    = render 'shared/welcome_product', product: product
+.grid-x
+    = render 'shared/categories_nav'
+    .cell.small-12.medium-9.large-10
+        - unless @products.size.zero?
+            h2= @category.name
+        - else
+            h2 В данной категории нет товаров
+        .catalog
+            .products.row
+                - unless @products.size.zero?
+                    - @products.each do |product|
+                        = render 'shared/welcome_product', product: product

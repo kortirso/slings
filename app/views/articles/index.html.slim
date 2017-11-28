@@ -1,6 +1,6 @@
 - provide(:path, 'articles')
-.row.big_block
-    .columns.small-10.small-centered
+.grid-x
+    .cell.small-10.small-centered
         h2 Статьи
         - @articles.each do |article|
             p= link_to article.name, article_path(article), class: 'link'

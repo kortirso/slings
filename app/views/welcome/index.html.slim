@@ -1,5 +1,6 @@
 - provide(:path, 'root')
-.row.big_block.about_block
+- provide(:body, 'page_index')
+.block.about_block
     h1
         span.big Интернет-магазин LilMonkey
         br /
@@ -8,52 +9,53 @@
         | Самые безопасные и качественные переноски для вашего малыша.
         br /
         | Доставка по России.
-.row.big_block.categories_block
+.block
     h2 Категории товаров
-    - @categories.each do |category|
-        .columns.small-6.medium-4.end
-            = link_to category do
-                .category_block.block
-                    .category_image
-                        = image_tag category.image
-                    .category_text
-                        h3= category.name
-                        p= category.caption
-.row.big_block
+    .categories_block
+        - @categories.each do |category|
+            .category_block
+                .category_image
+                    = link_to image_tag('empty_image.jpg'), category
+                .category_text
+                    h3= category.name
+                    p= category.caption
+.block
     h2 Статьи
-    - @articles.each do |article|
-        .columns.small-12.medium-6.large-4.end
-            .article_block
-                p= link_to article.name, article, class: 'link'
-                p= article.caption.truncate(200)
-                span= link_to 'читать далее...', article, class: 'link'
-.row.big_block
+    .grid-x
+        - @articles.each do |article|
+            .cell.small-12.medium-6.large-4
+                .article_block
+                    p= link_to article.name, article, class: 'link'
+                    p= article.caption.truncate(200)
+                    span= link_to 'читать далее...', article, class: 'link'
+.block
     h2 Почему стоит выбрать именно нас?
-    .columns.small-12.medium-4
-        .advance_block
-            .advance_image
-                = image_tag 'icons/award.png'
-            .advance_text
-                h3 Качество
-                p Вся наша продукция изготавливается только из натуральных тканей - льна и хлопка. И оснащена качественной, проверенной фурнитурой.
-    .columns.small-12.medium-4
-        .advance_block
-            .advance_image
-                = image_tag 'icons/shield.png'
-            .advance_text
-                h3 Безопасность
-                p Наши слинги обеспечивают физиологически правильное и безопасное расположение малыша. Имеют удобную конструкцию не позволяющую спине родителей уставать. 
-    .columns.small-12.medium-4
-        .advance_block
-            .advance_image
-                = image_tag 'icons/handshake.png'
-            .advance_text
-                h3 Поддержка
-                p Мы помогаем мамам от момента выбора слинга, до его освоения малышом. Все консультации бесплатны, просто напишите нам.
-.row.big_block
+    .grid-x
+        .cell.small-12.medium-4
+            .advance_block
+                .advance_image
+                    = image_tag 'icons/award.png'
+                .advance_text
+                    h3 Качество
+                    p Вся наша продукция изготавливается только из натуральных тканей - льна и хлопка. И оснащена качественной, проверенной фурнитурой.
+        .cell.small-12.medium-4
+            .advance_block
+                .advance_image
+                    = image_tag 'icons/shield.png'
+                .advance_text
+                    h3 Безопасность
+                    p Наши слинги обеспечивают физиологически правильное и безопасное расположение малыша. Имеют удобную конструкцию не позволяющую спине родителей уставать. 
+        .cell.small-12.medium-4
+            .advance_block
+                .advance_image
+                    = image_tag 'icons/handshake.png'
+                .advance_text
+                    h3 Поддержка
+                    p Мы помогаем мамам от момента выбора слинга, до его освоения малышом. Все консультации бесплатны, просто напишите нам.
+.block
     h2 Отзывы наших клиентов
-    .columns.small-12
-        .columns.small-12.medium-6.large-3.end
+    .grid-x
+        .cell.small-12.medium-6.large-3
             .review_block
                 .review_icon
                 .review_text
@@ -61,7 +63,7 @@
                 .review_author
                     .author_name Дарья Макарова
                     .author_image= image_tag 'reviews/makarova.jpg'
-        .columns.small-12.medium-6.large-3.end
+        .cell.small-12.medium-6.large-3
             .review_block
                 .review_icon
                 .review_text
@@ -69,7 +71,7 @@
                 .review_author
                     .author_name Марина Тимошечкина
                     .author_image= image_tag 'reviews/timoshechkina.jpg'
-        .columns.small-12.medium-6.large-3.end
+        .cell.small-12.medium-6.large-3
             .review_block
                 .review_icon
                 .review_text
@@ -77,7 +79,7 @@
                 .review_author
                     .author_name Вика Смирнова
                     .author_image= image_tag 'reviews/smirnova.jpg'
-        .columns.small-12.medium-6.large-3.end
+        .cell.small-12.medium-6.large-3
             .review_block
                 .review_icon
                 .review_text

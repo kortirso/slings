@@ -17,7 +17,7 @@ gem 'jquery-rails'
 gem 'erubis'
 
 gem 'figaro'
-gem 'foundation-rails'
+gem 'foundation-rails', '6.4.1.3'
 gem 'autoprefixer-rails', '6.7.6'
 gem 'slim'
 gem 'trix'
