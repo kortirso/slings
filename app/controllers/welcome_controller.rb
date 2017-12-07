@@ -1,6 +1,7 @@
-class WelcomeController < ApplicationController    
+class WelcomeController < ApplicationController
+    before_action :get_categories_list
+
     def index
-        @categories = Category.where('name != ? AND name != ?', 'Слинги с кольцами', 'Ткани').order(name: :asc)
         @articles = Article.order(id: :desc).limit(3)
     end
 end

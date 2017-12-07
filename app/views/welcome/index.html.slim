@@ -15,7 +15,7 @@
         - @categories.each do |category|
             .category_block
                 .category_image
-                    = link_to image_tag('empty_image.jpg'), category
+                    = link_to image_tag(category.image), category
                 .category_text
                     h3= category.name
                     p= category.caption
