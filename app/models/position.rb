@@ -5,7 +5,7 @@ class Position < ApplicationRecord
     belongs_to :product
     belongs_to :order
 
-    validates :product_id, :count, presence: true
+    validates :product_id, :count, :cart_id, presence: true
     validates :count, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
     before_save :calc_summ
