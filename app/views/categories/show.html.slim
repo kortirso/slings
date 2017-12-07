@@ -8,7 +8,7 @@
         - else
             h2 В данной категории нет товаров
         .catalog
-            .products.row
+            .products.grid-x
                 - unless @products.size.zero?
                     - @products.each do |product|
                         = render 'shared/welcome_product', product: product

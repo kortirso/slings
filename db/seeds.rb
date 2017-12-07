@@ -7,11 +7,11 @@ if Category.count.zero?
     File.open("#{Rails.root}/db/category_images/mai-sling.jpg") { |f| category.image = f }
     category.save
 
-    category = Category.create name: 'Эрго-рюкзаки для двойни', caption: ''
+    category = Category.new name: 'Слинги-рюкзаки для двойни', caption: ''
     File.open("#{Rails.root}/db/category_images/twins.jpg") { |f| category.image = f }
     category.save
 
-    category = Category.create name: 'Коконы', caption: ''
+    category = Category.new name: 'Коконы', caption: ''
     File.open("#{Rails.root}/db/category_images/cocoon.jpg") { |f| category.image = f }
     category.save
 end

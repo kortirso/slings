@@ -4,6 +4,6 @@
     .cell.small-12.medium-9.large-10
         h2 Новинки
         .catalog
-            .new_products.row
+            .new_products.grid-x
                 - @new_ones.each do |product|
                     = render 'shared/welcome_product', product: product
