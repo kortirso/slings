@@ -10,15 +10,16 @@
         br /
         | Доставка по России.
 .block
-    h2 Категории товаров
-    .categories_block
-        - @categories.each do |category|
-            .category_block
-                .category_image
-                    = link_to image_tag(category.image), category
-                .category_text
-                    h3= category.name
-                    p= category.caption
+    section#dg-container.dg-container
+        .dg-wrapper
+            - @categories.each do |category|
+                .slide
+                    .img= image_tag category.image
+                    .text= category.caption
+        nav
+            span.arrows.dg-prev
+        nav
+            span.arrows.dg-next
 .block
     h2 Статьи
     .grid-x

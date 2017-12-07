@@ -1,0 +1,81 @@
+.dg-container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    height: 300px;
+}
+
+.dg-wrapper {
+    width: 418px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -o-perspective: 1000px;
+    -ms-perspective: 1000px;
+    perspective: 1000px;
+}
+
+.dg-wrapper .slide {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #FFF;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px 5px #ef767d;
+}
+
+.dg-wrapper .slide.dg-transition {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.dg-wrapper .slide .img {
+    height: 300px;
+}
+
+.dg-wrapper .slide .img img {
+    height: 100%;
+}
+
+.dg-wrapper .slide .text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: #000;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.dg-container .arrows {
+    width: 11px;
+    height: 21px;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.dg-container .arrows.dg-prev {
+    left: 0;
+    background: image-url('icons/arrow_left.png');
+}
+
+.dg-container .arrows.dg-next {
+    right: 0;
+    background: image-url('icons/arrow_right.png');
+}
