@@ -1,8 +1,6 @@
-require 'rails_helper'
-
 RSpec.configure do |config|
-    Capybara::Webkit.configure do |config|
-        config.allow_url('fonts.googleapis.com')
+    Capybara::Webkit.configure do |conf|
+        conf.allow_url('fonts.googleapis.com')
     end
 
     config.use_transactional_fixtures = false

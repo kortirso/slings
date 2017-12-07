@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-    before_action :get_categories_list
+    before_action :categories_list
 
     def index
         @new_ones = Product.all.order(created_at: :desc).limit(8)

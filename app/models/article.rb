@@ -1,5 +1,6 @@
 require 'babosa'
 
+# Represents articles about products
 class Article < ApplicationRecord
     extend FriendlyId
 

@@ -1,4 +1,4 @@
-if Category.count == 0
+if Category.count.zero?
     category = Category.new name: 'Эрго-рюкзаки (слинги-рюкзаки)', caption: ''
     File.open("#{Rails.root}/db/category_images/ergo-sling.jpg") { |f| category.image = f }
     category.save

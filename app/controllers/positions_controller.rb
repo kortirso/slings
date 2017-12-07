@@ -1,6 +1,6 @@
 class PositionsController < ApplicationController
-    skip_before_action :verify_authenticity_token, only: [:create, :destroy, :product_plus, :product_minus, :product_full]
-    before_action :find_position, except: [:create]
+    skip_before_action :verify_authenticity_token, only: %i[create destroy product_plus product_minus product_full]
+    before_action :find_position, except: %i[create]
 
     def create
         @cart.add_product(params[:product_id])

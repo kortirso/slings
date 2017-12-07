@@ -1,13 +1,7 @@
 class PagesController < ApplicationController
-    def instructions
+    def instructions; end
 
-    end
+    def reviews; end
 
-    def reviews
-
-    end
-
-    def feedback
-
-    end
+    def feedback; end
 end

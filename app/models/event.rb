@@ -1,3 +1,4 @@
+# Represents events in shop
 class Event < ApplicationRecord
     has_many :products
 

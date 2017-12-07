@@ -8,7 +8,7 @@ RSpec.describe Position, type: :model do
 
     it 'should be valid' do
         position = create :position
-        
+
         expect(position).to be_valid
     end
 end

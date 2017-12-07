@@ -6,6 +6,7 @@ require 'carrierwave'
 Bundler.require(*Rails.groups)
 
 module Slings
+    # Main App
     class Application < Rails::Application
         config.active_record.schema_format = :ruby
         config.generators do |g|

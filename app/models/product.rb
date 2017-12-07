@@ -1,6 +1,7 @@
 require 'babosa'
 require 'open-uri'
 
+# Represents products
 class Product < ApplicationRecord
     extend FriendlyId
 
@@ -21,20 +22,12 @@ class Product < ApplicationRecord
     scope :sales_hits, -> { where sales_hit: true }
     scope :new_ones, -> { where new_one: true }
 
-    def is_new_product?
-        new_one
-    end
-
-    def is_sales_hit?
-        sales_hit
-    end
-
-    def is_available_for_order?
+    def available_for_order?
         amount > 0
     end
 
     def slug_candidates
-        [:name, [:name, :id]]
+        [:name, %i[name id]]
     end
 
     def normalize_friendly_id(input)
@@ -47,8 +40,6 @@ class Product < ApplicationRecord
         product.save
         product
     end
-
-    private
 
     def self.download_image(image)
         download = open(image)

@@ -1,3 +1,4 @@
+# Imahe uploader for products
 class ItemsUploader < CarrierWave::Uploader::Base
     include CarrierWave::RMagick
 
@@ -10,10 +11,10 @@ class ItemsUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [400, 400]
 
     version :for_catalog do
-        process resize_to_fit: [200,200]
+        process resize_to_fit: [200, 200]
     end
 
     def extension_white_list
-        %w(jpg png jpeg)
+        %w[jpg png jpeg]
     end
 end

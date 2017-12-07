@@ -17,7 +17,7 @@
                                 p= position.product.name
                                 .check_box
                                     = label_tag "full_#{position.id}", 'Полная комплектация (+499 руб.)'
-                                    = link_to check_box_tag("full_#{position.id}", value = '1', checked = position.is_full?), full_path(position), remote: true, method: :post
+                                    = link_to check_box_tag("full_#{position.id}", value = '1', checked = position.full?), full_path(position), remote: true, method: :post
                             td.change_count
                                 .buttons
                                     = button_to '', plus_path(position), class: 'button_up', remote: true
@@ -35,7 +35,7 @@
                 h2 Доставка
                 = form_tag({ controller: 'orders', action: 'create' }, method: 'post') do
                     #= hidden_field_tag :cart_id, @cart.id
-                    - if Delivery.has_option_for_wait?
+                    - if Delivery.option_for_wait?
                         .check_box.to_wait
                             p 25 числа каждого месяца происходит совместная заказ слингов, что позволяет снизить стоимость заказа.
                             = label_tag 'wait', 'Готовы ли вы оформить заказ от 25 числа и получить скидку 5% на товары'

@@ -1,3 +1,4 @@
+# Image uploader for categories
 class GroupsUploader < CarrierWave::Uploader::Base
     include CarrierWave::RMagick
 
@@ -8,6 +9,6 @@ class GroupsUploader < CarrierWave::Uploader::Base
     end
 
     def extension_white_list
-        %w(jpg png jpeg)
+        %w[jpg png jpeg]
     end
 end

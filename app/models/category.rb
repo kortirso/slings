@@ -1,5 +1,6 @@
 require 'babosa'
 
+# Represents categories
 class Category < ApplicationRecord
     extend FriendlyId
 

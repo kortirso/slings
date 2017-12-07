@@ -3,12 +3,10 @@ class OrdersController < ApplicationController
     before_action :find_order, only: :show
     before_action :check_owner, only: :show
 
-    def show
+    def show; end
 
-    end
-    
     def create
-        order = CreateOrderService.call({order: { cart_id: session[:cart_id] }, delivery: delivery_params})
+        order = CreateOrderService.call(order: { cart_id: session[:cart_id] }, delivery: delivery_params)
         if order.nil?
             redirect_to @cart
         else

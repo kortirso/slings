@@ -11,7 +11,7 @@
                 - @order.positions.includes(:product).order(id: :asc).each do |position|
                     tr
                         td= image_tag position.product.image
-                        td= "#{position.product.name}#{' (полная комплектация)' if position.is_full?}"
+                        td= "#{position.product.name}#{' (полная комплектация)' if position.full?}"
                         td= position.count
                         td= position.summ
                 tr
@@ -19,7 +19,7 @@
                     td= @order.delivery.delivery_form
                     td
                     td= @order.delivery.delivery_cost
-                - if @order.delivery.can_wait?
+                - if @order.delivery.wait?
                     tr
                         td
                         td Скидка за ожидание

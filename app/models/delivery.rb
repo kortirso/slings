@@ -1,3 +1,4 @@
+# Represents delivery options for orders
 class Delivery < ApplicationRecord
     COST_TEK = 500
     COST_POST = 300
@@ -9,7 +10,7 @@ class Delivery < ApplicationRecord
     validates :order_id, presence: true
 
     def delivery_cost
-        case self.delivery_form
+        case delivery_form
             when 'Доставка Транспортной Компанией' then COST_TEK
             when 'Доставка Почтой России' then COST_POST
             when 'Самовывоз' then COST_SELF
@@ -17,14 +18,10 @@ class Delivery < ApplicationRecord
     end
 
     def discount
-        can_wait? ? DISCOUNT : 0
+        wait? ? DISCOUNT : 0
     end
 
-    def can_wait?
-        wait
-    end
-
-    def self.has_option_for_wait?
+    def self.option_for_wait?
         Date.current.mday < 18
     end
 end
