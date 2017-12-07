@@ -54,37 +54,49 @@
                     h3 Поддержка
                     p Мы помогаем мамам от момента выбора слинга, до его освоения малышом. Все консультации бесплатны, просто напишите нам.
 .block
-    h2 Отзывы наших клиентов
     .grid-x
-        .cell.small-12.medium-6.large-3
-            .review_block
-                .review_icon
-                .review_text
-                    p Сегодня получила, пока великоват (но и ребенку пока только 3.5), но я уже в восторге! Очень приятный лен, идеальные швы и строчки, удобные лямки!
-                .review_author
-                    .author_name Дарья Макарова
-                    .author_image= image_tag 'reviews/makarova.jpg'
-        .cell.small-12.medium-6.large-3
-            .review_block
-                .review_icon
-                .review_text
-                    p Получили рюкзачок, уже обкатали, мы в восторге! Так удобно и красиво) Спасибо большое!)
-                .review_author
-                    .author_name Марина Тимошечкина
-                    .author_image= image_tag 'reviews/timoshechkina.jpg'
-        .cell.small-12.medium-6.large-3
-            .review_block
-                .review_icon
-                .review_text
-                    p Наконец мы привыкли к слингу. По чуть-чуть и стал спокойно сидеть. В экскурсии по Абхазии очень помог слинг рюкзак. Как только уставал засыпал в нем.
-                .review_author
-                    .author_name Вика Смирнова
-                    .author_image= image_tag 'reviews/smirnova.jpg'
-        .cell.small-12.medium-6.large-3
-            .review_block
-                .review_icon
-                .review_text
-                    p Я не знаю как я без него жила!)) Мой любимый помощник!
-                .review_author
-                    .author_name Анна Журавлева
-                    .author_image= image_tag 'reviews/zhuravleva.jpg'
+        .cell.large-6
+            h2 Отзывы наших клиентов
+            .grid-x
+                .cell.small-12.medium-6
+                    .review_block
+                        .review_icon
+                        .review_text
+                            p Сегодня получила, пока великоват (но и ребенку пока только 3.5), но я уже в восторге! Очень приятный лен, идеальные швы и строчки, удобные лямки!
+                        .review_author
+                            .author_name Дарья Макарова
+                            .author_image= image_tag 'reviews/makarova.jpg'
+                .cell.small-12.medium-6
+                    .review_block
+                        .review_icon
+                        .review_text
+                            p Получили рюкзачок, уже обкатали, мы в восторге! Так удобно и красиво) Спасибо большое!)
+                        .review_author
+                            .author_name Марина Тимошечкина
+                            .author_image= image_tag 'reviews/timoshechkina.jpg'
+                .cell.small-12.medium-6
+                    .review_block
+                        .review_icon
+                        .review_text
+                            p Наконец мы привыкли к слингу. По чуть-чуть и стал спокойно сидеть. В экскурсии по Абхазии очень помог слинг рюкзак. Как только уставал засыпал в нем.
+                        .review_author
+                            .author_name Вика Смирнова
+                            .author_image= image_tag 'reviews/smirnova.jpg'
+                .cell.small-12.medium-6
+                    .review_block
+                        .review_icon
+                        .review_text
+                            p Я не знаю как я без него жила!)) Мой любимый помощник!
+                        .review_author
+                            .author_name Анна Журавлева
+                            .author_image= image_tag 'reviews/zhuravleva.jpg'
+        .cell.large-6
+            #instagram_box
+                .header
+                    = image_tag 'icons/social-instagram.png'
+                    span Мы в Инстаграм
+                - @insta_photos.each do |row|
+                    .photo_row
+                        - row.each do |photo|
+                            .img= image_tag photo
+
