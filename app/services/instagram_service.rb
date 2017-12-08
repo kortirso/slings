@@ -9,12 +9,7 @@ class InstagramService
     end
 
     def insta_photos
-        photos = user_recent.collect { |elem| elem['images']['standard_resolution']['url'] }
-        [
-            [photos[0], photos[1], photos[2]],
-            [photos[3], photos[4], photos[5]],
-            [photos[6], photos[7], photos[8]]
-        ]
+        user_recent.collect { |elem| elem['images']['standard_resolution']['url'] }
     end
 
     def user_recent
