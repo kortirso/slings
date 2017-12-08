@@ -1,3 +1,4 @@
+# Represents collection of photos from instagram account
 class Instagram < ApplicationRecord
     has_many :instaphotos, dependent: :destroy
 

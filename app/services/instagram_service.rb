@@ -1,5 +1,6 @@
 require 'net/http'
 
+# Service for getting links to last 9 images from instagram account
 class InstagramService
     attr_reader :access_token, :user_id
 
