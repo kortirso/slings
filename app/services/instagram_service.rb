@@ -4,8 +4,8 @@ class InstagramService
     attr_reader :access_token, :user_id
 
     def initialize
-        @access_token = '1480822591.e029fea.f5fdb64bd8454631b6b71d210f06ca9a'
-        @user_id = '1480822591'
+        @access_token = ENV['INSTAGRAM_TOKEN']
+        @user_id = ENV['INSTAGRAM_USER']
     end
 
     def insta_photos

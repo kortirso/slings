@@ -1,7 +1,5 @@
 # Represents positions in cart
 class Position < ApplicationRecord
-    PRICE_FOR_FULL = 499
-
     belongs_to :cart
     belongs_to :product
     belongs_to :order
@@ -36,6 +34,6 @@ class Position < ApplicationRecord
 
     def calc_summ
         self.summ = count * product.price
-        self.summ += count * PRICE_FOR_FULL if full?
+        self.summ += count * Config.first.price_full if full?
     end
 end

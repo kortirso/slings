@@ -15,3 +15,5 @@ if Category.count.zero?
     File.open("#{Rails.root}/db/category_images/cocoon.jpg") { |f| category.image = f }
     category.save
 end
+
+Config.create
