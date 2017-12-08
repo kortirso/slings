@@ -57,8 +57,8 @@ gem 'rails_admin', '~> 1.1.1'
 
 # Add Webpack
 gem 'foreman'
-gem 'webpacker', '2.0'
-gem 'webpacker-react', '~> 0.2.0'
+gem 'webpacker', '~> 3.0'
+gem 'webpacker-react', '~> 0.3.2'
 
 # Code analyzation
 gem 'rubocop', '~> 0.49.1', require: false
