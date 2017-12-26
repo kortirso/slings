@@ -1,0 +1,12 @@
+.grid-x.instructions {
+    margin-top: 50px;
+    .instr {
+        p {
+            text-align: center;
+            padding: 10px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

@@ -30,8 +30,6 @@ export default class InstructionsBox extends React.Component {
 
     _instructionView() {
         switch(this.state.page) {
-            case 0:
-                return <Default />
             case 1:
                 return <Instruction_1 />
             case 2:
@@ -41,11 +39,24 @@ export default class InstructionsBox extends React.Component {
         }
     }
 
-    render() {
+    _selectRenderPage() {
+        if(this.state.page == 0) return <Default page={this.state.page} onPageClick={this._selectPage.bind(this)} />;
         return (
             <div className='grid-x'>
                 {this._instructionsNav()}
                 {this._instructionView()}
+            </div>
+        );
+    }
+
+    _selectPage(page) {
+        this.setState({page: page});
+    }
+
+    render() {
+        return (
+            <div>
+                {this._selectRenderPage()}
             </div>
         );
     }
