@@ -92,4 +92,45 @@
             }
         }
     }
+    .review_block {
+    background: #FFF;
+    padding: 5px 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    .review_icon {
+        height: 54px;
+        width: 100%;
+        background-image: image-url('icons/review.png');
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .review_text {
+        margin-top: 10px;
+        min-height: 140px;
+        p {
+            color: #282723;
+            text-align: center;
+            font-size: 16px;
+        }
+    }
+    .review_author {
+        position: relative;
+        font-style: italic;
+        text-align: center;
+        .author_image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            img {
+                width: 100%;
+            }
+        }
+        .author_name {
+            color: #282723;
+            font-size: 14px;
+        }
+    }
+}
 }

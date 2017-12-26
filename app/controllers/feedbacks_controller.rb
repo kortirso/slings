@@ -1,4 +1,10 @@
 class FeedbacksController < ApplicationController
+    def index
+        render json: {
+            feedbacks: ActiveModel::Serializer::CollectionSerializer.new(Feedback.lasts, each_serializer: FeedbackSerializer)
+        }, status: 200
+    end
+    
     def create
         Feedback.create(feedback_params)
         redirect_to feedback_path

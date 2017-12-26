@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :carts, only: :show
     resources :orders, only: %i[show create]
     resources :positions, only: %i[create destroy]
-    resources :feedbacks, only: %i[create]
+    resources :feedbacks, only: %i[index create]
 
     scope controller: :positions do
         post 'plus/:id' => :product_plus, as: :plus

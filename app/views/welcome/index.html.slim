@@ -1,5 +1,6 @@
 - provide(:path, 'root')
 - provide(:body, 'page_index')
+= javascript_pack_tag 'feedbacks_box'
 .block.about_block
     h1
         span.big Интернет-магазин LilMonkey
@@ -56,17 +57,7 @@
 .block
     .grid-x
         .cell.large-6
-            h2 Отзывы наших клиентов
-            .grid-x
-                - @feedbacks.each do |feedback|
-                    .cell.small-12.medium-6
-                        .review_block
-                            .review_icon
-                            .review_text
-                                p= feedback.body
-                            .review_author
-                                .author_name= feedback.name
-                                .author_image= image_tag feedback.image
+            = react_component('FeedbacksBox')
         .cell.large-6
             #instagram_box
                 .header
