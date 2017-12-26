@@ -4,5 +4,5 @@ class Feedback < ApplicationRecord
 
     validates :body, presence: true
 
-    scope :lasts, -> { order(created_at: :asc).limit(4) }
+    scope :lasts, -> { order(created_at: :desc).limit(4) }
 end

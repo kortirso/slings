@@ -1,4 +1,4 @@
-# Imahe uploader for products
+# Image uploader for products
 class FeedbacksUploader < CarrierWave::Uploader::Base
     include CarrierWave::RMagick
 

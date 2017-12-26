@@ -29,6 +29,7 @@ gem 'figaro'
 
 # Foundation for frontend
 gem 'foundation-rails', '6.4.1.3'
+gem 'simple_form', '3.5.0'
 
 # Auto-prefixing CSS for cross-browser compat.
 gem 'autoprefixer-rails', '6.7.6'

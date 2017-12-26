@@ -1,1 +1,12 @@
 - provide(:path, 'feedback')
+.block
+    .grid-x
+        .cell.small-12.medium-6
+            h2 Оставить сообщение
+        .cell.small-12.medium-6
+            h2 Оставить отзыв
+            = simple_form_for Feedback.new, controller: 'feedbacks', action: 'create', method: 'post' do |f|
+                = f.input :name, label: 'Ваше имя'
+                = f.input :body, label: 'Текст отзыва'
+                = f.input :image, label: 'Фотография'
+                = f.button :submit, 'Отправить', class: 'button'

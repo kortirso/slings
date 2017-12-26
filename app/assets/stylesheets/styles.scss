@@ -47,6 +47,16 @@ html, body {
 body {
     position: relative;
     @include scroll-bar;
+    .button {
+        padding: 12px 25px;
+        background: #e17a7b;
+        color: #FFF !important;
+        margin-bottom: 0;
+        font-size: 18px;
+        &:hover {
+            background: #ba6566;
+        }
+    }
 }
 
 .block {
@@ -253,17 +263,6 @@ h1, h2 {
             color: #010101;
             margin-bottom: 5px;
         }
-    }
-}
-
-.button.price_button {
-    padding: 12px 25px;
-    background: #e17a7b;
-    color: #FFF !important;
-    margin-bottom: 0;
-    font-size: 18px;
-    &:hover {
-        background: #ba6566;
     }
 }
 
