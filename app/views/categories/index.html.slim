@@ -1,9 +1,6 @@
 - provide(:path, 'catalog')
+= javascript_pack_tag 'novelty_box'
 .grid-x
     = render 'shared/categories_nav'
     .cell.small-12.medium-9.large-10
-        h2 Новинки
-        .catalog
-            .new_products.grid-x
-                - @new_ones.each do |product|
-                    = render 'shared/welcome_product', product: product
+        = react_component('NoveltyBox')
