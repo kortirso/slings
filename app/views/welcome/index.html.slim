@@ -59,10 +59,11 @@
         .cell.large-6
             = react_component('FeedbacksBox')
         .cell.large-6
+            h2 Мы в Instagram
             #instagram_box
                 .header
                     = image_tag 'icons/social-instagram.png'
-                    span Мы в Инстаграм
+                    span @mom_monkey
                 - @insta_photos.each do |row|
                     .photo_row
                         - row.each do |photo|
