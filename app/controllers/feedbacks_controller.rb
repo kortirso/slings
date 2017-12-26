@@ -3,7 +3,7 @@ class FeedbacksController < ApplicationController
 
     def index
         render json: {
-            feedbacks: ActiveModel::Serializer::CollectionSerializer.new(Feedback.lasts, each_serializer: FeedbackSerializer)
+            feedbacks: ActiveModel::Serializer::CollectionSerializer.new(Feedback.published.lasts, each_serializer: FeedbackSerializer)
         }, status: 200
     end
 
