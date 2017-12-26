@@ -2,8 +2,11 @@
     = link_to product do
         .sling_block.block
             .sling_image
-                = image_tag product.image.for_catalog
+                - if product.image.for_catalog.to_s.empty?
+                    = image_tag '/images/product.jpg'
+                - else
+                    = image_tag product.image.for_catalog
             .sling_text
                 .sling_name= product.name.truncate(20)
                 .sling_price= "#{product.price} руб."
-                = button_to 'Купить', positions_path(product_id: product.id), class: 'button price_button', remote: true
+                = button_to 'Купить', positions_path(product_id: product.id), class: 'button', remote: true

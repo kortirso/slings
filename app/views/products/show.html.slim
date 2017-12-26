@@ -8,9 +8,12 @@
             .cell.small-12.medium-4
                 .product_block.block
                     .image_block
-                        = image_tag @product.image
+                        - if @product.image.to_s.empty?
+                            = image_tag '/images/product.jpg'
+                        - else
+                            = image_tag @product.image
             .cell.small-12.medium-8
-                - @product.caption.each_line do |line|
+                - @product.caption.try(:each_line) do |line|
                     p= line
                 p= "Цена - #{@product.price} руб."
                 p= button_to 'Купить', positions_path(product_id: @product.id), class: 'button price_button', remote: true

@@ -21,6 +21,7 @@ class Product < ApplicationRecord
 
     scope :sales_hits, -> { where sales_hit: true }
     scope :new_ones, -> { where new_one: true }
+    scope :lasts, -> { order(created_at: :desc) }
 
     def available_for_order?
         amount > 0
