@@ -67,6 +67,9 @@ gem 'rubocop', '~> 0.49.1', require: false
 # Pagination
 gem 'kaminari'
 
+# Mailer
+gem 'premailer-rails'
+
 group :development do
     gem 'capistrano', require: false
     gem 'capistrano-bundler', require: false
