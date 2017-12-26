@@ -1,4 +1,6 @@
 class FeedbacksController < ApplicationController
+    skip_before_action :verify_authenticity_token, only: :create
+
     def index
         render json: {
             feedbacks: ActiveModel::Serializer::CollectionSerializer.new(Feedback.lasts, each_serializer: FeedbackSerializer)

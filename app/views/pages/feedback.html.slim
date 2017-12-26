@@ -2,11 +2,22 @@
 .block
     .grid-x
         .cell.small-12.medium-6
-            h2 Оставить сообщение
+            h2 Отправить сообщение
+            = form_tag('/mailer', method: 'post') do
+                = label_tag :author, 'Ваше имя'
+                = text_field_tag :author
+                = label_tag :contact, 'Контактные данные'
+                = text_field_tag :contact
+                = label_tag :body do
+                    abbr title='required'
+                        | *
+                    |  Ваше сообщение
+                = text_area_tag :body, '', required: true
+                = submit_tag 'Отправить', class: 'button'
         .cell.small-12.medium-6
             h2 Оставить отзыв
             = simple_form_for Feedback.new, controller: 'feedbacks', action: 'create', method: 'post' do |f|
                 = f.input :name, label: 'Ваше имя'
-                = f.input :body, label: 'Текст отзыва'
+                = f.input :body, label: 'Текст отзыва', required: true
                 = f.input :image, label: 'Фотография'
                 = f.button :submit, 'Отправить', class: 'button'

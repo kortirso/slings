@@ -28,6 +28,8 @@ Rails.application.routes.draw do
         get 'tailor' => :tailor, as: :tailor
     end
 
+    post 'mailer' => 'mailer#create'
+
     root to: 'welcome#index'
     match '*path', to: 'application#catch_404', via: :all
 end
