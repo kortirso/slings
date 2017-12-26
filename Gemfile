@@ -63,6 +63,9 @@ gem 'webpacker-react', '~> 0.3.2'
 # Code analyzation
 gem 'rubocop', '~> 0.49.1', require: false
 
+# Pagination
+gem 'kaminari'
+
 group :development do
     gem 'capistrano', require: false
     gem 'capistrano-bundler', require: false

@@ -334,6 +334,7 @@ DEPENDENCIES
   friendly_id (~> 5.1.0)
   jquery-rails
   json_spec
+  kaminari
   listen (~> 3.0.5)
   oj
   oj_mimic_json
