@@ -1,9 +1,15 @@
 class MailerController < ApplicationController
-    skip_before_action :verify_authenticity_token, only: :create
+    skip_before_action :verify_authenticity_token, only: %i[create verification]
 
     def create
         AdminMailer.admin_email(mail_params).deliver_now if correct_mail_params?
         redirect_to feedback_path
+    end
+
+    def verification
+        # OrderVerificationService.new
+        AdminMailer.yandex_money_email.deliver_now
+        render status: :ok
     end
 
     private

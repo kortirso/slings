@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     resources :orders, only: %i[show create]
     resources :positions, only: %i[create destroy]
     resources :feedbacks, only: %i[index create]
+    resources :mailer, only: %i[create] do
+        post 'verification' => :verification, on: :collection
+    end
 
     scope controller: :positions do
         post 'plus/:id' => :product_plus, as: :plus
@@ -27,8 +30,6 @@ Rails.application.routes.draw do
         get 'feedback' => :feedback, as: :feedback
         get 'tailor' => :tailor, as: :tailor
     end
-
-    post 'mailer' => 'mailer#create'
 
     root to: 'welcome#index'
     match '*path', to: 'application#catch_404', via: :all
