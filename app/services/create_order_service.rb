@@ -11,6 +11,9 @@ class CreateOrderService
         order.cart.positions.includes(:product).each do |position|
             order.positions.create product: position.product, count: position.count, full: position.full
         end
+
+        AdminMailer.new_order_email(order: order, delivery: delivery)
+
         order
     end
 end
