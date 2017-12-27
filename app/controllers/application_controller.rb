@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
     def render_not_found
         render template: 'shared/404', status: 404
     end
+
+    def select_page
+        params[:page].nil? ? 1 : params[:page]
+    end
 end

@@ -1,0 +1,21 @@
+.review {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    background: #FFF;
+    .image_block {
+        width: 100px;
+        img {
+            border-radius: 50%;
+            width: 75px;
+        }
+    }
+    .text_block {
+        p {
+            margin-bottom: 5px;
+            &:nth-of-type(2) {
+                font-style: italic;
+            }
+        }
+    }
+}

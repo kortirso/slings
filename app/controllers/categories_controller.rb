@@ -39,8 +39,4 @@ class CategoriesController < ApplicationController
     def find_category_products
         @products = @category.products.lasts.page(select_page).per(8)
     end
-
-    def select_page
-        params[:page].nil? ? 1 : params[:page]
-    end
 end
