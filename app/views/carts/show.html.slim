@@ -1,5 +1,7 @@
+= javascript_pack_tag 'cart_box'
 .grid-x
     .cell.small-12.medium-10.medium-offset-1
+        = react_component('CartBox', cart_id: @cart.id)
         h2 Корзина
         .positions
             table
