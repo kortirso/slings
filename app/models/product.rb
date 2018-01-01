@@ -35,6 +35,13 @@ class Product < ApplicationRecord
         input.to_s.to_slug.normalize(transliterations: :russian).to_s
     end
 
+    def additional_price
+        category_name = category.name
+        return Config.sling_additional_price if category_name.include?('Эрго-рюкзаки')
+        return Config.mai_additional_price if category_name.include?('Май-слинги')
+        0
+    end
+
     def self.build(args)
         product = Product.new args[:params]
         File.open(Product.download_image(args[:image])) { |f| product.image = f }
