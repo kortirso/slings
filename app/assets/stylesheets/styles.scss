@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Neucha&subset=cyrillic');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600');
 
 @mixin scroll-bar {
     &::-webkit-scrollbar {
@@ -28,15 +27,12 @@
 }
 
 * {
-    font-family: 'Roboto', sans-serif !important;
+    font-family: 'Source Sans Pro', sans-serif !important;
     font-size: 18px;
     font-weight: 300;
 }
 
-h1, h2 {
-    text-transform: uppercase;
-    font-weight: 300;
-}
+
 
 html, body {
     padding: 0;
@@ -47,14 +43,44 @@ html, body {
 body {
     position: relative;
     @include scroll-bar;
+    background: #F4F2EC image-url('background.png');
     .button {
         padding: 12px 25px;
-        background: #e17a7b;
-        color: #FFF !important;
+        background: rgb(97, 179, 207);
+        color: #FFF;
         margin-bottom: 0;
         font-size: 18px;
         &:hover {
-            background: #ba6566;
+            background: #e17a7b;
+        }
+    }
+    h1, h2 {
+        text-transform: uppercase;
+        font-weight: 300;
+        color: #303030;
+        font-size: 36px;
+        text-align: center;
+        position: relative;
+        padding-bottom: 10px;
+        margin: 0 0 40px;
+        span {
+            &.big {
+                font-weight: 500;
+                font-size: 30px;
+            }
+            &.little {
+                font-size: 26px;
+            }
+        }
+        &:after {
+            position: absolute;
+            content: '';
+            background: #76BBFA;
+            width: 100px;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            margin-left: -50px;
         }
     }
 }
@@ -71,13 +97,12 @@ body {
     min-height: 100%;
     padding-bottom: 140px;
     padding-top: 80px;
-    background: #FDFDBF;
 }
 
 #header {
     height: 80px;
-    background: #FCC7BF;
-    padding-top: 15px;
+    background: #FFF;
+    padding-top: 12px;
     position: absolute;
     top: 0;
     left: 0;
@@ -98,7 +123,7 @@ body {
     }
     .head, .text {
         color: #282723;
-        font-size: 16px;
+        font-size: 18px;
     }
 }
 
@@ -112,7 +137,7 @@ body {
         max-width: 1000px;
         margin: 0 auto;
         a {
-            font-family: 'Neucha', sans-serif !important;
+            font-family: 'Source Sans Pro', sans-serif !important;
             color: #645f69;
             font-size: 18px;
             text-transform: uppercase;
@@ -129,7 +154,7 @@ body {
 
 #footer {
     width: 100%;
-    background: #fcc7bf;
+    background: #FFF;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -145,60 +170,6 @@ body {
         width: 25px;
         border-radius: 6px;
         margin-right: 4px;
-    }
-}
-
-h1, h2 {
-    color: #ef767d;
-    font-size: 30px;
-    text-align: center;
-    position: relative;
-    padding-bottom: 10px;
-    margin: 0 0 40px;
-    span {
-        &.big {
-            font-weight: 500;
-            font-size: 30px;
-        }
-        &.little {
-            font-size: 26px;
-        }
-    }
-    &:after {
-        position: absolute;
-        content: '';
-        background: #76BBFA;
-        width: 100px;
-        height: 2px;
-        bottom: 0;
-        left: 50%;
-        margin-left: -50px;
-    }
-}
-
-.advance_block {
-    .advance_image {
-        height: 100px;
-        text-align: center;
-        margin-bottom: 20px;
-        img {
-            max-height: 100%;
-        }
-    }
-    .advance_text {
-        h3 {
-            text-align: center;
-            font-size: 22px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            color: #282723;
-            text-transform: uppercase;
-        }
-        p {
-            text-align: center;
-            margin: 0;
-            font-size: 18px;
-        }
     }
 }
 
@@ -240,6 +211,9 @@ h1, h2 {
     color: #010101;
     z-index: 3;
     border-radius: 5px;
+    &:hover {
+        background: #ba6566;
+    }
 }
 
 .catalog_nav {
@@ -248,13 +222,13 @@ h1, h2 {
         margin-bottom: 2px;
         width: 100%;
         text-align: left;
-        background: #e17a7b;
+        background: rgb(97, 179, 207);
         font-size: 16px;
         &.active {
             background: #ba6566;
         }
         &:hover {
-            background: #ba6566;
+            background: #e17a7b;
         }
     }
 }

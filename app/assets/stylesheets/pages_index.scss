@@ -112,7 +112,7 @@
             p {
                 color: #282723;
                 text-align: center;
-                font-size: 16px;
+                font-size: 18px;
             }
         }
         .review_author {
@@ -131,7 +131,32 @@
             }
             .author_name {
                 color: #282723;
-                font-size: 14px;
+                font-size: 16px;
+            }
+        }
+    }
+    .advance_block {
+        .advance_image {
+            height: 100px;
+            text-align: center;
+            margin-bottom: 20px;
+            img {
+                max-height: 100%;
+            }
+        }
+        .advance_text {
+            h3 {
+                text-align: center;
+                font-size: 24px;
+                font-weight: 500;
+                margin-bottom: 20px;
+                color: #282723;
+                text-transform: uppercase;
+            }
+            p {
+                text-align: center;
+                margin: 0;
+                font-size: 20px;
             }
         }
     }
