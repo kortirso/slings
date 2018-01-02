@@ -306,21 +306,32 @@ table {
         }
     }
     tbody {
+        td {
+            padding: 8px 10px 10px;
+        }
         td:nth-of-type(1), td:nth-of-type(5) {
             text-align: center;
         }
     }
     .change_count {
         width: 110px;
+        position: relative;
         .count {
-            float: right;
-            width: 50px;
-            padding-top: 12px;
+            display: block;
+            text-align: center;
+            line-height: 1;
         }
-        .buttons {
-            float: right;
+        .count_button {
+            position: absolute;
+            top: 12px;
             form {
                 height: 23px;
+            }
+            &.button_down {
+                left: 0;
+            }
+            &.button_up {
+                right: 0;
             }
         }
     }
@@ -333,17 +344,20 @@ table {
         cursor: pointer;
     }
     .button_up {
-        background-image: image-url('button_up.png');
+        background: image-url('button_up.png');
         background-repeat: no-repeat;
+        background-size: 100%;
     }
     .button_down {
-        background-image: image-url('button_down.png');
+        background: image-url('button_down.png');
         background-repeat: no-repeat;
+        background-size: 100%;
     }
     .button_delete {
         margin-top: 3px;
-        background-image: image-url('button_delete.png');
+        background: image-url('button_delete.png');
         background-repeat: no-repeat;
+        background-size: 100%;
     }
     .amount {
         text-align: right;

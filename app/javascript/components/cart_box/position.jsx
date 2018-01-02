@@ -15,11 +15,15 @@ export default class Position extends React.Component {
         this.setState({positionFull: !this.state.positionFull});
     }
 
+    _changeCount(direction) {
+        this.setState({positionCount: this.state.positionCount + direction});
+    }
+
     // prerender functions
     _calcSumm(position) {
         let price = position.product.price;
         if(this.state.positionFull) price = price + position.product.additional_price;
-        return price * position.count;
+        return price * this.state.positionCount;
     }
 
     _fullOrder(position) {
@@ -33,6 +37,10 @@ export default class Position extends React.Component {
         }
     }
 
+    _prepareDownButton() {
+        if(this.state.positionCount != 1) return <a className='count_button button_down' onClick={this._changeCount.bind(this, -1)}></a>;
+    }
+
     // render
     render() {
         let position = this.state.position;
@@ -44,7 +52,9 @@ export default class Position extends React.Component {
                     {this._fullOrder(position)}
                 </td>
                 <td className='change_count'>
+                    {this._prepareDownButton()}
                     <span className='count' id={'count_' + position.id}>{this.state.positionCount}</span>
+                    <a className='count_button button_up' onClick={this._changeCount.bind(this, 1)}></a>
                 </td>
                 <td className='amount' id={'summ_' + position.id}>{this._calcSumm(position)}</td>
                 <td>
