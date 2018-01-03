@@ -1,5 +1,4 @@
+# Template for order verification service
 class OrderVerificationService
-    def initialize(args = {})
-
-    end
+    def initialize(_args = {}); end
 end

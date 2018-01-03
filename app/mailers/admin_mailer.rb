@@ -11,7 +11,7 @@ class AdminMailer < ApplicationMailer
         mail(to: ENV['ADMIN_EMAIL'], subject: 'Received Money at Yandex')
     end
 
-    def new_order_email(args= {})
+    def new_order_email(args = {})
         @order = args[:order]
         @delivery = args[:delivery]
         mail(to: ENV['ADMIN_EMAIL'], subject: 'New order is created at LilMonkey')

@@ -4,7 +4,7 @@ class Position < ApplicationRecord
     belongs_to :product
     belongs_to :order
 
-    validates :product_id, :count, :cart_id, presence: true
+    validates :product_id, :count, presence: true
     validates :count, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
     before_save :calc_summ
@@ -34,6 +34,6 @@ class Position < ApplicationRecord
 
     def calc_summ
         self.summ = count * product.price
-        self.summ += count * Config.first.price_full if full?
+        self.summ += count * Config.last.price_full if full?
     end
 end

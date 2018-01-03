@@ -1,10 +1,10 @@
-= javascript_pack_tag 'cart_box'
+/= javascript_pack_tag 'cart_box'
 .grid-x
     .cell.small-12.medium-10.medium-offset-1
-        = react_component('CartBox', cart_id: @cart.id)
+        /= react_component('CartBox', cart_id: @cart.id)
         h2 Корзина
         .positions
-            table
+            table.cart
                 thead
                     th Фото
                     th Название
@@ -17,14 +17,14 @@
                             td= image_tag position.product.image
                             td
                                 p= position.product.name
-                                .check_box
-                                    = label_tag "full_#{position.id}", 'Полная комплектация (+499 руб.)'
-                                    = link_to check_box_tag("full_#{position.id}", value = '1', checked = position.full?), full_path(position), remote: true, method: :post
+                                - unless position.product.additional_price.zero?
+                                    .check_box
+                                        = label_tag "full_#{position.id}", "Полная комплектация (+#{position.product.additional_price} руб.)"
+                                        = link_to check_box_tag("full_#{position.id}", value = '1', checked = position.full?), full_path(position), remote: true, method: :post
                             td.change_count
-                                .buttons
-                                    = button_to '', plus_path(position), class: 'button_up', remote: true
-                                    = button_to '', minus_path(position), class: 'button_down', remote: true
+                                = button_to '', minus_path(position), class: 'count_button button_down', remote: true
                                 span.count id="count_#{position.id}"= position.count
+                                = button_to '', plus_path(position), class: 'count_button button_up', remote: true
                             td.amount id="summ_#{position.id}"= position.summ
                             td= button_to '', position_path(position.id), class: 'button_delete', method: :delete, remote: true
             #total_summ

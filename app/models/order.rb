@@ -9,7 +9,7 @@ class Order < ApplicationRecord
 
     validates :cart_id, presence: true
 
-    before_create :update_summ
+    after_commit :update_summ, on: :create
 
     def update_summ
         self.summ = cart.summ

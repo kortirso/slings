@@ -240,26 +240,6 @@ body {
     }
 }
 
-table {
-    thead {
-        th {
-            font-weight: 500;
-        }
-    }
-    tbody {
-        tr {
-            td {
-                img {
-                    max-height: 50px;
-                }
-                p {
-                    margin: 0;
-                }
-            }
-        }
-    }
-}
-
 .check_box {
     position: relative;
     height: 30px;
@@ -290,77 +270,6 @@ table {
             top: auto;
             bottom: -30px;
         }
-    }
-}
-
-table {
-    thead {
-        th:nth-of-type(2) {
-            width: 400px;
-        }
-        th:nth-of-type(3) {
-            text-align: center;
-        }
-        th:nth-of-type(4) {
-            text-align: right;
-        }
-    }
-    tbody {
-        td {
-            padding: 8px 10px 10px;
-        }
-        td:nth-of-type(1), td:nth-of-type(5) {
-            text-align: center;
-        }
-    }
-    .change_count {
-        width: 110px;
-        position: relative;
-        .count {
-            display: block;
-            text-align: center;
-            line-height: 1;
-        }
-        .count_button {
-            position: absolute;
-            top: 12px;
-            form {
-                height: 23px;
-            }
-            &.button_down {
-                left: 0;
-            }
-            &.button_up {
-                right: 0;
-            }
-        }
-    }
-    .button_up, .button_down, .button_delete {
-        padding: 0;
-        width: 23px;
-        height: 23px;
-        border: none;
-        outline: 0;
-        cursor: pointer;
-    }
-    .button_up {
-        background: image-url('button_up.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-    }
-    .button_down {
-        background: image-url('button_down.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-    }
-    .button_delete {
-        margin-top: 3px;
-        background: image-url('button_delete.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-    }
-    .amount {
-        text-align: right;
     }
 }
 
