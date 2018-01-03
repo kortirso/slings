@@ -9,7 +9,7 @@ class MailerController < ApplicationController
     def verification
         # OrderVerificationService.new
         AdminMailer.yandex_money_email.deliver_now
-        render status: :ok
+        render json: {}, status: 200
     end
 
     private
