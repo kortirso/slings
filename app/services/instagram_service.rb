@@ -10,10 +10,10 @@ class InstagramService
     end
 
     def insta_photos
-        user_recent.collect { |elem| elem['images']['standard_resolution']['url'] }
+        user_recent.collect { |elem| { photo: elem['images']['standard_resolution']['url'], link: elem['link'] } }
     end
 
-    def user_recent
+    private def user_recent
         uri = URI("https://api.instagram.com/v1/users/self/media/recent/?access_token=#{access_token}&count=9")
         req = Net::HTTP::Get.new(uri)
         resp = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.request(req) }

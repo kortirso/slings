@@ -13,10 +13,8 @@ class Instagram < ApplicationRecord
         ]
     end
 
-    private
-
-    def create_photos
-        photos = InstagramService.new.insta_photos
-        photos.each { |photo| instaphotos.create image: photo }
+    private def create_photos
+        elements = InstagramService.new.insta_photos
+        elements.each { |elem| instaphotos.create(image: elem[:photo], link: elem[:link]) }
     end
 end

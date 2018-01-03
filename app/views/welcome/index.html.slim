@@ -63,9 +63,9 @@
             #instagram_box
                 .header
                     = image_tag 'icons/social-instagram.png'
-                    span @mom_monkey
+                    span= link_to '@mom_monkey', 'https://www.instagram.com/mom_monkey/', 'target' => '_blank'
                 - @insta_photos.each do |row|
                     .photo_row
                         - row.each do |photo|
-                            .img= image_tag photo.image
+                            .img= link_to image_tag(photo.image), photo.link, 'target' => '_blank'
 
