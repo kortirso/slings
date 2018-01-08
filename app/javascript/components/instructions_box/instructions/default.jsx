@@ -9,7 +9,6 @@ export default class Default extends React.Component {
         return (
             <div>
                 <h2>Страница инструкций</h2>
-                <p>На этой странице вы сможете изучить инструкции для наших слингов</p>
                 <div className='grid-x instructions'>
                     <div className='cell small-4'>
                         <div className='instr' onClick={this._setPage.bind(this, 1)}>
