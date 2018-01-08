@@ -50,6 +50,17 @@
             }
         }
     }
+    .article_block {
+        p {
+            &:nth-of-type(1) {
+                text-align: center;
+            }
+            &:nth-last-of-type(1) {
+                text-align: right;
+                margin-bottom: 0;
+            }
+        }
+    }
     #instagram_box {
         display: flex;
         flex-direction: column;

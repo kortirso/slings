@@ -4,8 +4,6 @@
 .block.about_block
     h1
         span.big Интернет-магазин LilMonkey
-        br /
-        span.little официальный представитель ТМ СлингУля
     p
         | Самые безопасные и качественные переноски для вашего малыша.
         br /
@@ -16,7 +14,7 @@
             - @categories.each do |category|
                 .slide
                     .img= image_tag category.image
-                    .text= category.caption
+                    .text= "#{category.name} - #{category.caption}"
         nav
             span.arrows.dg-prev
         nav
@@ -29,7 +27,7 @@
                 .article_block
                     p= link_to article.name, article, class: 'link'
                     p= article.caption.truncate(200)
-                    span= link_to 'читать далее...', article, class: 'link'
+                    p= link_to 'читать далее...', article, class: 'link'
 .block
     h2 Почему стоит выбрать именно нас?
     .grid-x
@@ -39,7 +37,7 @@
                     = image_tag 'icons/award.png'
                 .advance_text
                     h3 Качество
-                    p Вся наша продукция изготавливается только из натуральных тканей - льна и хлопка. И оснащена качественной, проверенной фурнитурой.
+                    p Вся наша продукция изготавливается только из натуральных тканей - льна и хлопка. Оснащена качественной, проверенной фурнитурой.
         .cell.small-12.medium-4
             .advance_block
                 .advance_image
