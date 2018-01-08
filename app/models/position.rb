@@ -34,6 +34,6 @@ class Position < ApplicationRecord
 
     def calc_summ
         self.summ = count * product.price
-        self.summ += count * Config.last.price_full if full?
+        self.summ += count * product.additional_price if full?
     end
 end
