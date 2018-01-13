@@ -1,9 +1,10 @@
 .review {
-    display: flex;
-    flex-direction: row;
     padding: 15px;
     background: #FFF;
+    min-height: 105px;
+    margin-bottom: 10px;
     .image_block {
+        float: left;
         width: 100px;
         img {
             border-radius: 50%;
