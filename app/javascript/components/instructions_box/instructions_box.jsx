@@ -20,9 +20,9 @@ export default class InstructionsBox extends React.Component {
         return (
             <div className='cell small-12 medium-3 large-2'>
                 <div className='catalog_nav'>
-                    <a className='button' onClick={this._changePage.bind(this, 1)}>Слинг-рюкзак</a>
-                    <a className='button' onClick={this._changePage.bind(this, 2)}>Май-слинг</a>
-                    <a className='button' onClick={this._changePage.bind(this, 3)}>Слинг-рюкзак для двойни</a>
+                    <a className='button' onClick={this._changePage.bind(this, 1)}>Инструкция к эрго-рюкзаку (слингу-рюкзаку)</a>
+                    <a className='button' onClick={this._changePage.bind(this, 2)}>Инструкция к май-слингу</a>
+                    <a className='button' onClick={this._changePage.bind(this, 3)}>Инструкция к слингу-рюкзаку для двойни</a>
                 </div>
             </div>
         );

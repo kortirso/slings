@@ -13,19 +13,19 @@ export default class Default extends React.Component {
                     <div className='cell small-4'>
                         <div className='instr' onClick={this._setPage.bind(this, 1)}>
                             <img src='/images/category_images/ergo-sling.jpg' alt='' />
-                            <p>Инструкция для слинг-рюкзака</p>
+                            <p>Инструкция к эрго-рюкзаку (слингу-рюкзаку)</p>
                         </div>
                     </div>
                     <div className='cell small-4'>
                         <div className='instr' onClick={this._setPage.bind(this, 2)}>
                             <img src='/images/category_images/mai-sling.jpg' alt='' />
-                            <p>Инструкция для май-рюкзака</p>
+                            <p>Инструкция к май-слингу</p>
                         </div>
                     </div>
                     <div className='cell small-4'>
                         <div className='instr' onClick={this._setPage.bind(this, 3)}>
                             <img src='/images/category_images/twins.jpg' alt='' />
-                            <p>Инструкция для слинг-рюкзака для двойни</p>
+                            <p>Инструкция к слингу-рюкзаку для двойни</p>
                         </div>
                     </div>
                 </div>
