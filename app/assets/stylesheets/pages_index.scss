@@ -1,4 +1,132 @@
 .page_index {
+    .slider {
+        height: auto;
+        background: none;
+        margin: 0 0 50px;
+        .orbit {
+            &:hover {
+                cursor: default;
+            }
+            .orbit-previous, .orbit-next {
+                color: rgb(97, 179, 207);
+                background: rgba(97, 179, 207, 0.5);
+                &:hover {
+                    background: rgba(97, 179, 207, 0.75);
+                    cursor: pointer;
+                }
+            }
+            .orbit-container {
+                .orbit-slide {
+                    .orbit-figure {
+                        &.first-slide {
+                            position: relative;
+                            ul {
+                                position: absolute;
+                                top: 0;
+                                left: 310px;
+                                list-style: none;
+                                margin: 0;
+                                height: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                padding-top: 140px;
+                                @media (min-width: 1400px) and (max-width: 1700px) {
+                                    left: 250px;
+                                }
+                                @media (min-width: 1000px) and (max-width: 1399px) {
+                                    left: 200px;
+                                    padding-top: 100px;
+                                }
+                                @media (max-width: 999px) {
+                                    left: 80px;
+                                    padding-top: 80px;
+                                }
+                                li {
+                                    text-transform: uppercase;
+                                    font-weight: 600;
+                                    font-size: 40px;
+                                    color: #474c45;
+                                    padding: 15px 0 5px 60px;
+                                    background: image-url('slider/list_marker.png') no-repeat;
+                                    background-size: auto 100%;
+                                    @media (min-width: 1400px) and (max-width: 1700px) {
+                                        font-size: 30px;
+                                    }
+                                    @media (min-width: 1000px) and (max-width: 1399px) {
+                                        font-size: 24px;
+                                    }
+                                    @media (max-width: 999px) {
+                                        font-size: 20px;
+                                        padding: 0 0 0 30px;
+                                    }
+                                }
+                            }
+                        }
+                        &.second-slide {
+                            position: relative;
+                            .inside {
+                                position: absolute;
+                                bottom: 45px;
+                                left: 0;
+                                width: 100%;
+                                padding-left: 30px;
+                                .spans {
+                                    width: 81.25%;
+                                    margin: 0 auto;
+                                    display: flex;
+                                    flex-direction: row;
+                                    span {
+                                        display: inline-block;
+                                        width: 480px;
+                                        margin-right: 60px;
+                                        text-align: center;
+                                        font-size: 34px;
+                                        font-weight: 600;
+                                        color: #474c45;
+                                        padding-left: 20px;
+                                        &:nth-of-type(3) {
+                                            margin-right: 0;
+                                        }
+                                    }
+                                }
+                            }
+                            @media (min-width: 1400px) and (max-width: 1700px) {
+                                .inside {
+                                    bottom: 28px;
+                                    .spans {
+                                        span {
+                                            font-size: 30px;
+                                        }
+                                    }
+                                }
+                            }
+                            @media (min-width: 1000px) and (max-width: 1399px) {
+                                .inside {
+                                    bottom: 20px;
+                                    .spans {
+                                        span {
+                                            font-size: 24px;
+                                        }
+                                    }
+                                }
+                            }
+                            @media (max-width: 999px) {
+                                .inside {
+                                    bottom: 20px;
+                                    .spans {
+                                        span {
+                                            font-size: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .about_block {
         position: relative;
         p {

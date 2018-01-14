@@ -1,19 +1,20 @@
 - provide(:category, @product.category.friendly_id)
 - provide(:path, 'catalog')
-.grid-x
-    = render 'shared/categories_nav'
-    .cell.small-12.medium-9.large-10
-        h2= @product.name
-        .grid-x
-            .cell.small-12.medium-4
-                .product_block.block
-                    .image_block
-                        - if @product.image.to_s.empty?
-                            = image_tag '/images/product.jpg'
-                        - else
-                            = image_tag @product.image
-            .cell.small-12.medium-8
-                - @product.caption.try(:each_line) do |line|
-                    p= line
-                p= "Цена - #{@product.price} руб."
-                p= button_to 'Купить', positions_path(product_id: @product.id), class: 'button price_button', remote: true
+.grid-container
+    .grid-x
+        = render 'shared/categories_nav'
+        .cell.small-12.medium-9.large-10
+            h2= @product.name
+            .grid-x
+                .cell.small-12.medium-4
+                    .product_block.block
+                        .image_block
+                            - if @product.image.to_s.empty?
+                                = image_tag '/images/product.jpg'
+                            - else
+                                = image_tag @product.image
+                .cell.small-12.medium-8
+                    - @product.caption.try(:each_line) do |line|
+                        p= line
+                    p= "Цена - #{@product.price} руб."
+                    p= button_to 'Купить', positions_path(product_id: @product.id), class: 'button price_button', remote: true

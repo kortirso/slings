@@ -1,7 +1,8 @@
 - provide(:path, 'articles')
-.grid-x
-    .cell.small-10.small-offset-1
-        h2= @article.name
-        - @article.caption.lines do |line|
-            - unless line.blank?
-                p= line
+.grid-container
+    .grid-x
+        .cell.small-10.small-offset-1
+            h2= @article.name
+            - @article.caption.lines do |line|
+                - unless line.blank?
+                    p= line

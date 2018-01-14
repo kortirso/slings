@@ -17,5 +17,4 @@
 
 $(function(){
     $(document).foundation();
-    $('#dg-container').gallery();
 });

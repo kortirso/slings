@@ -1,0 +1,39 @@
+.slider
+    .orbit aria-label=('Покупайте слинги') data-orbit='' role='region'
+        .orbit-wrapper
+            .orbit-controls
+                button.orbit-previous
+                    span.show-for-sr> Previous Slide
+                    | ◀︎
+                button.orbit-next
+                    span.show-for-sr> Next Slide
+                    | ▶︎
+            ul.orbit-container
+                li.is-active.orbit-slide
+                    figure.orbit-figure.first-slide
+                        = image_tag 'slider/1.jpg', alt: 'В слинге удобно путешествовать', class: 'orbit-image'
+                        ul
+                            li Легко ездить в метро
+                            li Нет проблем с эскалаторами
+                            li У вас свободны руки
+                            li Меньше багажа
+                            li Малыш всегда рядом и спокоен
+                li.orbit-slide
+                    figure.orbit-figure.second-slide
+                        = image_tag 'slider/2.jpg', alt: 'Наши слинги самые уютные', class: 'orbit-image'
+                        .inside
+                            .spans
+                                span с рождения
+                                span с 4 месяцев и 7 кг
+                                span с 4 месяцев и 7 кг
+                li.orbit-slide
+                    figure.orbit-figure
+                        = image_tag 'slider/3.jpg', alt: 'Освободи руки для домашних дел', class: 'orbit-image'
+        nav.orbit-bullets
+            button.is-active data-slide='0'
+                span.show-for-sr First slide details.
+                span.show-for-sr Current Slide
+            button data-slide='1'
+                span.show-for-sr Second slide details.
+            button data-slide='2'
+                span.show-for-sr Third slide details.

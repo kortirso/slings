@@ -1,51 +1,52 @@
 /= javascript_pack_tag 'cart_box'
-.grid-x
-    .cell.small-12.medium-10.medium-offset-1
-        /= react_component('CartBox', cart_id: @cart.id)
-        h2 Корзина
-        .positions
-            table.cart
-                thead
-                    th Фото
-                    th Название
-                    th Количество
-                    th Цена (руб.)
-                    th
-                tbody
-                    - @cart.positions.includes(:product).order(id: :asc).each do |position|
-                        tr id="position_#{position.id}"
-                            td= image_tag position.product.image
-                            td
-                                p= position.product.name
-                                - unless position.product.additional_price.zero?
-                                    .check_box
-                                        = label_tag "full_#{position.id}", "Полная комплектация (+#{position.product.additional_price} руб.)"
-                                        = link_to check_box_tag("full_#{position.id}", value = '1', checked = position.full?), full_path(position), remote: true, method: :post
-                            td.change_count
-                                = button_to '', minus_path(position), class: 'count_button button_down', remote: true
-                                span.count id="count_#{position.id}"= position.count
-                                = button_to '', plus_path(position), class: 'count_button button_up', remote: true
-                            td.amount id="summ_#{position.id}"= position.summ
-                            td= button_to '', position_path(position.id), class: 'button_delete', method: :delete, remote: true
-            #total_summ
-                = 'Итоговая сумма - '
-                span#amount= @cart.summ
-                = ' руб.'
-            p После оформления и оплаты заказа мы отправляем заявку на пошив, через 5 - 10 дней (в зависимости от загруженности) заказ будет доставлен по месту назначения.
-        - unless @cart.summ.zero?
-            .delivery_options
-                h2 Доставка
-                = form_tag({ controller: 'orders', action: 'create' }, method: 'post') do
-                    #= hidden_field_tag :cart_id, @cart.id
-                    - if Delivery.option_for_wait?
-                        .check_box.to_wait
-                            p 25 числа каждого месяца происходит совместная заказ слингов, что позволяет снизить стоимость заказа.
-                            = label_tag 'wait', 'Готовы ли вы оформить заказ от 25 числа и получить скидку 5% на товары'
-                            = check_box_tag :wait
-                    = select_tag :delivery_form, options_for_select([['Самовывоз из г. Липецк', 'Самовывоз'], ['Доставка Почтой России (+300 руб.)', 'Доставка Почтой России'], ['Доставка Транспортной Компанией (+500 руб.)', 'Доставка Транспортной Компанией']], 'Самовывоз'), prompt: false
-                    = text_field_tag :owner_name, nil, placeholder: 'ФИО получателя'
-                    = text_field_tag :phone, nil, placeholder: 'Телефон'
-                    .delivery_data
-                        = text_area_tag :passport, nil, rows: 3, cols: 25, placeholder: "Паспортные данные для получения посылки\nНеобходимы: серия и номер паспорта, кем и когда выдан"
-                        = text_area_tag :address, nil, rows: 3, cols: 25, placeholder: "Адрес доставки"
-                    = submit_tag 'Оформить заказ', class: 'button price_button'
+.grid-container
+    .grid-x
+        .cell.small-12.medium-10.medium-offset-1
+            /= react_component('CartBox', cart_id: @cart.id)
+            h2 Корзина
+            .positions
+                table.cart
+                    thead
+                        th Фото
+                        th Название
+                        th Количество
+                        th Цена (руб.)
+                        th
+                    tbody
+                        - @cart.positions.includes(:product).order(id: :asc).each do |position|
+                            tr id="position_#{position.id}"
+                                td= image_tag position.product.image
+                                td
+                                    p= position.product.name
+                                    - unless position.product.additional_price.zero?
+                                        .check_box
+                                            = label_tag "full_#{position.id}", "Полная комплектация (+#{position.product.additional_price} руб.)"
+                                            = link_to check_box_tag("full_#{position.id}", value = '1', checked = position.full?), full_path(position), remote: true, method: :post
+                                td.change_count
+                                    = button_to '', minus_path(position), class: 'count_button button_down', remote: true
+                                    span.count id="count_#{position.id}"= position.count
+                                    = button_to '', plus_path(position), class: 'count_button button_up', remote: true
+                                td.amount id="summ_#{position.id}"= position.summ
+                                td= button_to '', position_path(position.id), class: 'button_delete', method: :delete, remote: true
+                #total_summ
+                    = 'Итоговая сумма - '
+                    span#amount= @cart.summ
+                    = ' руб.'
+                p После оформления и оплаты заказа мы отправляем заявку на пошив, через 5 - 10 дней (в зависимости от загруженности) заказ будет доставлен по месту назначения.
+            - unless @cart.summ.zero?
+                .delivery_options
+                    h2 Доставка
+                    = form_tag({ controller: 'orders', action: 'create' }, method: 'post') do
+                        #= hidden_field_tag :cart_id, @cart.id
+                        - if Delivery.option_for_wait?
+                            .check_box.to_wait
+                                p 25 числа каждого месяца происходит совместная заказ слингов, что позволяет снизить стоимость заказа.
+                                = label_tag 'wait', 'Готовы ли вы оформить заказ от 25 числа и получить скидку 5% на товары'
+                                = check_box_tag :wait
+                        = select_tag :delivery_form, options_for_select([['Самовывоз из г. Липецк', 'Самовывоз'], ['Доставка Почтой России (+300 руб.)', 'Доставка Почтой России'], ['Доставка Транспортной Компанией (+500 руб.)', 'Доставка Транспортной Компанией']], 'Самовывоз'), prompt: false
+                        = text_field_tag :owner_name, nil, placeholder: 'ФИО получателя'
+                        = text_field_tag :phone, nil, placeholder: 'Телефон'
+                        .delivery_data
+                            = text_area_tag :passport, nil, rows: 3, cols: 25, placeholder: "Паспортные данные для получения посылки\nНеобходимы: серия и номер паспорта, кем и когда выдан"
+                            = text_area_tag :address, nil, rows: 3, cols: 25, placeholder: "Адрес доставки"
+                        = submit_tag 'Оформить заказ', class: 'button price_button'

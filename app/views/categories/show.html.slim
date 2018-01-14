@@ -1,7 +1,8 @@
 - provide(:category, @category.friendly_id)
 - provide(:path, 'catalog')
 = javascript_pack_tag 'products_box'
-.grid-x
-    = render 'shared/categories_nav'
-    .cell.small-12.medium-9.large-10
-        = react_component('ProductsBox', category: @category)
+.grid-container
+    .grid-x
+        = render 'shared/categories_nav'
+        .cell.small-12.medium-9.large-10
+            = react_component('ProductsBox', category: @category)

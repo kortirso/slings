@@ -30,6 +30,9 @@
     font-family: 'Source Sans Pro', sans-serif !important;
     font-size: 18px;
     font-weight: 300;
+    &:focus {
+        outline: none;
+    }
 }
 
 

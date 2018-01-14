@@ -1,6 +1,7 @@
 - provide(:path, 'articles')
-.grid-x
-    .cell.small-10.small-offset-1
-        h2 Статьи
-        - @articles.each do |article|
-            p= link_to article.name, article_path(article), class: 'link'
+.grid-container
+    .grid-x
+        .cell.small-10.small-offset-1
+            h2 Статьи
+            - @articles.each do |article|
+                p= link_to article.name, article_path(article), class: 'link'
