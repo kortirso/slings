@@ -8,10 +8,10 @@
                 cursor: default;
             }
             .orbit-previous, .orbit-next {
-                color: rgb(97, 179, 207);
-                background: rgba(97, 179, 207, 0.5);
+                color: #FFF;
+                background: none;
                 &:hover {
-                    background: rgba(97, 179, 207, 0.75);
+                    background: none;
                     cursor: pointer;
                 }
             }
