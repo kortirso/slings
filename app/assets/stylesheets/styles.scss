@@ -20,6 +20,9 @@
     overflow: hidden;
     .grid-x {
         margin: 0 -15px;
+        @media (max-width: 640px) {
+            margin: 0;
+        }
         .cell {
             padding: 0 15px;
         }
