@@ -35,7 +35,7 @@ export default class ReviewsBox extends React.Component {
     render() {
         return (
             <div className='grid-x'>
-                <div className='cell small-10 small-offset-1'>
+                <div className='cell small-12 medium-10 medium-offset-1'>
                     <h2>Отзывы</h2>
                     {this._prepareProductsList()}
                 </div>
