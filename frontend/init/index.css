@@ -1,0 +1,91 @@
+@import "normalize.css/normalize.css";
+@import "foundation-sites/dist/css/foundation.css";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600");
+
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 300;
+  background: #f4f2ec;
+
+  .button {
+    padding: 12px 25px;
+    background: rgb(97, 179, 207);
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 18px;
+
+    &:hover {
+      background: #e17a7b;
+    }
+  }
+
+  h1,
+  h2 {
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #303030;
+    font-size: 36px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    margin: 0 0 40px;
+
+    span {
+      &.big {
+        font-weight: 500;
+        font-size: 30px;
+      }
+
+      &.little {
+        font-size: 26px;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      background: #76bbfa;
+      width: 100px;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      margin-left: -50px;
+    }
+  }
+
+  .block {
+    margin-bottom: 100px;
+
+    h2 {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+* {
+  font-family: "Source Sans Pro", sans-serif !important;
+  font-size: 18px;
+  font-weight: 300;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.grid-container {
+  overflow: hidden;
+
+  .grid-x {
+    margin: 0 -15px;
+
+    @media (max-width: 640px) {
+      margin: 0;
+    }
+
+    .cell {
+      padding: 0 15px;
+    }
+  }
+}

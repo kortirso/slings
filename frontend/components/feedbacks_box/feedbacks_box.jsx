@@ -1,5 +1,7 @@
 import React from 'react';
 import Feedback from 'components/feedbacks_box/feedback';
+import "foundation-sites";
+const $ = require("jquery");
 
 export default class FeedbacksBox extends React.Component {
 

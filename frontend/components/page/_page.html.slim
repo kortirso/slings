@@ -1,0 +1,7 @@
+/= render 'shared/header'
+.content class=yield(:body)
+  /= render 'shared/navigation'
+  = yield
+  /= render 'shared/footer'
+/= render 'shared/cart'
+/= render 'shared/metrics' if Rails.env.production?
