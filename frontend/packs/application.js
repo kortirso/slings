@@ -16,3 +16,4 @@ import "components/category/category";
 import "components/reviews/reviews";
 import "components/instructions/instructions";
 import "components/articles/articles";
+import "components/article/article";
