@@ -17,3 +17,4 @@ import "components/reviews/reviews";
 import "components/instructions/instructions";
 import "components/articles/articles";
 import "components/article/article";
+import "components/product/product";
