@@ -12,3 +12,4 @@ import "components/welcome/welcome";
 import "components/feedback/feedback";
 import "components/categories/categories";
 import "components/categories_nav/categories_nav";
+import "components/category/category";

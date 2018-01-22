@@ -16,4 +16,8 @@
       background: #e17a7b;
     }
   }
+
+  @media screen and (max-width: 639px) {
+    margin-top: 0;
+  }
 }
