@@ -12,9 +12,7 @@ class CategoriesController < ApplicationController
         render_page
     end
 
-    private
-
-    def render_page
+    private def render_page
         respond_to do |format|
             format.html do
                 render action_name
@@ -28,15 +26,15 @@ class CategoriesController < ApplicationController
         end
     end
 
-    def find_category
+    private def find_category
         @category = Category.friendly.find(params[:id])
     end
 
-    def find_novelty_products
+    private def find_novelty_products
         @products = Product.lasts.page(select_page).per(8)
     end
 
-    def find_category_products
+    private def find_category_products
         @products = @category.products.lasts.page(select_page).per(8)
     end
 end

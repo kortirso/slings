@@ -4,6 +4,7 @@ class PositionsController < ApplicationController
 
     def create
         @cart.add_product(params[:product_id])
+        render json: @cart.positions.sum(:count), status: 200
     end
 
     def destroy
@@ -22,9 +23,7 @@ class PositionsController < ApplicationController
         @position.change_fullness
     end
 
-    private
-
-    def find_position
+    private def find_position
         @position = @cart.positions.find_by(id: params[:id])
         nil if @position.nil?
     end

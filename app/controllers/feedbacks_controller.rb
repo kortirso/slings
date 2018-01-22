@@ -12,9 +12,7 @@ class FeedbacksController < ApplicationController
         redirect_to feedback_path
     end
 
-    private
-
-    def feedback_params
+    private def feedback_params
         params.require(:feedback).permit(:name, :body, :image)
     end
 end

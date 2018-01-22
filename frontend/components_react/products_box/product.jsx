@@ -1,5 +1,6 @@
 import React from 'react';
 import defaultImage from 'images/product.jpg';
+const $ = require("jquery");
 
 export default class Product extends React.Component {
     _prepareImage(product) {
@@ -7,6 +8,18 @@ export default class Product extends React.Component {
         return <img src={defaultImage} alt='empty image' className='empty' />;
     }
 
+    // api calls
+    _addProduct(product) {
+        $.ajax({
+            method: 'POST',
+            url: `/positions?product_id=${product.id}.json`,
+            success: (data) => {
+                $('#cart_amount').text(data);
+            }
+        });
+    }
+
+    // renders
     render() {
         let product = this.props.product;
         return (
@@ -23,11 +36,9 @@ export default class Product extends React.Component {
                             <div className='sling_price'>
                                 {product.price + ' руб.'}
                             </div>
-                            <form className='button_to' method='post' action={'/positions?product_id=' + product.id} data-remote='true'>
-                                <input className='button' value='Купить' type='submit' />
-                            </form>
                         </div>
                     </a>
+                    <button className='button' onClick={this._addProduct.bind(this, product)}>Купить</button>
                 </div>
             </div>
         );

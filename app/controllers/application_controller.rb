@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
     include ProductsCart
 
-    before_action :set_products_cart
+    before_action :set_products_cart, unless: :format_json?
 
     rescue_from ActionController::RoutingError, with: :render_not_found
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
@@ -13,17 +13,19 @@ class ApplicationController < ActionController::Base
         raise ActionController::RoutingError.new(params[:path]), 'route error'
     end
 
-    private
-
-    def categories_list
+    private def categories_list
         @categories = Category.category_order
     end
 
-    def render_not_found
+    private def render_not_found
         render template: 'shared/404', status: 404
     end
 
-    def select_page
+    private def select_page
         params[:page].nil? ? 1 : params[:page]
+    end
+
+    private def format_json?
+        request.format.json?
     end
 end

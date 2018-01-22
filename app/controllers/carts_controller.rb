@@ -16,13 +16,11 @@ class CartsController < ApplicationController
         end
     end
 
-    private
-
-    def check_cart
+    private def check_cart
         render_not_found if params[:id].to_i != session[:cart_id]
     end
 
-    def find_positions
+    private def find_positions
         @positions = @cart.positions.includes(:product).order(id: :asc)
     end
 end

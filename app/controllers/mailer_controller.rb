@@ -12,13 +12,11 @@ class MailerController < ApplicationController
         render json: {}, status: 200
     end
 
-    private
-
-    def mail_params
+    private def mail_params
         params.permit(:author, :contact, :body)
     end
 
-    def correct_mail_params?
+    private def correct_mail_params?
         return false if mail_params[:body].empty?
         true
     end
