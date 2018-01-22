@@ -15,3 +15,4 @@ import "components/categories_nav/categories_nav";
 import "components/category/category";
 import "components/reviews/reviews";
 import "components/instructions/instructions";
+import "components/articles/articles";
