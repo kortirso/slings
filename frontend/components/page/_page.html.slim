@@ -1,6 +1,6 @@
 = render 'components/header/header'
-.content class=yield(:body)
-  = render 'components/navigation/navigation'
+.content
+  = render 'components/navigation/navigation', path: path
   = yield
   = render 'components/footer/footer'
 = render 'components/cart_preview/cart_preview'

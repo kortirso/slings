@@ -1,0 +1,8 @@
+form {
+  margin-bottom: 50px;
+
+  textarea {
+    height: 150px;
+    resize: none;
+  }
+}
