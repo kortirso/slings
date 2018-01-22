@@ -1,5 +1,5 @@
 import React from 'react';
-import Position from 'components/cart_box/position';
+import Position from 'components_react/cart_box/position';
 
 export default class CartBox extends React.Component {
     constructor(props) {

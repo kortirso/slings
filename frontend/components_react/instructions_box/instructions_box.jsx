@@ -1,8 +1,8 @@
 import React from 'react';
-import Default from 'components/instructions_box/instructions/default';
-import Instruction_1 from 'components/instructions_box/instructions/1';
-import Instruction_2 from 'components/instructions_box/instructions/2';
-import Instruction_3 from 'components/instructions_box/instructions/3';
+import Default from 'components_react/instructions_box/instructions/default';
+import Instruction_1 from 'components_react/instructions_box/instructions/1';
+import Instruction_2 from 'components_react/instructions_box/instructions/2';
+import Instruction_3 from 'components_react/instructions_box/instructions/3';
 
 export default class InstructionsBox extends React.Component {
     constructor() {

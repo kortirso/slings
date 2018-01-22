@@ -1,5 +1,5 @@
 import React from 'react';
-import Review from 'components/reviews_box/review';
+import Review from 'components_react/reviews_box/review';
 
 export default class ReviewsBox extends React.Component {
     constructor() {

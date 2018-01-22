@@ -1,13 +1,12 @@
 import React from 'react';
-import Product from 'components/products_box/product';
+import Product from 'components_react/products_box/product';
 
-export default class ProductsBox extends React.Component {
+export default class NoveltyBox extends React.Component {
 
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
-            categorySlug: props.category.slug,
-            categoryName: props.category.name,
+            categoryName: 'Новинки',
             productsList: [],
             nextPage: 1
         }
@@ -20,7 +19,7 @@ export default class ProductsBox extends React.Component {
     _fetchProductsList() {
         $.ajax({
             method: 'GET',
-            url: `${this.state.categorySlug}.json?page=${this.state.nextPage}`,
+            url: `categories.json?page=${this.state.nextPage}`,
             success: (data) => {
                 this.setState({productsList: this.state.productsList.concat(data.products), nextPage: data.next_page});
             }

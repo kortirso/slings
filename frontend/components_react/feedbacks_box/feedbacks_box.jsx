@@ -1,5 +1,5 @@
 import React from 'react';
-import Feedback from 'components/feedbacks_box/feedback';
+import Feedback from 'components_react/feedbacks_box/feedback';
 import "foundation-sites";
 const $ = require("jquery");
 

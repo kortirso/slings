@@ -1,4 +1,4 @@
-import InstructionsBox from 'components/instructions_box/instructions_box';
+import InstructionsBox from 'components_react/instructions_box/instructions_box';
 import WebpackerReact from 'webpacker-react';
 
 WebpackerReact.setup({InstructionsBox});
