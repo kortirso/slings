@@ -1,4 +1,2 @@
-- provide(:path, 'instr')
-= javascript_pack_tag 'instructions_box'
-.grid-container
-    = react_component('InstructionsBox')
+= render 'components/page/page', path: :instr do
+    = render 'components/instructions/instructions'
