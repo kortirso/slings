@@ -1,6 +1,6 @@
-/= render 'shared/header'
+= render 'components/header/header'
 .content class=yield(:body)
-  /= render 'shared/navigation'
+  = render 'components/navigation/navigation'
   = yield
   /= render 'shared/footer'
 /= render 'shared/cart'

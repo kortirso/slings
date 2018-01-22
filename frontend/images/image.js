@@ -1,4 +1,5 @@
 import "./background.png";
+import "./logo.png";
 
 import "./icons/award.png";
 import "./icons/handshake.png";

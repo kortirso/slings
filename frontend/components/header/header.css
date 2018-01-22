@@ -1,0 +1,32 @@
+#header {
+  height: 80px;
+  background: #fff;
+  padding-top: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+
+  #logo {
+    position: absolute;
+    left: 50px;
+    top: 0;
+    height: 87px;
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  p {
+    margin: 0;
+    text-align: center;
+  }
+
+  .head,
+  .text {
+    color: #282723;
+    font-size: 18px;
+  }
+}
