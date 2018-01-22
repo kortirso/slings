@@ -1,0 +1,103 @@
+table.cart {
+  thead {
+    th {
+      font-weight: 500;
+    }
+
+    th:nth-of-type(2) {
+      width: 400px;
+    }
+
+    th:nth-of-type(3) {
+      text-align: center;
+    }
+
+    th:nth-of-type(4) {
+      text-align: right;
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        padding: 8px 10px 10px;
+
+        img {
+          max-height: 50px;
+        }
+
+        p {
+          margin: 0;
+        }
+
+        &:nth-of-type(1),
+        &:nth-of-type(5) {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .change_count {
+    width: 110px;
+    position: relative;
+
+    .count {
+      display: block;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .count_button {
+      position: absolute;
+      margin-top: -12px;
+      top: 50%;
+
+      form {
+        height: 23px;
+      }
+
+      &.button_down {
+        left: 0;
+      }
+
+      &.button_up {
+        right: 0;
+      }
+    }
+  }
+
+  .button_up,
+  .button_down,
+  .button_delete {
+    padding: 0;
+    width: 23px;
+    height: 23px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+  }
+
+  .button_up {
+    background: url("../../images/icons/button_up.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .button_down {
+    background: url("../../images/icons/button_down.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .button_delete {
+    margin-top: 8px;
+    background: url("../../images/icons/button_delete.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .amount {
+    text-align: right;
+  }
+}

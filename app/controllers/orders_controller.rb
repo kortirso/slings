@@ -14,17 +14,15 @@ class OrdersController < ApplicationController
         end
     end
 
-    private
-
-    def find_order
+    private  def find_order
         @order = Order.find(params[:id])
     end
 
-    def check_owner
+    private def check_owner
         render_not_found if @order.cart_id != @cart.id
     end
 
-    def delivery_params
+    private def delivery_params
         params.permit(:wait, :delivery_form, :owner_name, :phone, :passport, :address)
     end
 end

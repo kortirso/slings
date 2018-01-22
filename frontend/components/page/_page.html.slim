@@ -1,0 +1,7 @@
+= render 'components/header/header'
+.content
+  = render 'components/navigation/navigation', path: path
+  = yield
+  = render 'components/footer/footer'
+= render 'components/cart_preview/cart_preview'
+= render 'components/metrics/metrics' if Rails.env.production?

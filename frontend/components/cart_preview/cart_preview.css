@@ -1,0 +1,14 @@
+#cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px 15px;
+  background: #ef767d;
+  color: #010101;
+  z-index: 3;
+  border-radius: 5px;
+
+  &:hover {
+    background: #ba6566;
+  }
+}

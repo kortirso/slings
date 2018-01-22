@@ -1,4 +1,2 @@
-- provide(:path, 'reviews')
-= javascript_pack_tag 'reviews_box'
-.grid-container
-    = react_component('ReviewsBox')
+= render 'components/page/page', path: :reviews do
+    = render 'components/reviews/reviews'

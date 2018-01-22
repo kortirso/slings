@@ -1,0 +1,7 @@
+.product_block {
+  padding: 10px;
+
+  .image_block {
+    text-align: center;
+  }
+}

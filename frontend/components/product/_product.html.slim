@@ -1,0 +1,6 @@
+= javascript_pack_tag 'product_box'
+.grid-container
+  .grid-x
+    = yield
+    .cell.small-12.medium-9.large-10
+      = react_component('ProductBox', product_id: @product.slug)

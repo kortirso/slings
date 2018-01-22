@@ -1,0 +1,8 @@
+.menu-centered
+  ul.menu
+    li= link_to 'Главная', root_path, class: "#{'active' if path == :root }"
+    li= link_to 'Каталог', categories_path, class: "#{'active' if path == :catalog }"
+    li= link_to 'Инструкции', instructions_path, class: "#{'active' if path == :instr }"
+    li= link_to 'Статьи', articles_path, class: "#{'active' if path == :articles }"
+    li= link_to 'Отзывы', reviews_path, class: "#{'active' if path == :reviews }"
+    li= link_to 'Обратная связь', feedback_path, class: "#{'active' if path == :feedback }"

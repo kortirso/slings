@@ -1,5 +1,5 @@
 doctype html
-html
+html lang='en'
     head
         title Интернет-магазин LilMonkey
         meta charset='utf-8'
@@ -8,14 +8,8 @@ html
         meta name='Description' content='Эрго-рюкзаки, слинги с рождения и до 2х лет. Индивидуальный дизайн. Бесплатные консультации. Доставка по всей России. Акции и скидки!'
         meta name='yandex-verification' content='6aa59733fd0a7c21'
         meta name='google-site-verification' content='NjZUu2RcXEv6iiUJeEEntu5hCTNeULkRr4Tr6iAn2sc'
-        = stylesheet_link_tag 'application', media: 'all'
-        = javascript_include_tag 'application'
+        = stylesheet_pack_tag 'application', media: 'all'
         = csrf_meta_tags
-    body class=yield(:body)
-        = render 'shared/header'
-        .content
-            = render 'shared/navigation'
-            == yield
-            = render 'shared/footer'
-        = render 'shared/cart'
-        = render 'shared/metrics' if Rails.env.production?
+    body
+        = yield
+        = javascript_pack_tag 'application'

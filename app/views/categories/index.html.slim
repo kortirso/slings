@@ -1,7 +1,3 @@
-- provide(:path, 'catalog')
-= javascript_pack_tag 'novelty_box'
-.grid-container
-    .grid-x
-        = render 'shared/categories_nav'
-        .cell.small-12.medium-9.large-10
-            = react_component('NoveltyBox')
+= render 'components/page/page', path: :catalog do
+    = render 'components/categories/categories' do
+        = render 'components/categories_nav/categories_nav', categories: @categories, active_category: ''

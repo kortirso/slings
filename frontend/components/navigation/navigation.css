@@ -1,0 +1,38 @@
+.menu-centered {
+  padding-top: 20px;
+  margin-bottom: 50px;
+
+  .menu {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px 0 #76bbfa;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    a {
+      font-family: "Source Sans Pro", sans-serif !important;
+      color: #645f69;
+      font-size: 18px;
+      text-transform: uppercase;
+      padding: 16px 25px 14px;
+
+      &:hover {
+        color: #909090;
+      }
+
+      &.active {
+        color: #76bbfa;
+      }
+    }
+
+    li {
+      @media screen and (max-width: 700px) {
+        display: list-item;
+
+        a {
+          padding: 10px 25px;
+        }
+      }
+    }
+  }
+}
