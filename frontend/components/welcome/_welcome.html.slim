@@ -14,7 +14,7 @@
                     ul.orbit-container
                         li.is-active.orbit-slide
                             figure.orbit-figure.first-slide
-                                = image_tag 'slider/1.jpg', alt: 'В слинге удобно путешествовать', class: 'orbit-image'
+                                = image_tag asset_pack_path('images/slider/1.jpg'), alt: 'В слинге удобно путешествовать', class: 'orbit-image'
                                 ul
                                     li Легко ездить в метро
                                     li Нет проблем с эскалаторами
@@ -23,7 +23,7 @@
                                     li Малыш всегда рядом и спокоен
                         li.orbit-slide
                             figure.orbit-figure.second-slide
-                                = image_tag 'slider/2.jpg', alt: 'Наши слинги самые уютные', class: 'orbit-image'
+                                = image_tag asset_pack_path('images/slider/2.jpg'), alt: 'Наши слинги самые уютные', class: 'orbit-image'
                                 .inside
                                     .spans
                                         span с рождения
@@ -31,7 +31,7 @@
                                         span с 4 месяцев и 7 кг
                         li.orbit-slide
                             figure.orbit-figure
-                                = image_tag 'slider/3.jpg', alt: 'Освободи руки для домашних дел', class: 'orbit-image'
+                                = image_tag asset_pack_path('images/slider/3.jpg'), alt: 'Освободи руки для домашних дел', class: 'orbit-image'
                 nav.orbit-bullets
                     button.is-active data-slide='0'
                         span.show-for-sr First slide details.
@@ -63,21 +63,21 @@
                 .cell.small-12.medium-4
                     .advance_block
                         .advance_image
-                            = image_tag 'icons/award.png'
+                            = image_tag asset_pack_path('images/icons/award.png')
                         .advance_text
                             h3 Качество
                             p Вся наша продукция изготавливается только из натуральных тканей - льна и хлопка. Оснащена качественной, проверенной фурнитурой.
                 .cell.small-12.medium-4
                     .advance_block
                         .advance_image
-                            = image_tag 'icons/shield.png'
+                            = image_tag asset_pack_path('images/icons/shield.png')
                         .advance_text
                             h3 Безопасность
                             p Наши слинги обеспечивают физиологически правильное и безопасное расположение малыша. Имеют удобную конструкцию не позволяющую спине родителей уставать. 
                 .cell.small-12.medium-4
                     .advance_block
                         .advance_image
-                            = image_tag 'icons/handshake.png'
+                            = image_tag asset_pack_path('images/icons/handshake.png')
                         .advance_text
                             h3 Поддержка
                             p Мы помогаем мамам от момента выбора слинга, до его освоения малышом. Все консультации бесплатны, просто напишите нам.
@@ -89,7 +89,7 @@
                     h2 Мы в Instagram
                     #instagram_box
                         .header
-                            = image_tag 'icons/social-instagram.png'
+                            = image_tag asset_pack_path('images/icons/social-instagram.png')
                             span= link_to '@lilmonkey.ru', 'https://www.instagram.com/lilmonkey.ru/', 'target' => '_blank'
                         - @insta_photos.each do |row|
                             .photo_row

@@ -7,7 +7,7 @@ body {
   font-size: 18px;
   line-height: 24px;
   font-weight: 300;
-  background: #f4f2ec;
+  background: #f4f2ec url("../images/background.png");
 
   .button {
     padding: 12px 25px;
