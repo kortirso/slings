@@ -18,6 +18,7 @@ import "components/instructions/instructions";
 import "components/articles/articles";
 import "components/article/article";
 import "components/product/product";
+import "components/cart/cart";
 
 import Rails from "rails-ujs";
 

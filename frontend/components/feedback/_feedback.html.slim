@@ -3,7 +3,7 @@
     .grid-x
       .cell.small-12.medium-6
         h2 Отправить сообщение
-        = form_tag('/mailer', method: 'post') do
+        #mailer= form_tag('/mailer', method: 'post') do
           = label_tag :author, 'Ваше имя'
           = text_field_tag :author
           = label_tag :contact, 'Контактные данные'
