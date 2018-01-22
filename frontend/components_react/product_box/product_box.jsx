@@ -26,7 +26,6 @@ export default class ProductBox extends React.Component {
             method: 'GET',
             url: `${this.props.product_id}.json`,
             success: (data) => {
-                console.log(data);
                 this.setState({product: data});
             }
         });
