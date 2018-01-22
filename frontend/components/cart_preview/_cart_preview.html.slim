@@ -1,0 +1,4 @@
+= link_to @cart, id: 'cart' do
+  = 'Корзина ('
+  span#cart_amount= @cart.positions.sum(:count)
+  = ')'
