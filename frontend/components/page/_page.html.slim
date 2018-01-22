@@ -2,6 +2,6 @@
 .content class=yield(:body)
   = render 'components/navigation/navigation'
   = yield
-  /= render 'shared/footer'
+  = render 'components/footer/footer'
 /= render 'shared/cart'
 /= render 'shared/metrics' if Rails.env.production?
