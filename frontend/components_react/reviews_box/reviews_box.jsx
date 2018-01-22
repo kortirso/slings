@@ -1,5 +1,6 @@
 import React from 'react';
 import Review from 'components_react/reviews_box/review';
+const $ = require("jquery");
 
 export default class ReviewsBox extends React.Component {
     constructor() {

@@ -9,7 +9,6 @@ export default class Review extends React.Component {
 
     render() {
         let review = this.props.review;
-        console.log(review);
         return (
             <div className='review'>
                 <div className='image_block'>
