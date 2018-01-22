@@ -17,6 +17,10 @@
     img {
       max-height: 100%;
     }
+
+    @media screen and (max-width: 1023px) {
+      display: none;
+    }
   }
 
   p {
@@ -28,5 +32,11 @@
   .text {
     color: #282723;
     font-size: 18px;
+  }
+
+  .text {
+    @media screen and (max-width: 639px) {
+      font-size: 15px;
+    }
   }
 }
