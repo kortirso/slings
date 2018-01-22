@@ -1,5 +1,6 @@
 @import "normalize.css/normalize.css";
 @import "foundation-sites/dist/css/foundation.css";
+@import "./motion-ui.css";
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600");
 
 body {
