@@ -1,9 +1,10 @@
 import React from 'react';
+import defaultImage from 'images/profile.jpg';
 
 export default class Review extends React.Component {
     _prepareImage(review) {
         if(review.image != '') return <img src={review.image} alt={'Фото от ' + review.name} />;
-        return <img src='images/profile.jpg' alt='empty image' className='empty' />
+        return <img src={defaultImage} alt='empty image' className='empty' />
     }
 
     render() {

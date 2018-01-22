@@ -1,5 +1,6 @@
 import React from 'react';
 import Product from 'components_react/products_box/product';
+const $ = require("jquery");
 
 export default class NoveltyBox extends React.Component {
 

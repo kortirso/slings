@@ -1,9 +1,10 @@
 import React from 'react';
+import defaultImage from 'images/product.jpg';
 
 export default class Product extends React.Component {
     _prepareImage(product) {
         if(product.image != '') return <img src={product.catalog_image} alt={product.name} />;
-        return <img src='/images/product.jpg' alt='empty image' className='empty' />;
+        return <img src={defaultImage} alt='empty image' className='empty' />;
     }
 
     render() {

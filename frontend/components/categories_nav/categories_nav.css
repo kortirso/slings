@@ -1,0 +1,19 @@
+.catalog_nav {
+  margin-top: 92px;
+
+  .button {
+    margin-bottom: 2px;
+    width: 100%;
+    text-align: left;
+    background: rgb(97, 179, 207);
+    font-size: 16px;
+
+    &.active {
+      background: #ba6566;
+    }
+
+    &:hover {
+      background: #e17a7b;
+    }
+  }
+}
