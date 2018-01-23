@@ -9,7 +9,6 @@ class ProductsController < ApplicationController
                 render json: @product, serializer: ProductSerializer, status: 200
             end
         end
-        
     end
 
     private def find_product

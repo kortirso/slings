@@ -1,4 +1,5 @@
 import React from 'react';
+import defaultImage from 'images/product.jpg';
 const $ = require("jquery");
 
 export default class Position extends React.Component {
@@ -7,6 +8,11 @@ export default class Position extends React.Component {
         this.state = {
             position: props.position
         }
+    }
+
+    _prepareImage(product) {
+        if(product.image != '') return <img src={product.catalog_image} alt={product.name} />;
+        return <img src={defaultImage} alt='empty image' className='empty' />;
     }
 
     // api calls
@@ -69,7 +75,9 @@ export default class Position extends React.Component {
         let position = this.state.position;
         return (
             <tr id={'position_' + position.id}>
-                <td></td>
+                <td>
+                    {this._prepareImage(position.product)}
+                </td>
                 <td>
                     <p>{position.product.name}</p>
                     {this._fullOrder(position)}
