@@ -4,4 +4,6 @@
   = yield
   = render 'components/footer/footer'
 = render 'components/cart_preview/cart_preview'
-= render 'components/metrics/metrics' if Rails.env.production?
+- if Rails.env.production?
+  = render 'components/metrics/metrics'
+  = render 'components/structure_data/structure_data'
