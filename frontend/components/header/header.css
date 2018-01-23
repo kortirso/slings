@@ -32,11 +32,13 @@
   .text {
     color: #282723;
     font-size: 18px;
-  }
 
-  .text {
     @media screen and (max-width: 639px) {
       font-size: 15px;
     }
+  }
+
+  @media screen and (max-width: 639px) {
+    padding: 6px 0;
   }
 }
