@@ -11,13 +11,13 @@ export default class ProductBox extends React.Component {
     }
 
     componentWillMount() {
-        this._fetchProduct();
+        this._fetchProduct()
     }
 
     _prepareImage() {
-        let product = this.state.product;
-        if(product.image.url != null) return <img src={product.catalog_image} alt={product.name} />;
-        return <img src={defaultImage} alt='empty image' className='empty' />;
+        let product = this.state.product
+        if(product.image != '') return <img src={product.image} alt={product.name} />
+        return <img src={defaultImage} alt='empty image' className='empty' />
     }
 
     // api calls
@@ -26,9 +26,9 @@ export default class ProductBox extends React.Component {
             method: 'GET',
             url: `${this.props.product_id}.json`,
             success: (data) => {
-                this.setState({product: data});
+                this.setState({product: data})
             }
-        });
+        })
     }
 
     _addProduct() {
@@ -36,14 +36,14 @@ export default class ProductBox extends React.Component {
             method: 'POST',
             url: `/positions?product_id=${this.state.product.id}.json`,
             success: (data) => {
-                $('#cart_amount').text(data);
+                $('#cart_amount').text(data)
             }
-        });
+        })
     }
 
     // renders
     render() {
-        let product = this.state.product;
+        let product = this.state.product
         return (
             <div>
                 <h2>{product.name}</h2>
@@ -61,6 +61,6 @@ export default class ProductBox extends React.Component {
                     </div>
                 </div>
             </div>
-        );
+        )
     }
 }
