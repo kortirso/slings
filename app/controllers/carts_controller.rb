@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-    before_action :check_cart
+    before_action :check_cart, unless: :format_json?
     before_action :find_positions
 
     def show
@@ -21,6 +21,6 @@ class CartsController < ApplicationController
     end
 
     private def find_positions
-        @positions = @cart.positions.includes(:product).order(id: :asc)
+        @positions = Cart.find_by(id: params[:id]).positions.includes(:product).order(id: :asc)
     end
 end

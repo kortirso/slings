@@ -1,35 +1,51 @@
 import React from 'react';
 import Position from 'components_react/cart_box/position';
+const $ = require("jquery");
 
 export default class CartBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cart_id: props.cart_id,
+            cart: props.cart,
             positionsList: []
         }
     }
 
     componentWillMount() {
-        this._fetchPositionsList();
+        this._fetchPositionsList()
     }
 
+    // api calls
     _fetchPositionsList() {
         $.ajax({
             method: 'GET',
-            url: `${this.state.cart_id}.json`,
+            url: `${this.state.cart.id}.json`,
             success: (data) => {
-                this.setState({positionsList: data.positions});
+                this.setState({positionsList: data.positions})
             }
-        });
+        })
     }
 
+    // actions
+    _deletePosition(position_id) {
+        $.ajax({
+            method: 'DELETE',
+            url: `/positions/${position_id}.json`,
+            success: (data) => {
+                $('#cart_amount').text(data.positions_amount)
+                $('#amount').text(data.cart_amount)
+                this.setState({positionsList: data.positions})
+            }
+        })
+    }
+
+    // renders
     _preparePositionsList() {
         return this.state.positionsList.map((position) => {
             return (
-                <Position position={position} key={position.id} />
-            );
-        });
+                <Position position={position} key={position.id} onDeletePosition={this._deletePosition.bind(this)} />
+            )
+        })
     }
 
     render() {
@@ -37,7 +53,7 @@ export default class CartBox extends React.Component {
             <div>
                 <h2>Корзина</h2>
                 <div className='positions'>
-                    <table>
+                    <table className='cart'>
                         <thead>
                             <tr>
                                 <th>Фото</th>
@@ -51,8 +67,12 @@ export default class CartBox extends React.Component {
                             {this._preparePositionsList()}
                         </tbody>
                     </table>
+                    <div id='total_summ'>
+                        <p>Итоговая сумма - <span id='amount'>{this.state.cart.summ}</span> руб.</p>
+                    </div>
+                    <p>После оформления и оплаты заказа мы отправляем заявку на пошив, через 5 - 10 дней (в зависимости от загруженности) заказ будет доставлен по месту назначения.</p>
                 </div>
             </div>
-        );
+        )
     }
 }

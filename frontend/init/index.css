@@ -64,6 +64,14 @@ body {
     }
   }
 
+  .link {
+    color: #e17a7b;
+
+    &:hover {
+      color: #ba6566;
+    }
+  }
+
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -103,6 +111,33 @@ body {
 
     .cell {
       padding: 0 15px;
+    }
+  }
+}
+
+.sling_block {
+  margin-bottom: 20px;
+  text-align: center;
+
+  .sling_image {
+    height: 220px;
+    padding: 10px;
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  .sling_text {
+    padding: 15px;
+
+    .sling_name {
+      color: #010101;
+    }
+
+    .sling_price {
+      color: #010101;
+      margin-bottom: 5px;
     }
   }
 }
