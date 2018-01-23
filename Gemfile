@@ -8,7 +8,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'erubis'
-gem 'jquery-rails'
 gem 'rails', '5.1.4'
 gem 'therubyracer', platforms: :ruby
 
@@ -21,18 +20,12 @@ gem 'puma', '3.10.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.6'
 
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '3.2.0'
-
 # Store secrets
 gem 'figaro'
 
 # Foundation for frontend
 gem 'foundation-rails', '6.4.1.3'
 gem 'simple_form', '3.5.0'
-
-# Auto-prefixing CSS for cross-browser compat.
-gem 'autoprefixer-rails', '6.7.6'
 
 # Use Slim as the templating engine. Better than ERB
 gem 'slim'

@@ -49,8 +49,6 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     arel (8.0.0)
     ast (2.3.0)
-    autoprefixer-rails (6.7.6)
-      execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -310,8 +308,6 @@ GEM
       rails (> 4.1, < 5.2)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    uglifier (3.2.0)
-      execjs (>= 0.3.0, < 3)
     unicode-display_width (1.3.0)
     webpacker (3.0.2)
       activesupport (>= 4.2)
@@ -330,7 +326,6 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.0)
-  autoprefixer-rails (= 6.7.6)
   babosa
   capistrano
   capistrano-bundler
@@ -345,7 +340,6 @@ DEPENDENCIES
   foreman
   foundation-rails (= 6.4.1.3)
   friendly_id (~> 5.1.0)
-  jquery-rails
   json_spec
   kaminari
   listen (~> 3.0.5)
@@ -368,7 +362,6 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   therubyracer
   trix
-  uglifier (= 3.2.0)
   webpacker (~> 3.0)
   webpacker-react (~> 0.3.2)
 
