@@ -1,29 +1,49 @@
 import React from 'react';
+const $ = require("jquery");
 
 export default class Position extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            position: props.position,
-            positionFull: props.position.full,
-            positionCount: props.position.count
+            position: props.position
+        }
+    }
+
+    // api calls
+    _positionChange(type) {
+        let mode = this._selectUrl(type);
+        $.ajax({
+            method: 'POST',
+            url: `/${mode}/${this.state.position.id}.json`,
+            success: (data) => {
+                $('#cart_amount').text(data.positions_amount)
+                $('#amount').text(data.cart_amount)
+                this.setState({position: data.position})
+            }
+        })
+    }
+
+    _selectUrl(type) {
+        switch(type) {
+            case 'plus':
+                return 'plus'
+            case 'minus':
+                return 'minus'
+            case 'full':
+                return 'full'
         }
     }
 
     // actions
-    _handleChangeFullness() {
-        this.setState({positionFull: !this.state.positionFull});
-    }
-
-    _changeCount(direction) {
-        this.setState({positionCount: this.state.positionCount + direction});
+    _deletePosition() {
+        this.props.onDeletePosition(this.state.position.id)
     }
 
     // prerender functions
     _calcSumm(position) {
-        let price = position.product.price;
-        if(this.state.positionFull) price = price + position.product.additional_price;
-        return price * this.state.positionCount;
+        let price = position.product.price
+        if(this.state.position.full) price = price + position.product.additional_price
+        return price * this.state.position.count
     }
 
     _fullOrder(position) {
@@ -31,14 +51,17 @@ export default class Position extends React.Component {
             return (
                 <div className='check_box'>
                     <label htmlFor={'full_' + position.id}>Полная комплектация (+{position.product.additional_price} руб.)</label>
-                    <input type='checkbox' value='true' id={'full_' + position.id} defaultChecked={this.state.positionFull} name={'full_' + position.id} onChange={this._handleChangeFullness.bind(this)} />
+                    <input type='checkbox' value='true' id={'full_' + position.id} defaultChecked={this.state.position.full} name={'full_' + position.id} onChange={this._positionChange.bind(this, 'full')} />
                 </div>
-            );
+            )
+        } else {
+            return false
         }
     }
 
     _prepareDownButton() {
-        if(this.state.positionCount != 1) return <a className='count_button button_down' onClick={this._changeCount.bind(this, -1)}></a>;
+        if(this.state.position.count != 1) return <a className='count_button button_down' onClick={this._positionChange.bind(this, 'minus')}></a>
+        else return false
     }
 
     // render
@@ -53,16 +76,14 @@ export default class Position extends React.Component {
                 </td>
                 <td className='change_count'>
                     {this._prepareDownButton()}
-                    <span className='count' id={'count_' + position.id}>{this.state.positionCount}</span>
-                    <a className='count_button button_up' onClick={this._changeCount.bind(this, 1)}></a>
+                    <span className='count'>{this.state.position.count}</span>
+                    <a className='count_button button_up' onClick={this._positionChange.bind(this, 'plus')}></a>
                 </td>
-                <td className='amount' id={'summ_' + position.id}>{this._calcSumm(position)}</td>
+                <td className='amount'>{this._calcSumm(position)}</td>
                 <td>
-                    <form className='button_to' method='post' action='/positions/7' data-remote='true'>
-                        <input className='button_delete' value='' type='submit' />
-                    </form>
+                    <button className='button_delete' onClick={this._deletePosition.bind(this)}></button>
                 </td>
             </tr>
-        );
+        )
     }
 }
