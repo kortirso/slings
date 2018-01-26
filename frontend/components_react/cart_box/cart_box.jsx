@@ -19,7 +19,7 @@ export default class CartBox extends React.Component {
     _fetchPositionsList() {
         $.ajax({
             method: 'GET',
-            url: `${this.state.cart.id}.json`,
+            url: `carts.json`,
             success: (data) => {
                 this.setState({positionsList: data.positions})
             }

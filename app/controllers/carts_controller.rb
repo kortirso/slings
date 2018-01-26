@@ -1,8 +1,7 @@
 class CartsController < ApplicationController
-    before_action :check_cart, unless: :format_json?
-    before_action :find_positions
+    before_action :find_positions, if: :format_json?
 
-    def show
+    def index
         respond_to do |format|
             format.html do
                 @order = Order.new
@@ -16,11 +15,7 @@ class CartsController < ApplicationController
         end
     end
 
-    private def check_cart
-        render_not_found if params[:id].to_i != session[:cart_id]
-    end
-
     private def find_positions
-        @positions = Cart.find_by(id: params[:id]).positions.includes(:product).order(id: :asc)
+        @positions = Cart.find_by(id: session[:cart_id]).positions.includes(:product).order(id: :asc)
     end
 end
