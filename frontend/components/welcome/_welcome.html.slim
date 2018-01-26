@@ -63,21 +63,21 @@
                 .cell.small-12.medium-4
                     .advance_block
                         .advance_image
-                            = image_tag asset_pack_path('images/icons/award.png')
+                            = image_tag asset_pack_path('images/icons/award.png'), alt: 'Качественные слинги, переноски, май-слинги, эрго-рюкзаки'
                         .advance_text
                             h3 Качество
                             p Вся наша продукция изготавливается только из натуральных тканей - льна и хлопка. Оснащена качественной, проверенной фурнитурой.
                 .cell.small-12.medium-4
                     .advance_block
                         .advance_image
-                            = image_tag asset_pack_path('images/icons/shield.png')
+                            = image_tag asset_pack_path('images/icons/shield.png'), alt: 'Безопасные слинги, переноски, май-слинги, эрго-рюкзаки'
                         .advance_text
                             h3 Безопасность
                             p Наши слинги обеспечивают физиологически правильное и безопасное расположение малыша. Имеют удобную конструкцию не позволяющую спине родителей уставать. 
                 .cell.small-12.medium-4
                     .advance_block
                         .advance_image
-                            = image_tag asset_pack_path('images/icons/handshake.png')
+                            = image_tag asset_pack_path('images/icons/handshake.png'), alt: 'Помощь в выборе слинга, переноски, май-слинги, эрго-рюкзака'
                         .advance_text
                             h3 Поддержка
                             p Мы помогаем мамам от момента выбора слинга, до его освоения малышом. Все консультации бесплатны, просто напишите нам.
@@ -89,9 +89,9 @@
                     h2 Мы в Instagram
                     #instagram_box
                         .header
-                            = image_tag asset_pack_path('images/icons/social-instagram.png')
+                            = image_tag asset_pack_path('images/icons/social-instagram.png'), alt: 'Instagram аккаунт по продаже слингов'
                             span= link_to '@lilmonkey.ru', 'https://www.instagram.com/lilmonkey.ru/', 'target' => '_blank'
                         - @insta_photos.each do |row|
                             .photo_row
                                 - row.each do |photo|
-                                    .img= link_to image_tag(photo.image), photo.link, 'target' => '_blank'
+                                    .img= link_to image_tag(photo.image), photo.link, 'target' => '_blank', alt: 'Слинги переноски, май-слинги, эрго-рюкзаки'
