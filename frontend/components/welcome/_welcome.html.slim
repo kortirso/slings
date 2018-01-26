@@ -34,12 +34,12 @@
                                 = image_tag asset_pack_path('images/slider/3.jpg'), alt: 'Освободи руки для домашних дел', class: 'orbit-image'
                 nav.orbit-bullets
                     button.is-active data-slide='0'
-                        span.show-for-sr First slide details.
-                        span.show-for-sr Current Slide
+                        span.show-for-sr Подробности первого слайда, слинг
+                        span.show-for-sr Текущий слайд, слинг
                     button data-slide='1'
-                        span.show-for-sr Second slide details.
+                        span.show-for-sr Подробности второго слайда, слинг
                     button data-slide='2'
-                        span.show-for-sr Third slide details.
+                        span.show-for-sr Подробности третьего слайда, слинг
     .grid-container
         .block.about_block
             h1
@@ -94,4 +94,4 @@
                         - @insta_photos.each do |row|
                             .photo_row
                                 - row.each do |photo|
-                                    .img= link_to image_tag(photo.image), photo.link, 'target' => '_blank', alt: 'Слинги переноски, май-слинги, эрго-рюкзаки'
+                                    .img= link_to image_tag(photo.image, alt: 'Слинги переноски, май-слинги, эрго-рюкзаки'), photo.link, 'target' => '_blank'
