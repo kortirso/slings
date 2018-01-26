@@ -1,9 +1,10 @@
 import React from 'react';
+import defaultImage from 'images/profile.jpg';
 
 export default class Feedback extends React.Component {
     _prepareImage(feedback) {
         if(feedback.image != '') return <img src={feedback.image} alt={'Фото от ' + feedback.name} />;
-        return <img src='images/profile.jpg' alt='empty image' className='empty' />
+        return <img src={defaultImage} alt='empty image' className='empty' />
     }
 
     render() {
