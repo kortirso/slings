@@ -276,6 +276,7 @@
 
     .review_text {
       min-height: 150px;
+      position: relative;
 
       @media (max-width: 640px) {
         min-height: auto;
@@ -285,6 +286,15 @@
         color: #282723;
         text-align: center;
         font-size: 18px;
+        margin-bottom: 0;
+      }
+
+      .link_reviews {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
       }
     }
 
