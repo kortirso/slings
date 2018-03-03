@@ -123,6 +123,8 @@ GEM
     haml (4.0.7)
       tilt
     htmlentities (4.3.4)
+    httparty (0.16.0)
+      multi_xml (>= 0.5.2)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     jquery-rails (4.3.1)
@@ -154,6 +156,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.2)
+    multi_xml (0.6.0)
     nested_form (0.3.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -342,6 +345,7 @@ DEPENDENCIES
   foreman
   foundation-rails (= 6.4.1.3)
   friendly_id (~> 5.1.0)
+  httparty (~> 0.16)
   json_spec
   kaminari
   listen (~> 3.0.5)

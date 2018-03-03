@@ -66,6 +66,9 @@ gem 'kaminari'
 # Mailer
 gem 'premailer-rails'
 
+# HTTP requests
+gem 'httparty', '~> 0.16'
+
 group :development do
     gem 'capistrano', require: false
     gem 'capistrano-bundler', require: false

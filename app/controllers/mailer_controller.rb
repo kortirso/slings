@@ -1,5 +1,6 @@
 class MailerController < ApplicationController
     skip_before_action :verify_authenticity_token, only: %i[create verification]
+    before_action :check_captcha, only: %i[create]
 
     def create
         AdminMailer.admin_email(mail_params).deliver_now if correct_mail_params?

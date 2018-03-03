@@ -28,4 +28,9 @@ class ApplicationController < ActionController::Base
     private def format_json?
         request.format.json?
     end
+
+    private def check_captcha
+        response = CheckCaptchaService.new.check(result: params['g-recaptcha-response'])
+        redirect_to feedback_path unless response['success']
+    end
 end

@@ -1,5 +1,6 @@
 class FeedbacksController < ApplicationController
     skip_before_action :verify_authenticity_token, only: :create
+    before_action :check_captcha, only: %i[create]
 
     def index
         render json: {
