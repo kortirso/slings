@@ -10,6 +10,7 @@ html lang='ru'
         meta name='google-site-verification' content='NjZUu2RcXEv6iiUJeEEntu5hCTNeULkRr4Tr6iAn2sc'
         = stylesheet_pack_tag 'application', media: 'all'
         = csrf_meta_tags
+        = render 'components/captcha/captcha'
     body
         = yield
         = javascript_pack_tag 'application'

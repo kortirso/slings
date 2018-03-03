@@ -13,6 +13,7 @@
               | *
             |  Ваше сообщение
           = text_area_tag :body, '', required: true
+          .g-recaptcha data-sitekey='6LdjOUoUAAAAAJstCX7mEbC9CrxSEupJll0y-CKR'
           = submit_tag 'Отправить', class: 'button'
       .cell.small-12.medium-6
         h2 Оставить отзыв
@@ -20,4 +21,5 @@
           = f.input :name, label: 'Ваше имя'
           = f.input :body, label: 'Текст отзыва', required: true
           = f.input :image, label: 'Фотография'
+          .g-recaptcha data-sitekey='6LdjOUoUAAAAAJstCX7mEbC9CrxSEupJll0y-CKR'
           = f.button :submit, 'Отправить', class: 'button'
