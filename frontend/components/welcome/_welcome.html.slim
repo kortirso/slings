@@ -12,16 +12,7 @@
                             span.show-for-sr> Next Slide
                             | ▶︎
                     ul.orbit-container
-                        li.is-active.orbit-slide
-                            figure.orbit-figure.first-slide
-                                = image_tag asset_pack_path('images/slider/1.jpg'), alt: 'В слинге удобно путешествовать', class: 'orbit-image'
-                                ul
-                                    li Легко ездить в метро
-                                    li Нет проблем с эскалаторами
-                                    li У вас свободны руки
-                                    li Меньше багажа
-                                    li Малыш всегда рядом и спокоен
-                        li.orbit-slide
+                        li.orbit-slide.is-active
                             figure.orbit-figure.second-slide
                                 = image_tag asset_pack_path('images/slider/2.jpg'), alt: 'Наши слинги самые уютные', class: 'orbit-image'
                                 .inside
@@ -32,6 +23,15 @@
                         li.orbit-slide
                             figure.orbit-figure
                                 = image_tag asset_pack_path('images/slider/3.jpg'), alt: 'Освободи руки для домашних дел', class: 'orbit-image'
+                        li.orbit-slide
+                            figure.orbit-figure.first-slide
+                                = image_tag asset_pack_path('images/slider/1.jpg'), alt: 'В слинге удобно путешествовать', class: 'orbit-image'
+                                ul
+                                    li Легко ездить в метро
+                                    li Нет проблем с эскалаторами
+                                    li У вас свободны руки
+                                    li Меньше багажа
+                                    li Малыш всегда рядом и спокоен
                 nav.orbit-bullets
                     button.is-active data-slide='0'
                         span.show-for-sr Подробности первого слайда, слинг
