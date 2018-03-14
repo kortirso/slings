@@ -5,6 +5,8 @@ FactoryBot.define do
         amount 0
         new_one false
         sales_hit false
+        material 'Хлопок'
+        model 'Супер-М'
         association :category
         association :event
 

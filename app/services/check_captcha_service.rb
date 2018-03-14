@@ -1,5 +1,6 @@
 require 'httparty'
 
+# Service for checking google recaptcha
 class CheckCaptchaService
     include HTTParty
     base_uri 'https://www.google.com/recaptcha/api/siteverify'

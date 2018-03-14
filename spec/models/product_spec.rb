@@ -6,6 +6,8 @@ RSpec.describe Product, type: :model do
     it { should belong_to :category }
     it { should have_many :positions }
     it { should have_many(:carts).through(:positions) }
+    it { should validate_inclusion_of(:material).in_array(%w[Лён Хлопок]) }
+    it { should validate_inclusion_of(:model).in_array(%w[Стандарт Супер-М Тодлер]) }
 
     it 'should be valid' do
         product = create :product

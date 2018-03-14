@@ -14,6 +14,7 @@ class Instagram < ApplicationRecord
     end
 
     private def create_photos
+        return if Rails.env.test?
         elements = InstagramService.new.insta_photos
         elements.each { |elem| instaphotos.create(image: elem[:photo], link: elem[:link]) }
     end

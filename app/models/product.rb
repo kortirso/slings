@@ -18,6 +18,8 @@ class Product < ApplicationRecord
     validates :name, presence: true, uniqueness: true
     validates :category_id, presence: true
     validates :price, :amount, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+    validates :material, presence: true, inclusion: { in: %w[Лён Хлопок] }, allow_blank: true
+    validates :model, presence: true, inclusion: { in: %w[Стандарт Супер-М Тодлер] }, allow_blank: true
 
     scope :sales_hits, -> { where sales_hit: true }
     scope :new_ones, -> { where new_one: true }
