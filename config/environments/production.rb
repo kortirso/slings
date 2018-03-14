@@ -4,6 +4,11 @@ Rails.application.configure do
     # Code is not reloaded between requests.
     config.cache_classes = true
 
+    config.session_store :cookie_store
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
+    config.middleware.use Rack::MethodOverride
+
     # Eager load code on boot. This eager loads most of Rails and
     # your application in memory, allowing both threaded web servers
     # and those relying on copy on write to perform better.
