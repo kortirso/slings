@@ -6,7 +6,7 @@ export default class ProductBox extends React.Component {
     constructor() {
         super();
         this.state = {
-            product: {image: {}, model: ''}
+            product: {image: {}, model: '', caption: []}
         }
     }
 
@@ -41,9 +41,11 @@ export default class ProductBox extends React.Component {
         })
     }
 
-    _prepareModel() {
+    _prepareCaption() {
         let product = this.state.product
-        if(product.model != '') return <p>Модель - {product.model}</p>
+        return product.caption.map((line, index) => {
+            return <p key={index}>{line}</p>
+        })
     }
 
     // renders
@@ -61,9 +63,7 @@ export default class ProductBox extends React.Component {
                         </div>
                     </div>
                     <div className='cell small-12 medium-8'>
-                        <p>{product.caption}</p>
-                        <p>Материал - {product.material}</p>
-                        {this._prepareModel()}
+                        <div>{this._prepareCaption()}</div>
                         <p>Цена - {product.price} руб.</p>
                         <button className='button' onClick={this._addProduct.bind(this, product)}>Купить</button>
                     </div>

@@ -12,4 +12,8 @@ class ProductSerializer < ActiveModel::Serializer
     def image
         object.image.to_s
     end
+
+    def caption
+        object.caption.lines
+    end
 end
