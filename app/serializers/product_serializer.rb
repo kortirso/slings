@@ -1,5 +1,5 @@
 class ProductSerializer < ActiveModel::Serializer
-    attributes :id, :name, :short_name, :price, :additional_price, :image, :catalog_image, :slug, :caption
+    attributes :id, :name, :short_name, :price, :additional_price, :image, :catalog_image, :slug, :caption, :material, :model
 
     def short_name
         object.name.truncate(20)

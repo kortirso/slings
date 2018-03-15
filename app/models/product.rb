@@ -15,7 +15,7 @@ class Product < ApplicationRecord
     has_many :positions, dependent: :destroy
     has_many :carts, through: :positions
 
-    validates :name, presence: true, uniqueness: true
+    validates :name, presence: true
     validates :category_id, presence: true
     validates :price, :amount, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
     validates :material, presence: true, inclusion: { in: %w[Лён Хлопок] }, allow_blank: true
