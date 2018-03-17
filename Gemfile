@@ -50,7 +50,7 @@ gem 'oj'
 gem 'oj_mimic_json'
 
 # Admin panel
-gem 'rails_admin', '~> 1.1.1'
+gem 'rails_admin', '1.3.0'
 
 # Add Webpack
 gem 'foreman'
