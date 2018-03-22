@@ -50,7 +50,7 @@ export default class CartBox extends React.Component {
             method: 'GET',
             url: `carts/add_coupon/${this.state.coupon}.json`,
             success: (data) => {
-                $('#amount').text(data.cart_amount)
+                $('#amount').text(data.cart.summ)
                 this.setState({positionsList: data.positions})
             }
         })

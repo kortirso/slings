@@ -10,6 +10,10 @@ export default class Position extends React.Component {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState({position: nextProps.position})
+    }
+
     _prepareImage(product) {
         if(product.image != '') return <img src={product.catalog_image} alt={product.name} />;
         return <img src={defaultImage} alt='empty image' className='empty' />;
