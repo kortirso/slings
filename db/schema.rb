@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322040008) do
+ActiveRecord::Schema.define(version: 20180322040624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20180322040008) do
     t.integer "summ", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "coupon_id"
+    t.index ["coupon_id"], name: "index_carts_on_coupon_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -55,6 +57,22 @@ ActiveRecord::Schema.define(version: 20180322040008) do
     t.integer "price_mai_full", default: 150
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "coupons", force: :cascade do |t|
+    t.string "name"
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.integer "amount", default: 100, null: false
+    t.integer "collection_id"
+    t.integer "category_id"
+    t.integer "product_id"
+    t.integer "discount", default: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_coupons_on_category_id"
+    t.index ["collection_id"], name: "index_coupons_on_collection_id"
+    t.index ["product_id"], name: "index_coupons_on_product_id"
   end
 
   create_table "deliveries", force: :cascade do |t|
@@ -110,7 +128,9 @@ ActiveRecord::Schema.define(version: 20180322040008) do
     t.integer "summ", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "coupon_id"
     t.index ["cart_id"], name: "index_orders_on_cart_id"
+    t.index ["coupon_id"], name: "index_orders_on_coupon_id"
   end
 
   create_table "positions", force: :cascade do |t|

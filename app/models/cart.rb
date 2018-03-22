@@ -1,5 +1,7 @@
 # Represents cart of products
 class Cart < ApplicationRecord
+    belongs_to :coupon, optional: true
+
     has_many :positions, dependent: :destroy
     has_many :products, through: :positions
 
