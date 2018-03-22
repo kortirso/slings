@@ -37,10 +37,10 @@ class Position < ApplicationRecord
 
   private def discount
     coupon = cart.nil? ? order.cart.coupon : cart.coupon
-    return 100 if coupon.nil?
+    return 0 if coupon.nil?
     return coupon.discount if coupon.collection.present? && coupon.collection == product.collection
     return coupon.discount if coupon.category.present? && coupon.category == product.category
     return coupon.discount if coupon.product.present? && coupon.product == product
-    100
+    0
   end
 end
