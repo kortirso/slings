@@ -12,6 +12,7 @@ export default class ProductsBox extends React.Component {
             filteredList: [],
             sort: 'none',
             material: '0',
+            collection: '0',
             nextPage: 1
         }
     }
@@ -25,16 +26,21 @@ export default class ProductsBox extends React.Component {
             method: 'GET',
             url: `${this.state.categorySlug}.json?page=${this.state.nextPage}`,
             success: (data) => {
-                this.setState({productsList: this.state.productsList.concat(data.products), filteredList: this._filterList(this.state.productsList.concat(data.products), this.state.sort, this.state.material), nextPage: data.next_page})
+                this.setState({productsList: this.state.productsList.concat(data.products), filteredList: this._filterList(this.state.productsList.concat(data.products), this.state.sort, this.state.material, this.state.collection), nextPage: data.next_page})
             }
         })
     }
 
-    _filterList(products, sort, material) {
+    _filterList(products, sort, material, collection) {
         let tempProductsList = products
         if(material != '0') {
             tempProductsList = tempProductsList.filter(function(product) {
                 return product.material == material
+            })
+        }
+        if(collection != '0') {
+            tempProductsList = tempProductsList.filter(function(product) {
+                return product.collection_name == collection
             })
         }
         if(sort == 'up') tempProductsList.sort(this._compare)
@@ -81,13 +87,18 @@ export default class ProductsBox extends React.Component {
     }
 
     changeMaterial(event) {
-        const productList = this._filterList(this.state.productsList, this.state.sort, event.target.value)
-        this.setState({filteredList: productList, sort: this.state.sort, material: event.target.value})
+        const productList = this._filterList(this.state.productsList, this.state.sort, event.target.value, this.state.collection)
+        this.setState({filteredList: productList, material: event.target.value})
+    }
+
+    changeCollection(event) {
+        const productList = this._filterList(this.state.productsList, this.state.sort, this.state.material, event.target.value)
+        this.setState({filteredList: productList, collection: event.target.value})
     }
 
     changeSort(sort) {
-        const productList = this._filterList(this.state.productsList, sort, this.state.material)
-        this.setState({filteredList: productList, sort: sort, material: this.state.material})
+        const productList = this._filterList(this.state.productsList, sort, this.state.material, this.state.collection)
+        this.setState({filteredList: productList, sort: sort})
     }
 
     render() {
@@ -105,6 +116,14 @@ export default class ProductsBox extends React.Component {
                             <option value='0'>Все</option>
                             <option value='Хлопок'>Хлопок</option>
                             <option value='Лён'>Лён</option>
+                        </select>
+                    </div>
+                    <div className='filter'>
+                        <span>Коллекция</span>
+                        <select onChange={this.changeCollection.bind(this)}>
+                            <option value='0'>Все</option>
+                            <option value='Базовая коллекция'>Базовая коллекция</option>
+                            <option value='Весна-Лето 2018'>Весна-Лето 2018</option>
                         </select>
                     </div>
                 </div>
