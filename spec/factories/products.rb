@@ -8,7 +8,6 @@ FactoryBot.define do
         material 'Хлопок'
         model 'Супер-М'
         association :category
-        association :event
 
         trait :new_one do
             new_one true

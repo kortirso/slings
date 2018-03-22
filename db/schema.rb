@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322034333) do
+ActiveRecord::Schema.define(version: 20180322040008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,15 +68,6 @@ ActiveRecord::Schema.define(version: 20180322034333) do
     t.text "address"
     t.boolean "wait", default: false
     t.index ["order_id"], name: "index_deliveries_on_order_id"
-  end
-
-  create_table "events", force: :cascade do |t|
-    t.string "name", default: "", null: false
-    t.integer "discount", default: 0, null: false
-    t.date "start_date"
-    t.date "end_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "feedbacks", force: :cascade do |t|
@@ -146,7 +137,6 @@ ActiveRecord::Schema.define(version: 20180322034333) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
-    t.integer "event_id"
     t.string "slug"
     t.string "image"
     t.string "material", default: "", null: false
@@ -154,7 +144,6 @@ ActiveRecord::Schema.define(version: 20180322034333) do
     t.integer "collection_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["collection_id"], name: "index_products_on_collection_id"
-    t.index ["event_id"], name: "index_products_on_event_id"
     t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 
