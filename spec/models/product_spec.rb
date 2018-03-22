@@ -3,6 +3,7 @@ RSpec.describe Product, type: :model do
     it { should validate_numericality_of(:price).only_integer.is_greater_than_or_equal_to(0) }
     it { should validate_numericality_of(:amount).only_integer.is_greater_than_or_equal_to(0) }
     it { should belong_to :category }
+    it { should belong_to :collection }
     it { should have_many :positions }
     it { should have_many(:carts).through(:positions) }
     it { should validate_inclusion_of(:material).in_array(%w[Лён Хлопок]) }

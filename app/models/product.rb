@@ -11,6 +11,7 @@ class Product < ApplicationRecord
 
     belongs_to :category
     belongs_to :event
+    belongs_to :collection, optional: true
 
     has_many :positions, dependent: :destroy
     has_many :carts, through: :positions

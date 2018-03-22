@@ -17,3 +17,6 @@ if Category.count.zero?
 end
 
 Config.create
+
+Collection.create name: 'Базовая коллекция'
+Collection.create name: 'Весна-Лето 2018'
