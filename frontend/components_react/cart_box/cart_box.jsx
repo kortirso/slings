@@ -7,12 +7,17 @@ export default class CartBox extends React.Component {
         super(props);
         this.state = {
             cart: props.cart,
-            positionsList: []
+            positionsList: [],
+            coupon: ''
         }
     }
 
     componentWillMount() {
         this._fetchPositionsList()
+    }
+
+    _changeCoupon(event) {
+        this.setState({coupon: event.target.value})
     }
 
     // api calls
@@ -21,7 +26,7 @@ export default class CartBox extends React.Component {
             method: 'GET',
             url: `carts.json`,
             success: (data) => {
-                this.setState({positionsList: data.positions})
+                this.setState({positionsList: data.positions, coupon: data.cart.coupon_name})
             }
         })
     }
@@ -33,6 +38,18 @@ export default class CartBox extends React.Component {
             url: `/positions/${position_id}.json`,
             success: (data) => {
                 $('#cart_amount').text(data.positions_amount)
+                $('#amount').text(data.cart_amount)
+                this.setState({positionsList: data.positions})
+            }
+        })
+    }
+
+    _onCouponAdd() {
+        if(this.state.coupon == '') return null 
+        $.ajax({
+            method: 'GET',
+            url: `carts/add_coupon/${this.state.coupon}.json`,
+            success: (data) => {
                 $('#amount').text(data.cart_amount)
                 this.setState({positionsList: data.positions})
             }
@@ -67,6 +84,11 @@ export default class CartBox extends React.Component {
                             {this._preparePositionsList()}
                         </tbody>
                     </table>
+                    <div id='coupon'>
+                        <span>Скидочный купон - </span>
+                        <input type='text' onChange={this._changeCoupon.bind(this)} value={this.state.coupon} />
+                        <a onClick={this._onCouponAdd.bind(this)} className='button price_button'>Применить</a>
+                    </div>
                     <div id='total_summ'>
                         <p>Итоговая сумма - <span id='amount'>{this.state.cart.summ}</span> руб.</p>
                     </div>

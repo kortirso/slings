@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :categories, only: %i[index show]
     resources :products, only: :show
     resources :articles, only: %i[index show]
-    resources :carts, only: :index
+    resources :carts, only: :index do
+        get 'add_coupon/:coupon' => :add_coupon, on: :collection
+    end
     resources :orders, only: %i[show create]
     resources :positions, only: %i[create destroy]
     resources :feedbacks, only: %i[index create]

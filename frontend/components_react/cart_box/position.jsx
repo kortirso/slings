@@ -46,12 +46,6 @@ export default class Position extends React.Component {
     }
 
     // prerender functions
-    _calcSumm(position) {
-        let price = position.product.price
-        if(this.state.position.full) price = price + position.product.additional_price
-        return price * this.state.position.count
-    }
-
     _fullOrder(position) {
         if(position.product.additional_price != 0) {
             return (
@@ -87,7 +81,7 @@ export default class Position extends React.Component {
                     <span className='count'>{this.state.position.count}</span>
                     <a className='count_button button_up' onClick={this._positionChange.bind(this, 'plus')}></a>
                 </td>
-                <td className='amount'>{this._calcSumm(position)}</td>
+                <td className='amount'>{position.summ}</td>
                 <td>
                     <button className='button_delete' onClick={this._deletePosition.bind(this)}></button>
                 </td>

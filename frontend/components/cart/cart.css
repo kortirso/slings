@@ -144,3 +144,11 @@ table.cart {
 .delivery_data {
   display: none;
 }
+
+#coupon {
+  input {
+    display: inline-block;
+    width: 200px;
+    margin: 0 10px;
+  }
+}

@@ -24,13 +24,19 @@
             td= @order.delivery.delivery_form
             td
             td= @order.delivery.delivery_cost
+          - if @order.cart.coupon.present?
+            tr
+              td
+              td Купон
+              td
+              td= @order.cart.coupon.name
           - if @order.delivery.wait?
             tr
               td
               td Скидка за ожидание
               td
               td= "-#{@order.delivery.discount}%"
-      p= "К оплате - #{@order.summ} руб."
+      p.payment= "К оплате - #{@order.summ} руб."
       - if @order.delivery.owner_name.present?
         p= "Контактные данные - #{@order.delivery.owner_name}"
       - else
@@ -40,8 +46,9 @@
       - else
         p Вы не указали телефон
       p Перед оплатой убедитесь в правильности данных заказа. Если данные не верны, то создайте заново заказ из корзины.
-      p Для оплаты вы можете использовать несколько способов: оплата с карты, оплата через Яндекс.Кошелек или перевод с телефона.
+      p.payment Для оплаты используется система Яндекс.Деньги.
+      p.payment Выберите внизу способ оплаты и вы будете перенаправлены на сайт Яндекса. После оплаты наш менеджер свяжется с вами.
       p.payments
-        iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/button-widget?account=410015211276078&quickpay=small&any-card-payment-type=on&button-text=01&button-size=m&button-color=orange&targets=%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0+%E2%84%96#{@order.id}&default-sum=#{@order.summ}&fio=on&phone=on&successURL=" width="192" height="36"
-        iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/button-widget?account=410015211276078&quickpay=small&yamoney-payment-type=on&button-text=01&button-size=m&button-color=orange&targets=%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0+%E2%84%96#{@order.id}&default-sum=#{@order.summ}&fio=on&phone=on&successURL=" width="192" height="36"
-        iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/button-widget?account=410015211276078&quickpay=small&mobile-payment-type=on&button-text=01&button-size=m&button-color=orange&targets=%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0+%E2%84%96#{@order.id}&default-sum=#{@order.summ}&fio=on&phone=on&successURL=" width="192" height="36"
+        iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/button-widget?account=410015211276078&quickpay=small&any-card-payment-type=on&button-text=12&button-size=l&button-color=orange&targets=%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0+%E2%84%96#{@order.id}&default-sum=#{@order.summ}&fio=on&phone=on&successURL=" width="227" height="48"
+        iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/button-widget?account=410015211276078&quickpay=small&yamoney-payment-type=on&button-text=12&button-size=l&button-color=orange&targets=%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0+%E2%84%96#{@order.id}&default-sum=#{@order.summ}&fio=on&phone=on&successURL=" width="227" height="48"
+        iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/button-widget?account=410015211276078&quickpay=small&mobile-payment-type=on&button-text=12&button-size=l&button-color=orange&targets=%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0+%E2%84%96#{@order.id}&default-sum=#{@order.summ}&fio=on&phone=on&successURL=" width="227" height="48"
