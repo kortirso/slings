@@ -23,7 +23,7 @@
             td
             td= @order.delivery.delivery_form
             td
-            td= @order.delivery.delivery_cost
+            td= @order.delivery.delivery_label
           - if @order.cart.coupon.present?
             tr
               td

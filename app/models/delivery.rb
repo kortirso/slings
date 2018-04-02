@@ -13,6 +13,14 @@ class Delivery < ApplicationRecord
         end
     end
 
+    def delivery_label
+        case delivery_form
+            when 'Доставка Транспортной Компанией' then 'Оплата при получении'
+            when 'Доставка Почтой России' then Config.last.cost_post
+            else '0'
+        end
+    end
+
     def discount
         wait? ? Config.last.discount : 0
     end
