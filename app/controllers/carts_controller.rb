@@ -20,7 +20,9 @@ class CartsController < ApplicationController
 
   def add_coupon
     cart = AddCouponService.new(cart: @cart, coupon: @coupon).recalc_cart
+    result = cart.coupon.nil? ? 'Coupons are gone' : 'Coupon is attached'
     render json: {
+      result: result,
       positions: ActiveModel::Serializer::CollectionSerializer.new(cart.positions.includes(:product).order(id: :asc), each_serializer: PositionSerializer),
       cart: cart
     }, status: 200

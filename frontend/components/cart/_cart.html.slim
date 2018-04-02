@@ -20,3 +20,4 @@
                             = text_area_tag :passport, nil, rows: 3, cols: 25, placeholder: "Паспортные данные для получения посылки\nНеобходимы: серия и номер паспорта, кем и когда выдан"
                             = text_area_tag :address, nil, rows: 3, cols: 25, placeholder: "Адрес доставки"
                         = submit_tag 'Оформить заказ', class: 'button price_button'
+= render 'components/coupon_modal/coupon_modal'

@@ -19,4 +19,13 @@ class Cart < ApplicationRecord
         update(summ: positions.sum(&:summ))
         summ
     end
+
+    def update_coupon(coupon)
+        update(coupon: coupon)
+        positions.each do |position|
+          position.calc_summ
+          position.save
+        end
+        calc_summ
+    end
 end

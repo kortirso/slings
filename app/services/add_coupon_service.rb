@@ -7,15 +7,11 @@ class AddCouponService
   end
 
   def recalc_cart
+    cart.update_coupon(nil)
     return cart if DateTime.now < coupon.started_at
     return cart if DateTime.now > coupon.finished_at
     return cart if coupon.amount <= 0
-    cart.update(coupon: coupon)
-    cart.positions.each do |position|
-      position.calc_summ
-      position.save
-    end
-    cart.calc_summ
+    cart.update_coupon(coupon)
     cart
   end
 end

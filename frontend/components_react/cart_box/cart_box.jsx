@@ -1,6 +1,7 @@
-import React from 'react';
-import Position from 'components_react/cart_box/position';
-const $ = require("jquery");
+import React from 'react'
+import Position from 'components_react/cart_box/position'
+import Foundation from 'foundation-sites'
+const $ = require("jquery")
 
 export default class CartBox extends React.Component {
     constructor(props) {
@@ -13,6 +14,9 @@ export default class CartBox extends React.Component {
     }
 
     componentWillMount() {
+        $('#coupon_success').foundation()
+        $('#coupon_gone').foundation()
+        $('#coupon_error').foundation()
         this._fetchPositionsList()
     }
 
@@ -52,6 +56,11 @@ export default class CartBox extends React.Component {
             success: (data) => {
                 $('#amount').text(data.cart.summ)
                 this.setState({positionsList: data.positions})
+                if(data.result == 'Coupon is attached') $('#coupon_success').foundation('open')
+                else $('#coupon_gone').foundation('open')
+            },
+            error: (data) => {
+                $('#coupon_error').foundation('open')
             }
         })
     }

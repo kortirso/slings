@@ -9,4 +9,8 @@ class Coupon < ApplicationRecord
 
   validates :name, :amount, :discount, presence: true
   validates :amount, :discount, numericality: { only_integer: true }
+
+  def attach
+    update(amount: amount - 1)
+  end
 end

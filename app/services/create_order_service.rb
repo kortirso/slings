@@ -11,6 +11,8 @@ class CreateOrderService
       order.update(summ: order.summ * (100 - delivery.discount) / 100 + delivery.delivery_cost)
       order.cart.positions.includes(:product).each { |position| order.positions.create(product: position.product, count: position.count, full: position.full) }
 
+      order.cart.coupon.attach if order.cart.coupon.present?
+
       AdminMailer.new_order_email(order: order, delivery: delivery)
 
       order
