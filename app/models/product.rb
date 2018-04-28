@@ -7,6 +7,8 @@ class Product < ApplicationRecord
 
   friendly_id :slug_candidates, use: :slugged
 
+  has_one_attached :image
+
   belongs_to :category
   belongs_to :collection, optional: true
 

@@ -1,8 +1,8 @@
 class WelcomeController < ApplicationController
-    before_action :categories_list
+  before_action :categories_list
 
-    def index
-        @articles = Article.order(id: :desc).limit(3)
-        @insta_photos = Instagram.last.try(:insta_photos)
-    end
+  def index
+    @articles = Article.order(id: :desc).limit(3)
+    @insta_photos = Instagram.last.try(:insta_photos)
+  end
 end

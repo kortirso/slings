@@ -14,6 +14,10 @@ Bundler.require(*Rails.groups)
 module Slings
   # Main App
   class Application < Rails::Application
+    config.load_defaults 5.2
+
+    ActiveModelSerializers.config.adapter = :json
+
     config.active_record.schema_format = :ruby
     config.generators do |g|
       g.test_framework :rspec, fixtures: true, views: false, view_specs: false, helper_specs: false,
@@ -25,5 +29,6 @@ module Slings
     end
 
     config.generators.system_tests = nil
+    config.action_mailer.preview_path = 'spec/mailers/previews'
   end
 end

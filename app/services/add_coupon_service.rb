@@ -1,3 +1,4 @@
+# Service for adding coupons to order
 class AddCouponService
   attr_reader :cart, :coupon
 

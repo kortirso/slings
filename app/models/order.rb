@@ -1,17 +1,18 @@
 # Represents orders
 class Order < ApplicationRecord
-    belongs_to :cart
+  belongs_to :cart
 
-    has_many :positions, dependent: :destroy
-    has_many :products, through: :positions
+  has_many :positions, dependent: :destroy
+  has_many :products, through: :positions
 
-    has_one :delivery
+  has_one :delivery
 
-    validates :cart_id, presence: true
+  validates :cart_id, presence: true
 
-    after_commit :update_summ, on: :create
+  after_commit :update_summ, on: :create
 
-    def update_summ
-        self.summ = cart.summ
-    end
+  def update_summ
+    self.summ = cart.summ
+    save
+  end
 end
