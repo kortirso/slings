@@ -1,6 +1,6 @@
 # Represents feedbacks by users
 class Feedback < ApplicationRecord
-  has_one_attached :image
+  include Imageable
 
   validates :body, presence: true
 

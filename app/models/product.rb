@@ -3,11 +3,10 @@ require 'open-uri'
 
 # Represents products
 class Product < ApplicationRecord
+  include Imageable
   extend FriendlyId
 
   friendly_id :slug_candidates, use: :slugged
-
-  has_one_attached :image
 
   belongs_to :category
   belongs_to :collection, optional: true
@@ -24,10 +23,6 @@ class Product < ApplicationRecord
   scope :sales_hits, -> { where sales_hit: true }
   scope :new_ones, -> { where new_one: true }
   scope :lasts, -> { order(created_at: :desc) }
-
-  def image_content
-    image.attached? ? Base64.encode64(image.attachment.blob.download) : nil
-  end
 
   def available_for_order?
     amount > 0
