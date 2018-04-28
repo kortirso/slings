@@ -1,6 +1,6 @@
 #header {
   background: #fff;
-  padding: 12px 0;
+  padding: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -8,10 +8,8 @@
   z-index: 2;
 
   #logo {
-    position: absolute;
-    left: 50px;
-    top: 0;
-    height: 87px;
+    height: 140px;
+    text-align: right;
 
     img {
       max-height: 100%;

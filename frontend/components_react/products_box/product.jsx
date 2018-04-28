@@ -1,11 +1,11 @@
-import React from 'react';
-import defaultImage from 'images/product.jpg';
-const $ = require("jquery");
+import React from 'react'
+import defaultImage from 'images/product.jpg'
+const $ = require("jquery")
 
 export default class Product extends React.Component {
   _prepareImage(product) {
-    if(product.image_content != null) return <img src={`data:image/jpg;base64,${product.image_content}`} alt={product.name} />;
-    return <img src={defaultImage} alt='empty image' className='empty' />;
+    if(product.image_content != null) return <img src={`data:image/jpg;base64,${product.image_content}`} alt={product.name} />
+    return <img src={defaultImage} alt='empty image' className='empty' />
   }
 
   // api calls
@@ -14,14 +14,14 @@ export default class Product extends React.Component {
       method: 'POST',
       url: `/positions?product_id=${product.id}.json`,
       success: (data) => {
-        $('#cart_amount').text(data);
+        $('#cart_amount').text(data)
       }
-    });
+    })
   }
 
   // renders
   render() {
-    let product = this.props.product;
+    let product = this.props.product
     return (
       <div className='cell small-12 medium-6 large-3'>
         <div className='sling_block'>
@@ -33,6 +33,11 @@ export default class Product extends React.Component {
               <div className='sling_name'>
                 {product.short_name}
               </div>
+              {product.model != '' &&
+                <div className='sling_name'>
+                  {product.model}
+                </div>
+              }
               <div className='sling_price'>
                 {product.price + ' руб.'}
               </div>
@@ -41,6 +46,6 @@ export default class Product extends React.Component {
           <button className='button' onClick={this._addProduct.bind(this, product)}>Купить</button>
         </div>
       </div>
-    );
+    )
   }
 }
