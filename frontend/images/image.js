@@ -1,4 +1,5 @@
 import "./logo.png";
+import "./logo_text.png";
 import "./product.jpg";
 
 import "./icons/award.png";
