@@ -25,6 +25,10 @@ class Product < ApplicationRecord
   scope :new_ones, -> { where new_one: true }
   scope :lasts, -> { order(created_at: :desc) }
 
+  def image_content
+    image.attached? ? Base64.encode64(image.attachment.blob.download) : nil
+  end
+
   def available_for_order?
     amount > 0
   end

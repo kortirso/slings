@@ -28,6 +28,21 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'Product' do
+    field :name
+    field :caption
+    field :price
+    field :new_one
+    field :sales_hit
+    field :amount
+    field :slug
+    field :material
+    field :model
+    field :category
+    field :collection
+    field :image, :active_storage
+  end
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory

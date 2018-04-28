@@ -24,6 +24,7 @@ table.cart {
 
         img {
           max-height: 100px;
+          max-width: 76.5px;
         }
 
         p {

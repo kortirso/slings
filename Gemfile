@@ -32,7 +32,7 @@ gem 'oj'
 gem 'oj_mimic_json'
 
 # Admin panel
-gem 'rails_admin', '1.3.0'
+gem 'rails_admin', github: 'dtcristo/rails_admin', branch: 'active_storage'
 
 # Add Webpack
 gem 'foreman'
