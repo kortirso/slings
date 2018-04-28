@@ -1,5 +1,5 @@
 $("#position_<%= @position.id %>").remove();
 $("#amount").html("<%= @cart.summ %>");
 <% if @cart.summ.zero? %>
-    $('.delivery_options').remove();
+  $('.delivery_options').remove();
 <% end %>

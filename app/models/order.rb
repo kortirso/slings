@@ -13,6 +13,5 @@ class Order < ApplicationRecord
 
   def update_summ
     self.summ = cart.summ
-    save
   end
 end

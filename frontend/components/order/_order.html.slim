@@ -12,10 +12,10 @@
           - @order.positions.includes(:product).order(id: :asc).each do |position|
             tr
               td
-                - if position.product.image.to_s.empty?
-                  = image_tag asset_pack_path('images/product.jpg'), alt: 'Стандартное изображение продукта'
-                - else
+                - if position.product.image.attached?
                   = image_tag position.product.image
+                - else
+                  = image_tag asset_pack_path('images/product.jpg'), alt: 'Стандартное изображение продукта'
               td= "#{position.product.name}#{' (полная комплектация)' if position.full?}"
               td= position.count
               td= position.summ

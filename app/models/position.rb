@@ -1,8 +1,8 @@
 # Represents positions in cart
 class Position < ApplicationRecord
-  belongs_to :cart
+  belongs_to :cart, optional: true
   belongs_to :product
-  belongs_to :order
+  belongs_to :order, optional: true
 
   validates :product_id, :count, presence: true
   validates :count, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
