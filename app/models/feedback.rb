@@ -4,6 +4,6 @@ class Feedback < ApplicationRecord
 
   validates :body, presence: true
 
-  scope :lasts, -> { order(created_at: :desc).limit(4) }
+  scope :lasts, -> { order(updated_at: :desc).limit(4) }
   scope :published, -> { where(published: true) }
 end

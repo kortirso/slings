@@ -3,23 +3,26 @@
     .grid-x
       .cell.small-12.medium-6
         h2 Отправить сообщение
-        #mailer= form_tag('/mailer', method: 'post') do
-          = label_tag :author, 'Ваше имя'
-          = text_field_tag :author
-          = label_tag :contact, 'Контактные данные'
-          = text_field_tag :contact
-          = label_tag :body do
-            abbr title='required'
-              | *
-            |  Ваше сообщение
-          = text_area_tag :body, '', required: true
-          .g-recaptcha data-sitekey='6LdjOUoUAAAAAJstCX7mEbC9CrxSEupJll0y-CKR'
-          = submit_tag 'Отправить', class: 'button'
+        #mailer
+          = form_with url: mailer_index_path, local: true do |f|
+            = f.label :author, 'Ваше имя'
+            = f.text_field :author, required: true
+            = f.label :contact, 'Контактные данные'
+            = f.text_field :contact, required: true
+            = f.label :body do
+              abbr title='required'
+                | *
+              |  Ваше сообщение
+            = f.text_area :body, required: true
+            .g-recaptcha data-sitekey='6LdjOUoUAAAAAJstCX7mEbC9CrxSEupJll0y-CKR'
+            = f.submit 'Отправить', class: 'button'
       .cell.small-12.medium-6
         h2 Оставить отзыв
-        = simple_form_for Feedback.new, controller: 'feedbacks', action: 'create', method: 'post' do |f|
-          = f.input :name, label: 'Ваше имя'
-          = f.input :body, label: 'Текст отзыва', required: true
-          = f.input :image, label: 'Фотография'
+        = form_with model: Feedback.new, local: true do |f|
+          = f.label :name, 'Ваше имя'
+          = f.text_field :name, required: true
+          = f.label :body, 'Текст отзыва'
+          = f.text_field :body, required: true
+          = f.file_field :image, label: 'Фотография'
           .g-recaptcha data-sitekey='6LdjOUoUAAAAAJstCX7mEbC9CrxSEupJll0y-CKR'
-          = f.button :submit, 'Отправить', class: 'button'
+          = f.submit 'Отправить', class: 'button'
