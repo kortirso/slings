@@ -87,7 +87,6 @@
             .header
               = image_tag asset_pack_path('images/icons/social-instagram.png'), alt: 'Instagram аккаунт по продаже слингов'
               span= link_to '@lilmonkey.ru', 'https://www.instagram.com/lilmonkey.ru/', 'target' => '_blank'
-            - @insta_photos.each do |row|
-              .photo_row
-                - row.each do |photo|
-                  .img= link_to image_tag(photo.image, alt: 'Слинги переноски, май-слинги, эрго-рюкзаки'), photo.link, 'target' => '_blank'
+            .photos
+              - @insta_photos.each do |photo|
+                .img= link_to image_tag(photo.image, alt: 'Слинги переноски, май-слинги, эрго-рюкзаки'), photo.link, 'target' => '_blank'
