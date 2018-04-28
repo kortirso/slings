@@ -6,6 +6,10 @@
   left: 0;
   padding: 10px;
 
+  @media (max-width: 639px) {
+    padding-bottom: 50px;
+  }
+
   h4 {
     font-size: 20px;
   }

@@ -5,6 +5,11 @@
   overflow: hidden;
   overflow-y: scroll;
   position: relative;
-  padding-top: 80px;
+  padding-top: 110px;
   padding-bottom: 140px;
+
+  @media (max-width: 639px) {
+    padding-top: 190px;
+    padding-bottom: 120px;
+  }
 }

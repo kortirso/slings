@@ -1,7 +1,6 @@
 #header {
-  height: 80px;
   background: #fff;
-  padding-top: 12px;
+  padding: 12px 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -35,6 +34,7 @@
 
     @media screen and (max-width: 639px) {
       font-size: 15px;
+      text-align: left;
     }
   }
 

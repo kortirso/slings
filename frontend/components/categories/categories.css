@@ -4,10 +4,12 @@
 
 .filters {
   text-align: center;
+  margin-bottom: 20px;
 
   .filter {
     display: inline-block;
     margin-right: 20px;
+    margin-bottom: 10px;
 
     span {
       margin-right: 10px;
@@ -16,6 +18,7 @@
     select {
       display: inline-block;
       width: auto;
+      margin: 0;
     }
   }
 }

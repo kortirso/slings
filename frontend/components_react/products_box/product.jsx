@@ -23,8 +23,8 @@ export default class Product extends React.Component {
   render() {
     let product = this.props.product;
     return (
-      <div className='cell small-6 medium-6 large-3 end'>
-        <div className='sling_block block'>
+      <div className='cell small-12 medium-6 large-3'>
+        <div className='sling_block'>
           <a href={'/products/' + product.slug}>
             <div className='sling_image'>
               {this._prepareImage(product)}

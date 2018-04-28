@@ -2,27 +2,29 @@
   .block
     .grid-x
       .cell.small-12.medium-6
-        h2 Отправить сообщение
-        #mailer
-          = form_with url: mailer_index_path, local: true do |f|
-            = f.label :author, 'Ваше имя'
-            = f.text_field :author, required: true
-            = f.label :contact, 'Контактные данные'
-            = f.text_field :contact, required: true
-            = f.label :body do
-              abbr title='required'
-                | *
-              |  Ваше сообщение
-            = f.text_area :body, required: true
+        .form
+          h2 Отправить сообщение
+          #mailer
+            = form_with url: mailer_index_path, local: true do |f|
+              = f.label :author, 'Ваше имя'
+              = f.text_field :author, required: true
+              = f.label :contact, 'Контактные данные'
+              = f.text_field :contact, required: true
+              = f.label :body do
+                abbr title='required'
+                  | *
+                |  Ваше сообщение
+              = f.text_area :body, required: true
+              .g-recaptcha data-sitekey='6LdjOUoUAAAAAJstCX7mEbC9CrxSEupJll0y-CKR'
+              = f.submit 'Отправить', class: 'button'
+      .cell.small-12.medium-6
+        .form
+          h2 Оставить отзыв
+          = form_with model: Feedback.new, local: true do |f|
+            = f.label :name, 'Ваше имя'
+            = f.text_field :name, required: true
+            = f.label :body, 'Текст отзыва'
+            = f.text_field :body, required: true
+            = f.file_field :image, label: 'Фотография'
             .g-recaptcha data-sitekey='6LdjOUoUAAAAAJstCX7mEbC9CrxSEupJll0y-CKR'
             = f.submit 'Отправить', class: 'button'
-      .cell.small-12.medium-6
-        h2 Оставить отзыв
-        = form_with model: Feedback.new, local: true do |f|
-          = f.label :name, 'Ваше имя'
-          = f.text_field :name, required: true
-          = f.label :body, 'Текст отзыва'
-          = f.text_field :body, required: true
-          = f.file_field :image, label: 'Фотография'
-          .g-recaptcha data-sitekey='6LdjOUoUAAAAAJstCX7mEbC9CrxSEupJll0y-CKR'
-          = f.submit 'Отправить', class: 'button'

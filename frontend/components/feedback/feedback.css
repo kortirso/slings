@@ -11,3 +11,11 @@ form#new_feedback {
 .g-recaptcha {
   margin-bottom: 10px;
 }
+
+.form {
+  margin-bottom: 50px;
+
+  h2 {
+    margin-bottom: 25px;
+  }
+}
