@@ -1,3 +1,15 @@
 = javascript_pack_tag 'reviews_box'
 .grid-container
+  .grid-x
+    .cell.small-12.medium-6.medium-offset-3
+      .form
+        h2 Оставить отзыв
+        = form_with model: Feedback.new, local: true do |f|
+          = f.label :name, 'Ваше имя'
+          = f.text_field :name, required: true
+          = f.label :body, 'Текст отзыва'
+          = f.text_field :body, required: true
+          = f.file_field :image, label: 'Фотография'
+          .g-recaptcha data-sitekey='6LdjOUoUAAAAAJstCX7mEbC9CrxSEupJll0y-CKR'
+          = f.submit 'Отправить', class: 'button'
   = react_component('ReviewsBox')
