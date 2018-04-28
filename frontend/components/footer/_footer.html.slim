@@ -1,9 +1,23 @@
 footer#footer
   .grid-container
     .grid-x
-      .cell.small-12.medium-6
-        p Присоединяйтесь к нам в социальных сетях
+      .cell.small-6.medium-3
+        p.head Мы в социальных сетях
         p
           = link_to image_tag(asset_pack_path('images/icons/social-instagram.png'), alt: 'Аккаунт в Инстаграм по продаже слингов'), 'https://www.instagram.com/lilmonkey.ru', target: '_blank'
           = link_to image_tag(asset_pack_path('images/icons/social-vkontakte.png'), alt: 'Аккаунт в Вконтакте по продаже слингов'), 'https://vk.com/lilmonkeyru', target: '_blank'
           = link_to image_tag(asset_pack_path('images/icons/social-facebook.png'), alt: 'Аккаунт в Facebook по продаже слингов'), 'https://www.facebook.com/lilmonkey.ru', target: '_blank'
+      .cell.small-6.medium-2
+        p.head Режим работы
+        p.text 09:00 - 21:00
+      .cell.small-6.medium-2
+        p.text +7 920 502 69 48
+        p.text
+          a href="javascript:location='mailto:\u006c\u0069\u006c\u006d\u006f\u006e\u006b\u0065\u0079\u0040\u0062\u006b\u002e\u0072\u0075';void 0"
+            script
+              | document.write('\u006c\u0069\u006c\u006d\u006f\u006e\u006b\u0065\u0079\u0040\u0062\u006b\u002e\u0072\u0075')
+      .cell.small-6.medium-2
+        p.text
+          a title='WhatsApp' href='whatsapp://send?phone=+792050269480' WhatsApp
+        p.text
+          a title='Telegram' href='tg://resolve?domain=Lanaleeta' Telegram
