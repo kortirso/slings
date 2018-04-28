@@ -1,5 +1,5 @@
 FactoryBot.define do
-    factory :instaphoto do
-        association :instagram
-    end
+  factory :instaphoto do
+    association :instagram
+  end
 end
