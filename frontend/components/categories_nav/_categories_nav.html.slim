@@ -1,4 +1,4 @@
-.cell.small-12.medium-3.large-2
+.cell
   .catalog_nav
     - categories.each do |category|
       = link_to category.name, category_path(category), class: "button #{'active' if active_category == category.friendly_id }"

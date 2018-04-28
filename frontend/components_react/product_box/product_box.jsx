@@ -6,7 +6,7 @@ export default class ProductBox extends React.Component {
   constructor() {
     super();
     this.state = {
-      product: {image: {}, model: '', caption: []}
+      product: {image_content: null, model: '', caption: []}
     }
   }
 
@@ -16,7 +16,7 @@ export default class ProductBox extends React.Component {
 
   _prepareImage() {
     let product = this.state.product
-    if(product.image != '') return <img src={product.image} alt={product.name} />
+    if(product.image_content != null) return <img src={`data:image/jpg;base64,${product.image_content}`} alt={product.name} />
     return <img src={defaultImage} alt='empty image' className='empty' />
   }
 
@@ -26,7 +26,8 @@ export default class ProductBox extends React.Component {
       method: 'GET',
       url: `${this.props.product_id}.json`,
       success: (data) => {
-        this.setState({product: data})
+        console.log(data)
+        this.setState({product: data.product})
       }
     })
   }
@@ -42,8 +43,7 @@ export default class ProductBox extends React.Component {
   }
 
   _prepareCaption() {
-    let product = this.state.product
-    return product.caption.map((line, index) => {
+    return this.state.product.caption.map((line, index) => {
       return <p key={index}>{line}</p>
     })
   }
@@ -52,11 +52,11 @@ export default class ProductBox extends React.Component {
   render() {
     let product = this.state.product
     return (
-      <div>
+      <div className='current_product'>
         <h2>{product.name}</h2>
         <div className='grid-x'>
           <div className='cell small-12 medium-4'>
-            <div className='product_block block'>
+            <div className='product_block'>
               <div className='image_block'>
                 {this._prepareImage()}
               </div>

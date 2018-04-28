@@ -1,7 +1,16 @@
-.product_block {
-  padding: 0 10px;
+.current_product {
+  .product_block {
+    padding: 0 10px;
+    margin-bottom: 20px;
 
-  .image_block {
-    text-align: center;
+    .image_block {
+      text-align: center;
+      height: 300px;
+
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
   }
 }

@@ -2,5 +2,5 @@
 .grid-container
   .grid-x
     = yield
-    .cell.small-12.medium-9.large-10
+    .cell
       = react_component('ProductBox', product_id: @product.slug)
