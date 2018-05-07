@@ -6,8 +6,22 @@ export default class LastProductsBox extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      productsList: props.products
+      productsList: []
     }
+  }
+
+  componentWillMount() {
+    this._fetchProductsList()
+  }
+
+  _fetchProductsList() {
+    $.ajax({
+      method: 'GET',
+      url: `?format=json`,
+      success: (data) => {
+        this.setState({productsList: data.products})
+      }
+    })
   }
 
   _prepareProductsList() {
