@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :exception, except: %i[new create]
   prepend_view_path Rails.root.join('frontend')
 
   include ProductsCart
