@@ -15,7 +15,7 @@ export default class Position extends React.Component {
   }
 
   _prepareImage(product) {
-    if(product.image_content != null) return <img src={`data:image/jpg;base64,${product.image_content}`} alt={product.name} />;
+    if(product.image_content != null) return <img src={product.image_content} alt={product.name} />;
     return <img src={defaultImage} alt='empty image' className='empty' />;
   }
 

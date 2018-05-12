@@ -16,7 +16,6 @@ export default class ProductBox extends React.Component {
 
   _prepareImage() {
     let product = this.state.product
-    console.log(product)
     if(product.image_content != null) return <img src={product.image_content} alt={product.name} />
     return <img src={defaultImage} alt='empty image' className='empty' />
   }

@@ -13,7 +13,7 @@
             tr
               td
                 - if position.product.image.attached?
-                  = image_tag position.product.image
+                  = image_tag position.product.image_content
                 - else
                   = image_tag asset_pack_path('images/product.jpg'), alt: 'Стандартное изображение продукта'
               td= "#{position.product.name}#{' (полная комплектация)' if position.full?}"
