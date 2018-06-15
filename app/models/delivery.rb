@@ -6,7 +6,7 @@ class Delivery < ApplicationRecord
 
   def delivery_cost
     case delivery_form
-      when 'Доставка Транспортной Компанией' then Config.last.cost_tek
+      when 'Доставка Транспортной Компанией' then Config.last.cost_self
       when 'Доставка Почтой России' then Config.last.cost_post
       when 'Самовывоз' then Config.last.cost_self
       when 'Бесплатная доставка' then Config.last.cost_self
